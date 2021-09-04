@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main"
+    tools:context=".activity.SignupActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+
+        >
+
+        <EditText
+            android:id="@+id/id_text"
+            android:layout_width="300dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="180dp"
+            android:layout_marginRight="15dp"
+            android:layout_gravity="center"
+            android:background="@drawable/shape"
+            android:ems="10"
+            android:fontFamily="@font/ahn2006_m"
+            android:hint="ID"
+            android:inputType="textPersonName"
+            android:textColor="@color/black"
+            android:textColorHint="@color/white"
+            android:textSize="30sp"
+
+            />
+
+        <EditText
+            android:id="@+id/password_text"
+            android:layout_width="300dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_gravity="center"
+            android:background="@drawable/shape"
+            android:ems="10"
+            android:fontFamily="@font/ahn2006_m"
+            android:hint="PASSWORD"
+            android:inputType="textPassword"
+            android:textColor="@color/black"
+            android:textColorHint="@color/white"
+            android:textSize="30sp" />
+
+        <EditText
+            android:id="@+id/cfPassword_text"
+            android:layout_width="300dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_gravity="center"
+            android:background="@drawable/shape"
+            android:ems="10"
+            android:fontFamily="@font/ahn2006_m"
+            android:hint="CONFIRM PASSWORD"
+            android:inputType="textPassword"
+            android:textColor="@color/black"
+            android:textColorHint="@color/white"
+            android:textSize="30sp" />
+
+        <EditText
+            android:id="@+id/email_text"
+            android:layout_width="300dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_gravity="center"
+            android:background="@drawable/shape"
+            android:ems="10"
+            android:fontFamily="@font/ahn2006_m"
+            android:hint="E-mail"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/black"
+            android:textColorHint="@color/white"
+            android:textSize="30sp" />
+
+        <EditText
+            android:id="@+id/userName_text"
+            android:layout_width="300dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_gravity="center"
+            android:background="@drawable/shape"
+            android:ems="10"
+            android:fontFamily="@font/ahn2006_m"
+            android:hint="userNAME"
+            android:inputType="textPersonName"
+            android:textColor="@color/black"
+            android:textColorHint="@color/white"
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/signup_btn"
+            android:layout_width="134dp"
+            android:layout_height="34dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="80dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/shape"
+            android:fadingEdge="vertical"
+            android:fontFamily="@font/ahn2006_m"
+
+            android:text="Sign up"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/white"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

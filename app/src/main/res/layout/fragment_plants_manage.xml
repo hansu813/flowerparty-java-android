@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".fragment.PlantsManageFragment"
+    android:background="@color/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- TODO: Update blank fragment layout -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <!-- layout -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical">
+
+            <!-- title -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="5dp"
+                    android:fontFamily="@font/ahn2006_m"
+                    android:text="My Plants"
+                    android:textColor="@color/white"
+                    android:textSize="50sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
+
+                <ImageView
+                    android:id="@+id/imageView41"
+                    android:layout_width="43dp"
+                    android:layout_height="43dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_gravity="bottom"
+                    android:src="@drawable/manage" />
+            </LinearLayout>
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <!-- main -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="100dp">
+
+                    <!-- contents -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="330dp"
+                        android:layout_margin="20dp"
+                        android:orientation="vertical"
+                        android:background="@drawable/shape"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="40dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="10dp"
+                                android:fontFamily="@font/ahn2006_m"
+                                android:text="Rosemary"
+                                android:textColor="@color/white"
+                                android:textSize="35sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:fontFamily="@font/ahn2006_m"
+                                android:text="로즈마리"
+                                android:textColor="@color/white"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"/>
+
+                            <ImageView
+                                android:id="@+id/imageView42"
+                                android:layout_width="40dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginRight="10dp"
+                                android:src="@drawable/plantscal" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/imageView15"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/rosemary"
+                            android:scaleType="centerCrop"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="34dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_gravity="center_horizontal"
+                            android:background="@drawable/shape"
+                            android:backgroundTint="@color/main"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginLeft="50dp"
+                                android:gravity="center"
+                                android:fontFamily="@font/ahn2006_m"
+                                android:text="Rossy"
+                                android:textSize="23sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/white" />
+
+                            <ImageView
+                                android:id="@+id/imageView43"
+                                android:layout_width="20dp"
+                                android:layout_height="15dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_gravity="center_vertical"
+                                android:src="@drawable/pen" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="260dp"
+                        android:layout_margin="20dp"
+                        android:orientation="vertical"
+                        android:background="@drawable/shape"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_marginHorizontal="30dp"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/imageView44"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:src="@android:drawable/star_on" />
+
+                            <ImageView
+                                android:id="@+id/imageView48"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:src="@android:drawable/star_on" />
+
+                            <ImageView
+                                android:id="@+id/imageView49"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:src="@android:drawable/star_on" />
+
+                            <ImageView
+                                android:id="@+id/imageView50"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:src="@android:drawable/star_on" />
+
+                            <ImageView
+                                android:id="@+id/imageView45"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:src="@android:drawable/star_off" />
+
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:gravity="center"
+                            android:text="middle"
+                            android:fontFamily="@font/ahn2006_m"
+                            android:textSize="23sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/white"
+                            />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            android:padding="20dp"
+                            android:fontFamily="@font/ahn2006_m"
+                            android:text="test"
+                            android:textSize="23sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/gray" />
+
+                        </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginBottom="40dp"
+                        android:orientation="vertical"
+                        android:background="@drawable/shape"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginBottom="30dp"
+                                android:text="추천식물"
+                                android:textColor="@color/gray"
+                                android:textSize="30sp"
+                                android:textStyle="bold"
+                                android:fontFamily="@font/ahn2006_m"/>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="60dp"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="30dp"
+                                    android:layout_gravity="center_vertical"
+                                    android:fontFamily="@font/ahn2006_m"
+                                    android:text="포도"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/gray"
+                                    android:textSize="30sp"/>
+
+                                <View
+                                    android:layout_width="0dp"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1"/>
+
+                                <ImageView
+                                    android:id="@+id/imageView46"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_marginRight="30dp"
+                                    android:layout_gravity="center_vertical"
+                                    android:src="@drawable/water" />
+
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="60dp"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="30dp"
+                                    android:layout_gravity="center_vertical"
+                                    android:fontFamily="@font/ahn2006_m"
+                                    android:text="고무나무"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/gray"
+                                    android:textSize="30sp"/>
+
+                                <View
+                                    android:layout_width="0dp"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1"/>
+
+                                <ImageView
+                                    android:id="@+id/imageView47"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_marginRight="30dp"
+                                    android:layout_gravity="center_vertical"
+                                    android:src="@drawable/tem" />
+
+
+                            </LinearLayout>
+
+
+
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="20dp"
+                            android:layout_marginBottom="100dp"
+                            android:background="@drawable/shape"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginBottom="10dp"
+                                android:text="Searching plants"
+                                android:textColor="@color/gray"
+                                android:textSize="30sp"
+                                android:textStyle="bold"
+                                android:fontFamily="@font/ahn2006_m"/>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal"
+                                android:background="@drawable/shape"
+                                android:backgroundTint="@color/main"
+                                android:layout_marginHorizontal="20dp"
+                                android:layout_marginBottom="15dp">
+
+                                <ImageView
+                                    android:id="@+id/imageView33"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_margin="10dp"
+                                    android:layout_gravity="center"
+                                    app:srcCompat="@drawable/icon_search" />
+
+                                <EditText
+                                    android:id="@+id/editTextTextPersonName4"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:layout_gravity="center"
+                                    android:background="@null"
+                                    android:ems="10"
+                                    android:inputType="textPersonName"
+                                    android:text=""
+                                    android:textColorHint="@color/white"
+                                    />
+
+                            </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </LinearLayout><!-- end main -->
+            </androidx.core.widget.NestedScrollView>
+        </LinearLayout><!-- end layout -->
+
+
+
+    </FrameLayout>
+</LinearLayout>

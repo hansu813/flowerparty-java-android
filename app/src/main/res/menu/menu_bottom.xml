@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/tab_home"
+        android:title="home"
+        android:enabled="true"
+        android:icon="@android:drawable/ic_dialog_info"
+        app:showAsAction="ifRoom"
+        />
+    <item
+        android:id="@+id/tab_plants"
+        android:title="plants"
+        android:enabled="true"
+        android:icon="@android:drawable/ic_menu_help"
+        app:showAsAction="ifRoom"
+        />
+    <item
+        android:id="@+id/tab_community"
+        android:title="community"
+        android:enabled="true"
+        android:icon="@android:drawable/ic_btn_speak_now"
+        app:showAsAction="ifRoom"
+        />
+    <item
+        android:id="@+id/tab_mypage"
+        android:title="mypage"
+        android:enabled="true"
+        android:icon="@android:drawable/ic_dialog_alert"
+        app:showAsAction="ifRoom"
+        />
+
+</menu>
