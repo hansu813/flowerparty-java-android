@@ -12,13 +12,14 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import com.example.flowerparty.R;
+import com.example.flowerparty.activity.BlueConnectActivity;
 import com.example.flowerparty.activity.PlantsNicknameActivity;
 import com.example.flowerparty.activity.homeSettingActivity;
 
 public class HomeFragment extends Fragment {
     ImageButton imgBtnManage;
     ImageView imgNickname;
-
+    ImageView imgBlueIcon;
 
 
     @Override
@@ -42,6 +43,15 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), PlantsNicknameActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        imgBlueIcon = (ImageView) rootview.findViewById(R.id.imgBlueIcon);
+        imgBlueIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), BlueConnectActivity.class);
                 startActivity(intent);
             }
         });
