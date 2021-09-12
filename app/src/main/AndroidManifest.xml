@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".CommunityChatActivity"></activity>
+        <activity android:name=".activity.CommunityChatActivity"></activity>
         <activity android:name=".activity.PlantsChooseActivity" />
         <activity android:name=".activity.ProfileCEmailActivity" />
         <activity android:name=".activity.ProfileCnameActivity" />

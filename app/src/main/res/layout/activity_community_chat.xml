@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CommunityChatActivity"
+    tools:context=".activity.CommunityChatActivity"
     android:background="@color/main">
 
     <LinearLayout
@@ -26,7 +26,7 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/imageView72"
+                    android:id="@+id/imgLArrowChat"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_marginLeft="20dp"
