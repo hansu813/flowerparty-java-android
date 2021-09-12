@@ -217,13 +217,12 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="30dp"
-                            android:gravity="center"
-                            android:text="middle"
                             android:fontFamily="@font/ahn2006_m"
-                            android:textSize="23sp"
-                            android:textStyle="bold"
+                            android:gravity="center"
+                            android:text="직사광선을 좋아해요."
                             android:textColor="@color/white"
-                            />
+                            android:textSize="23sp"
+                            android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -232,7 +231,7 @@
                             android:layout_gravity="center"
                             android:padding="20dp"
                             android:fontFamily="@font/ahn2006_m"
-                            android:text="test"
+                            android:text="여름철 직사광선에는 탈 수 있으니 주의해주세요.\n\n하루 3~4시간은 햇빛을 쬐어주세요.\n\n햇빛이 중요한 식물이니 주의해서 키워주세요."
                             android:textSize="23sp"
                             android:textStyle="bold"
                             android:textColor="@color/gray" />

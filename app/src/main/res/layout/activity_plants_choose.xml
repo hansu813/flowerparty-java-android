@@ -62,7 +62,7 @@
                     android:id="@+id/textView75"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TextView" />
+                    android:text="Rose" />
             </LinearLayout>
 
             <!-- item 2 -->
@@ -82,7 +82,7 @@
                     android:id="@+id/textView67"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TextView" />
+                    android:text="Sunflower" />
             </LinearLayout>
         </LinearLayout>
 
@@ -109,7 +109,7 @@
                     android:id="@+id/textView76"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TextView" />
+                    android:text="Pineapple" />
             </LinearLayout>
 
             <!-- item 2 -->
@@ -129,7 +129,7 @@
                     android:id="@+id/textView68"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TextView" />
+                    android:text="Brocoli" />
             </LinearLayout>
         </LinearLayout>
 
@@ -391,7 +391,7 @@
                     android:id="@+id/textView76"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TextView" />
+                    android:text="lavender" />
             </LinearLayout>
 
             <!-- item 2 -->

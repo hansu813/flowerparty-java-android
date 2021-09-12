@@ -24,11 +24,11 @@
 
             <ImageView
                 android:id="@+id/imageView31"
-                android:layout_width="wrap_content"
+                android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
-                app:srcCompat="?attr/homeAsUpIndicator" />
+                app:srcCompat="?attr/homeAsUpIndicator"/>
 
             <TextView
                 android:id="@+id/textView30"
