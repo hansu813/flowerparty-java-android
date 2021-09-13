@@ -6,28 +6,28 @@
         android:id="@+id/tab_home"
         android:title="home"
         android:enabled="true"
-        android:icon="@android:drawable/ic_dialog_info"
+        android:icon="@drawable/home"
         app:showAsAction="ifRoom"
         />
     <item
         android:id="@+id/tab_plants"
         android:title="plants"
         android:enabled="true"
-        android:icon="@android:drawable/ic_menu_help"
+        android:icon="@drawable/myplants"
         app:showAsAction="ifRoom"
         />
     <item
         android:id="@+id/tab_community"
         android:title="community"
         android:enabled="true"
-        android:icon="@android:drawable/ic_btn_speak_now"
+        android:icon="@drawable/community"
         app:showAsAction="ifRoom"
         />
     <item
         android:id="@+id/tab_mypage"
         android:title="mypage"
         android:enabled="true"
-        android:icon="@android:drawable/ic_dialog_alert"
+        android:icon="@drawable/mypage"
         app:showAsAction="ifRoom"
         />
 
