@@ -12,6 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
+        <activity android:name=".fragment.PlantsManageFragment"></activity>
         <activity android:name=".activity.CommunityChatActivity"></activity>
         <activity android:name=".activity.PlantsChooseActivity" />
         <activity android:name=".activity.ProfileCEmailActivity" />

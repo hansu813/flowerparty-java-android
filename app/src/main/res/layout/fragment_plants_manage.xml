@@ -70,7 +70,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="330dp"
-                        android:layout_margin="20dp"
+                        android:layout_marginHorizontal="20dp"
                         android:orientation="vertical"
                         android:background="@drawable/shape"
                         >
@@ -162,7 +162,7 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="260dp"
+                        android:layout_height="290dp"
                         android:layout_margin="20dp"
                         android:orientation="vertical"
                         android:background="@drawable/shape"
@@ -182,6 +182,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
+                                android:layout_marginRight="10dp"
                                 android:src="@drawable/fullsun" />
 
                             <ImageView
@@ -189,6 +190,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
+                                android:layout_marginRight="10dp"
                                 android:src="@drawable/fullsun" />
 
                             <ImageView
@@ -196,6 +198,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
+                                android:layout_marginRight="10dp"
                                 android:src="@drawable/fullsun" />
 
                             <ImageView
@@ -203,6 +206,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
+                                android:layout_marginRight="10dp"
                                 android:src="@drawable/fullsun" />
 
                             <ImageView
@@ -227,7 +231,7 @@
 
                         <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="0dp"
+                            android:layout_height="100dp"
                             android:layout_weight="1"
                             android:layout_gravity="center"
                             android:padding="20dp"

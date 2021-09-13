@@ -54,6 +54,7 @@
 
                     <!-- contents -->
                     <LinearLayout
+                        android:id="@+id/plantsDetail"
                         android:layout_width="match_parent"
                         android:layout_height="330dp"
                         android:layout_margin="20dp"
