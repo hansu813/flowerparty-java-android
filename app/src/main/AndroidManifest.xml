@@ -3,6 +3,7 @@
     package="com.example.flowerparty">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -10,9 +11,13 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".fragment.PlantsManageFragment"></activity>
-        <activity android:name=".activity.CommunityChatActivity"></activity>
+        <activity
+            android:name=".RegisterActivity2"
+            android:exported="true" />
+        <activity android:name=".fragment.PlantsManageFragment" />
+        <activity android:name=".activity.CommunityChatActivity" />
         <activity android:name=".activity.PlantsChooseActivity" />
         <activity android:name=".activity.ProfileCEmailActivity" />
         <activity android:name=".activity.ProfileCnameActivity" />
@@ -34,6 +39,7 @@
         <activity android:name=".activity.homeSettingActivity" />
         <activity android:name=".activity.BlueConnectActivity" />
         <activity android:name=".activity.BlueActivity" />
+        <activity android:name=".activity.RegisterActivity" />
         <activity android:name=".activity.LoginActivity" />
         <activity android:name=".activity.IntroActivity">
             <intent-filter>

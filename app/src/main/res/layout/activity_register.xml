@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/main"
-    tools:context=".activity.SignupActivity">
+    tools:context=".activity.RegisterActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,7 +16,7 @@
         >
 
         <EditText
-            android:id="@+id/id_text"
+            android:id="@+id/editTextRID"
             android:layout_width="300dp"
             android:layout_height="45dp"
             android:layout_marginLeft="15dp"
@@ -34,7 +35,7 @@
             />
 
         <EditText
-            android:id="@+id/password_text"
+            android:id="@+id/editTextRPW"
             android:layout_width="300dp"
             android:layout_height="45dp"
             android:layout_marginTop="15dp"
@@ -51,7 +52,7 @@
             android:textSize="30sp" />
 
         <EditText
-            android:id="@+id/cfPassword_text"
+            android:id="@+id/editTextPWC"
             android:layout_width="300dp"
             android:layout_height="45dp"
             android:layout_marginTop="15dp"
@@ -68,7 +69,7 @@
             android:textSize="30sp" />
 
         <EditText
-            android:id="@+id/email_text"
+            android:id="@+id/editTextREmail"
             android:layout_width="300dp"
             android:layout_height="45dp"
             android:layout_marginTop="15dp"
@@ -85,7 +86,7 @@
             android:textSize="30sp" />
 
         <EditText
-            android:id="@+id/userName_text"
+            android:id="@+id/editTextRName"
             android:layout_width="300dp"
             android:layout_height="45dp"
             android:layout_marginTop="15dp"
@@ -102,7 +103,7 @@
             android:textSize="30sp" />
 
         <Button
-            android:id="@+id/signup_btn"
+            android:id="@+id/btnRegister"
             android:layout_width="134dp"
             android:layout_height="34dp"
             android:layout_gravity="center"
