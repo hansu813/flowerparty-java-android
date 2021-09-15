@@ -39,7 +39,7 @@
             app:layout_constraintVertical_bias="0.464" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/editTextID"
             android:layout_width="298dp"
             android:layout_height="48dp"
             android:background="@drawable/shape"
@@ -57,7 +57,7 @@
             app:layout_constraintVertical_bias="0.04" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName2"
+            android:id="@+id/editTextPW"
             android:layout_width="299dp"
             android:layout_height="44dp"
             android:background="@drawable/shape"
@@ -69,11 +69,11 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+            app:layout_constraintTop_toBottomOf="@+id/editTextID"
             app:layout_constraintVertical_bias="0.044" />
 
         <Button
-            android:id="@+id/buttonCheck"
+            android:id="@+id/btnSignIn"
             android:layout_width="299dp"
             android:layout_height="45dp"
             android:background="@drawable/shapebtn"
@@ -86,7 +86,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"
+            app:layout_constraintTop_toBottomOf="@+id/editTextPW"
             app:layout_constraintVertical_bias="0.149" />
 
 
@@ -102,7 +102,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonCheck"
+        app:layout_constraintTop_toBottomOf="@+id/btnSignIn"
         app:layout_constraintVertical_bias="0.131" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

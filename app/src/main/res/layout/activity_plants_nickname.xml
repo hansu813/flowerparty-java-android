@@ -119,7 +119,7 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/buttonCheck"
+            android:id="@+id/btnSignIn"
             android:layout_width="260dp"
             android:layout_height="45dp"
             android:paddingTop="10dp"
