@@ -1,5 +1,6 @@
 package com.example.flowerparty;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -21,6 +22,7 @@ import org.json.JSONObject;
 public class RegisterActivity extends AppCompatActivity {
     private EditText et_ID, et_PW, et_cPW, et_Email, et_Name;
     private Button btnRegister;
+    private AlertDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,7 @@ public class RegisterActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String userID = et_ID.getText().toString();
                 String userPassword = et_PW.getText().toString();
+                String userCPassword = et_cPW.getText().toString();
                 String userEmail = et_Email.getText().toString();
                 String userName = et_Name.getText().toString();
 
@@ -48,12 +51,20 @@ public class RegisterActivity extends AppCompatActivity {
                         try {
                             JSONObject jsonObject = new JSONObject(response);
                             boolean success = jsonObject.getBoolean("success");
-                            if (success) {
-                                Toast.makeText(getApplicationContext(), "회원 등록에 성공하였습니다.", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
-                                startActivity(intent);
+
+                            if (userPassword.equals(userCPassword)) {
+                                if (success) { // 회원가입 성공
+                                    Toast.makeText(getApplicationContext(), "회원 등록에 성공하였습니다.", Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                                    startActivity(intent);
+                                } else {
+                                    Toast.makeText(getApplicationContext(), "회원 등록에 실패하였습니다.", Toast.LENGTH_SHORT).show();
+                                }
                             } else {
-                                Toast.makeText(getApplicationContext(), "회원 등록에 실패하였습니다.", Toast.LENGTH_SHORT).show();
+                                AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
+                                dialog = builder.setMessage("비밀번호가 동일하지 않습니다.").setNegativeButton("확인", null).create();
+                                dialog.show();
+                                return;
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
