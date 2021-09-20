@@ -14,7 +14,7 @@
         android:usesCleartextTraffic="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity
-            android:name=".RegisterActivity2"
+            android:name=".RegisterActivity"
             android:exported="true" />
         <activity android:name=".fragment.PlantsManageFragment" />
         <activity android:name=".activity.CommunityChatActivity" />
@@ -39,7 +39,6 @@
         <activity android:name=".activity.homeSettingActivity" />
         <activity android:name=".activity.BlueConnectActivity" />
         <activity android:name=".activity.BlueActivity" />
-        <activity android:name=".activity.RegisterActivity" />
         <activity android:name=".activity.LoginActivity" />
         <activity android:name=".activity.IntroActivity">
             <intent-filter>
