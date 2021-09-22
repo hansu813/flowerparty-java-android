@@ -88,7 +88,7 @@ public class RegisterActivity extends AppCompatActivity {
                             if (success) {
                                 dialog = builder.setMessage("사용할 수 있는 아이디입니다.").setPositiveButton("확인", null).create();
                                 dialog.show();
-                                //et_ID.setEnabled(false); //아이디값 고정
+                                et_ID.setEnabled(false); //아이디값 고정
                                 validate = true; //검증 완료
                                 textValidate.setBackgroundColor(getResources().getColor(R.color.white));
                             } else {
