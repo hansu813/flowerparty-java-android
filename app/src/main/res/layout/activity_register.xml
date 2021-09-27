@@ -5,42 +5,61 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/main"
-    tools:context=".activity.SignupActivity">
+    tools:context=".RegisterActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
 
-        >
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <EditText
-            android:id="@+id/id_text"
+        <LinearLayout
             android:layout_width="300dp"
-            android:layout_height="45dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:gravity="center"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="180dp"
             android:layout_marginRight="15dp"
-            android:layout_gravity="center"
             android:background="@drawable/shape"
-            android:ems="10"
-            android:fontFamily="@font/ahn2006_m"
-            android:hint="ID"
-            android:inputType="textPersonName"
-            android:textColor="@color/black"
-            android:textColorHint="@color/white"
-            android:textSize="30sp"
+            android:orientation="horizontal">
 
-            />
+            <EditText
+                android:id="@+id/editTextRID"
+                android:layout_width="240dp"
+                android:layout_height="48dp"
+                android:ems="10"
+                android:background="@drawable/shape"
+                android:fontFamily="@font/ahn2006_m"
+                android:hint="ID"
+                android:inputType="textPersonName"
+                android:textColor="@color/black"
+                android:textColorHint="@color/white"
+                android:textSize="30sp"
+
+                />
+
+            <TextView
+                android:id="@+id/textValidate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="중복확인"
+                android:textColor="@color/gray_green"/>
+        </LinearLayout>
 
         <EditText
-            android:id="@+id/password_text"
+            android:id="@+id/editTextRPW"
             android:layout_width="300dp"
-            android:layout_height="45dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
+            android:layout_height="48dp"
             android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="15dp"
             android:background="@drawable/shape"
             android:ems="10"
             android:fontFamily="@font/ahn2006_m"
@@ -51,13 +70,13 @@
             android:textSize="30sp" />
 
         <EditText
-            android:id="@+id/cfPassword_text"
+            android:id="@+id/editTextPWC"
             android:layout_width="300dp"
-            android:layout_height="45dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
+            android:layout_height="48dp"
             android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="15dp"
             android:background="@drawable/shape"
             android:ems="10"
             android:fontFamily="@font/ahn2006_m"
@@ -68,13 +87,13 @@
             android:textSize="30sp" />
 
         <EditText
-            android:id="@+id/email_text"
+            android:id="@+id/editTextREmail"
             android:layout_width="300dp"
-            android:layout_height="45dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
+            android:layout_height="48dp"
             android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="15dp"
             android:background="@drawable/shape"
             android:ems="10"
             android:fontFamily="@font/ahn2006_m"
@@ -85,13 +104,13 @@
             android:textSize="30sp" />
 
         <EditText
-            android:id="@+id/userName_text"
+            android:id="@+id/editTextRName"
             android:layout_width="300dp"
-            android:layout_height="45dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
+            android:layout_height="48dp"
             android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="15dp"
             android:background="@drawable/shape"
             android:ems="10"
             android:fontFamily="@font/ahn2006_m"
@@ -102,12 +121,12 @@
             android:textSize="30sp" />
 
         <Button
-            android:id="@+id/signup_btn"
+            android:id="@+id/btnRegister"
             android:layout_width="134dp"
-            android:layout_height="34dp"
+            android:layout_height="48dp"
             android:layout_gravity="center"
-            android:layout_marginTop="80dp"
             android:layout_marginLeft="15dp"
+            android:layout_marginTop="80dp"
             android:layout_marginRight="15dp"
             android:background="@drawable/shape"
             android:fadingEdge="vertical"

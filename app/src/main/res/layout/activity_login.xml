@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.MainActivity"
+    tools:context=".activity.LoginActivity"
     android:background="@color/main">
 
     <TextView
@@ -39,15 +39,15 @@
         app:layout_constraintVertical_bias="0.464" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/editTextID"
         android:layout_width="298dp"
         android:layout_height="48dp"
         android:background="@drawable/shape"
         android:ems="10"
         android:inputType="textPersonName"
         android:padding="7dp"
-        android:text="ID"
-        android:textColor="@color/white"
+        android:hint="ID"
+        android:textColorHint="@color/white"
         android:textSize="54.74px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -57,23 +57,23 @@
         app:layout_constraintVertical_bias="0.04" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/editTextPW"
         android:layout_width="299dp"
         android:layout_height="44dp"
         android:background="@drawable/shape"
         android:ems="10"
         android:inputType="textPersonName"
         android:padding="7dp"
-        android:text="PASSWORD"
-        android:textColor="@color/white"
+        android:hint="PASSWORD"
+        android:textColorHint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+        app:layout_constraintTop_toBottomOf="@+id/editTextID"
         app:layout_constraintVertical_bias="0.044" />
 
     <Button
-        android:id="@+id/buttonCheck"
+        android:id="@+id/btnSignIn"
         android:layout_width="299dp"
         android:layout_height="45dp"
         android:background="@drawable/shapebtn"
@@ -86,11 +86,11 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPW"
         app:layout_constraintVertical_bias="0.149" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnSignUp"
         android:layout_width="108dp"
         android:layout_height="30dp"
         android:layout_marginEnd="72dp"
@@ -117,6 +117,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.307"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonCheck" />
+        app:layout_constraintTop_toBottomOf="@+id/btnSignIn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

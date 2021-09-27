@@ -3,15 +3,20 @@ package com.example.flowerparty.activity;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.LinearLayout;
 
 import com.example.flowerparty.fragment.CommunityFragment;
 import com.example.flowerparty.fragment.HomeFragment;
 import com.example.flowerparty.fragment.MypageFragment;
 import com.example.flowerparty.fragment.PlantsFragment;
 import com.example.flowerparty.R;
+import com.example.flowerparty.fragment.PlantsManageFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -19,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     Fragment plantsFragment;
     Fragment communityFragment;
     Fragment mypageFragment;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +35,9 @@ public class MainActivity extends AppCompatActivity {
         plantsFragment = new PlantsFragment();
         communityFragment = new CommunityFragment();
         mypageFragment = new MypageFragment();
+
+
+
 
         //초기화면 설정
         getSupportFragmentManager().beginTransaction().replace(R.id.container, homeFragment).commit();
@@ -57,5 +66,8 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+
     }
+
+
 }
