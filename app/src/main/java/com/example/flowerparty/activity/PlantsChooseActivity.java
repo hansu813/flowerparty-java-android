@@ -57,7 +57,7 @@ public class PlantsChooseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plants_choose_list);
 
-        mTextViewResult = (TextView)findViewById(R.id.textView_main_result);
+        //mTextViewResult = (TextView)findViewById(R.id.textView_main_result);
         mlistView = (ListView) findViewById(R.id.listVIew_main_list);
         mArrayList = new ArrayList<>();
 
@@ -84,15 +84,13 @@ public class PlantsChooseActivity extends AppCompatActivity {
             super.onPostExecute(s);
 
             progressDialog.dismiss();
-            mTextViewResult.setText(s);
+            //mTextViewResult.setText(s);
             Log.d(TAG, "response - " + s);
 
-            if (s == null) {
-                mTextViewResult.setText(errorString);
-            } else {
+
                 mJsonString = s;
                 showResult();
-            }
+
 
 
         }

@@ -23,47 +23,25 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.076"/>
 
-    <SearchView
-        android:id="@+id/searchView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView60"
-        app:layout_constraintVertical_bias="0.03" />
-
-    <TextView
-        android:id="@+id/txtPlant"
-        android:layout_width="305dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:text="목록"
-        android:textColor="@color/gray"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchView"
-        app:layout_constraintVertical_bias="0.012" />
-
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_width="308dp"
-        android:layout_height="412dp"
+        android:layout_width="302dp"
+        android:layout_height="430dp"
+        android:layout_marginBottom="80dp"
+        android:background="@drawable/shape"
+        android:backgroundTint="@color/gray_green"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.469"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPlant"
-        app:layout_constraintVertical_bias="0.192">
+        app:layout_constraintTop_toBottomOf="@+id/textView60">
 
         <LinearLayout
             android:id="@+id/linearLayout5"
             android:layout_width="305dp"
-            android:layout_height="470dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/shape"
+            android:backgroundTint="@color/gray_green"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -74,15 +52,10 @@
             <ListView
                 android:id="@+id/listVIew_main_list"
                 android:layout_width="match_parent"
-                android:layout_height="400dp"
-                android:layout_weight="6" />
-
-            <TextView
-                android:id="@+id/textView_main_result"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="3"
-                android:text="TextView" />
+                android:layout_height="430dp"
+                android:layout_weight="6"
+                android:dividerHeight="5dp"
+                android:padding="10dp" />
 
         </LinearLayout>
     </ScrollView>
