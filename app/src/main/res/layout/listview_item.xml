@@ -2,23 +2,44 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
-
-
+    android:orientation="horizontal"
+    android:background="@color/main">
 
     <TextView
-        android:id="@+id/listPlantName"
-        android:layout_width="match_parent"
+        android:id="@+id/textView_list_id"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="2"
-        android:text="TextView"
-        android:textSize="12sp"
+        android:layout_weight="1"
+        android:layout_margin="5dp"
+        android:padding="5dp"
+        android:text="id"
+        android:textSize="20sp"
+        android:fontFamily="@font/ahn2006_m"
+        android:textColor="#A3A3A3"/>
+
+    <TextView
+        android:id="@+id/textView_list_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="4"
+        android:layout_margin="5dp"
+        android:padding="5dp"
+        android:text="name"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/ahn2006_m"
+        android:textColor="#2C2C2C"/>
+
+    <TextView
+        android:id="@+id/textView_list_no"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="5"
+        android:layout_margin="5dp"
+        android:padding="5dp"
+        android:text="code"
+        android:fontFamily="@font/ahn2006_m"
         android:textColor="#aaa"/>
 
-    <!-- 구분선 -->
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginHorizontal="10dp"
-        android:background="#aaa"/>
+
 </LinearLayout>

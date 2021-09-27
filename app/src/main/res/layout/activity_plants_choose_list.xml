@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
+    tools:context=".activity.PlantsChooseActivity"
     android:background="@color/main">
 
     <TextView
@@ -35,33 +35,57 @@
         app:layout_constraintTop_toBottomOf="@+id/textView60"
         app:layout_constraintVertical_bias="0.03" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout5"
+    <TextView
+        android:id="@+id/txtPlant"
         android:layout_width="305dp"
-        android:layout_height="470dp"
-        android:orientation="vertical"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="목록"
+        android:textColor="@color/gray"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/searchView"
-        app:layout_constraintVertical_bias="0.1">
+        app:layout_constraintVertical_bias="0.012" />
 
-        <TextView
-            android:id="@+id/txtPlant"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:text="목록"
-            android:textColor="@color/gray"
-            android:textStyle="bold"/>
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="308dp"
+        android:layout_height="412dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.469"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPlant"
+        app:layout_constraintVertical_bias="0.192">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            />
-    </LinearLayout>
+        <LinearLayout
+            android:id="@+id/linearLayout5"
+            android:layout_width="305dp"
+            android:layout_height="470dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.509"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtPlant">
+
+            <ListView
+                android:id="@+id/listVIew_main_list"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_weight="6" />
+
+            <TextView
+                android:id="@+id/textView_main_result"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="3"
+                android:text="TextView" />
+
+        </LinearLayout>
+    </ScrollView>
 
     <Button
         android:id="@+id/button6"
@@ -78,5 +102,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout5" />
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
 </androidx.constraintlayout.widget.ConstraintLayout>

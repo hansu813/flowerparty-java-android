@@ -1,47 +1,47 @@
 package com.example.flowerparty.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.ArrayAdapter;
+import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.SimpleAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.xml.sax.InputSource;
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
-import org.xmlpull.v1.XmlPullParserFactory;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import com.example.flowerparty.NetworkThread;
 import com.example.flowerparty.PlantItem;
-import com.example.flowerparty.MyRecyclerAdapter;
 import com.example.flowerparty.R;
 
+import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
 import java.net.URL;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
+import java.util.HashMap;
 
 public class PlantsChooseActivity extends AppCompatActivity {
-    private RecyclerView mRecyclerView;
-    private MyRecyclerAdapter myRecyclerAdapter;
-    private ArrayList<PlantItem> mPlantItems;
-    String txtPlant;
-    TextView textPlant, textPlant1;
+
+    // json 관련
+    private static String TAG = "phptest_PlantChooseActivity";
+    private static final String TAG_JSON="webnautes";
+    private static final String TAG_ID = "idx";
+    private static final String TAG_NO = "cntntsNo";
+    private static final String TAG_NAME = "cntntsSj";
+
+    private TextView mTextViewResult;
+    ArrayList<HashMap<String, String>> mArrayList;
+    ListView mlistView;
+    String mJsonString;
+
 
 
 
@@ -55,23 +55,132 @@ public class PlantsChooseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_plants_choose);
+        setContentView(R.layout.activity_plants_choose_list);
 
-        textPlant = findViewById(R.id.txtPlant); // test
-        textPlant1 = findViewById(R.id.textPlant1);
-        new GetXMLTask().execute();
+        mTextViewResult = (TextView)findViewById(R.id.textView_main_result);
+        mlistView = (ListView) findViewById(R.id.listVIew_main_list);
+        mArrayList = new ArrayList<>();
 
-  /*      //mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        GetData task = new GetData();
+        task.execute("http://flowerparty.dothome.co.kr/PlantJson.php");
 
-        // initiate adapter
-        //myRecyclerAdapter = new MyRecyclerAdapter();
+    }
 
-        // initiate recyclerview
-        //mRecyclerView.setAdapter(myRecyclerAdapter);
-        //mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+
+    private class GetData extends AsyncTask<String, Void, String> {
+        ProgressDialog progressDialog;
+        String errorString = null;
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+
+            progressDialog = ProgressDialog.show(PlantsChooseActivity.this, "Please wail", null, true, true);
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+
+            progressDialog.dismiss();
+            mTextViewResult.setText(s);
+            Log.d(TAG, "response - " + s);
+
+            if (s == null) {
+                mTextViewResult.setText(errorString);
+            } else {
+                mJsonString = s;
+                showResult();
+            }
+
+
+        }
+
+        @Override
+        protected String doInBackground(String... strings) {
+            String serverURL = strings[0];
+
+            try {
+                URL url = new URL(serverURL);
+                HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+
+                httpURLConnection.setReadTimeout(5000);
+                httpURLConnection.setConnectTimeout(5000);
+                httpURLConnection.connect();
+
+                int responseStatusCode = httpURLConnection.getResponseCode();
+                Log.d(TAG, "response code - " + responseStatusCode);
+
+                InputStream inputStream;
+                if (responseStatusCode == HttpURLConnection.HTTP_OK) {
+                    inputStream = httpURLConnection.getInputStream();
+                } else {
+                    inputStream = httpURLConnection.getErrorStream();
+                }
+
+                InputStreamReader inputStreamReader = new InputStreamReader(inputStream, "UTF-8");
+                BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+
+                StringBuilder sb = new StringBuilder();
+                String line;
+
+                while ((line = bufferedReader.readLine()) != null) {
+                    sb.append(line);
+                }
+
+                bufferedReader.close();
+
+                return sb.toString().trim();
+
+            } catch (Exception e) {
+                Log.d(TAG, "InsertData: Error", e);
+                errorString = e.toString();
+
+                return null;
+            }
+        }
+    }
+
+    private void showResult() {
+        try {
+            JSONObject jsonObject = new JSONObject(mJsonString);
+            JSONArray jsonArray = jsonObject.getJSONArray(TAG_JSON);
+
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject item = jsonArray.getJSONObject(i);
+
+                String idx = item.getString(TAG_ID);
+                String no = item.getString(TAG_NO);
+                String name = item.getString(TAG_NAME);
+
+                HashMap<String, String>hashMap = new HashMap<>();
+
+                hashMap.put(TAG_ID, idx);
+                hashMap.put(TAG_NO, no);
+                hashMap.put(TAG_NAME, name);
+
+                mArrayList.add(hashMap);
+            }
+            ListAdapter adapter = new SimpleAdapter(
+              PlantsChooseActivity.this, mArrayList, R.layout.listview_item,
+                    new String[]{TAG_ID, TAG_NAME, TAG_NO},
+            new int[]{R.id.textView_list_id, R.id.textView_list_name, R.id.textView_list_no}
+            );
+            mlistView.setAdapter(adapter);
+        } catch (JSONException e) {
+            Log.d(TAG, "showResult: ", e);
+        }
+    }
+        // textPlant = findViewById(R.id.txtPlant); // test
+        //textPlant1 = findViewById(R.id.textPlant1);
+        //new GetXMLTask().execute();
+
+
+
 
         // adapt data
-        mPlantItems = new ArrayList<>();
+        //mPlantItems = new ArrayList<>();
 //        for ( int i = 1; i <= 10; i++ ) {
 //               mPlantItems.add(new PlantItem("번째"));
 //
@@ -168,7 +277,7 @@ public class PlantsChooseActivity extends AppCompatActivity {
 
 
 
-
+/*
     private class GetXMLTask extends AsyncTask<String, Void, Document> {
         Document doc;
 
@@ -221,5 +330,4 @@ public class PlantsChooseActivity extends AppCompatActivity {
             }
         }
 
-    }
-}
+    }*/
