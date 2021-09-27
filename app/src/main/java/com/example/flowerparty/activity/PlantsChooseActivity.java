@@ -4,9 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -19,6 +22,7 @@ import org.json.JSONObject;
 import com.example.flowerparty.NetworkThread;
 import com.example.flowerparty.PlantItem;
 import com.example.flowerparty.R;
+import com.example.flowerparty.RegisterActivity;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -41,6 +45,7 @@ public class PlantsChooseActivity extends AppCompatActivity {
     ArrayList<HashMap<String, String>> mArrayList;
     ListView mlistView;
     String mJsonString;
+    Button btnSelect;
 
 
 
@@ -59,10 +64,19 @@ public class PlantsChooseActivity extends AppCompatActivity {
 
         //mTextViewResult = (TextView)findViewById(R.id.textView_main_result);
         mlistView = (ListView) findViewById(R.id.listVIew_main_list);
+        btnSelect = findViewById(R.id.btn_plant_select);
         mArrayList = new ArrayList<>();
 
         GetData task = new GetData();
         task.execute("http://flowerparty.dothome.co.kr/PlantJson.php");
+
+        btnSelect.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PlantsChooseActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 

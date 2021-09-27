@@ -22,6 +22,7 @@
             android:layout_height="48dp"
             android:layout_gravity="center"
             android:gravity="center"
+            android:paddingHorizontal="10dp"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="180dp"
             android:layout_marginRight="15dp"
@@ -30,15 +31,15 @@
 
             <EditText
                 android:id="@+id/editTextRID"
-                android:layout_width="240dp"
+                android:layout_width="220dp"
                 android:layout_height="48dp"
                 android:ems="10"
                 android:background="@drawable/shape"
                 android:fontFamily="@font/ahn2006_m"
                 android:hint="ID"
                 android:inputType="textPersonName"
-                android:textColor="@color/black"
-                android:textColorHint="@color/white"
+                android:textColor="@color/gray"
+                android:textColorHint="@color/gray_green"
                 android:textSize="30sp"
 
                 />
@@ -60,13 +61,14 @@
             android:layout_marginLeft="15dp"
             android:layout_marginTop="15dp"
             android:layout_marginRight="15dp"
+            android:paddingHorizontal="10dp"
             android:background="@drawable/shape"
             android:ems="10"
             android:fontFamily="@font/ahn2006_m"
             android:hint="PASSWORD"
             android:inputType="textPassword"
-            android:textColor="@color/black"
-            android:textColorHint="@color/white"
+            android:textColor="@color/gray"
+            android:textColorHint="@color/gray_green"
             android:textSize="30sp" />
 
         <EditText
@@ -77,13 +79,14 @@
             android:layout_marginLeft="15dp"
             android:layout_marginTop="15dp"
             android:layout_marginRight="15dp"
+            android:paddingHorizontal="10dp"
             android:background="@drawable/shape"
             android:ems="10"
             android:fontFamily="@font/ahn2006_m"
             android:hint="CONFIRM PASSWORD"
             android:inputType="textPassword"
-            android:textColor="@color/black"
-            android:textColorHint="@color/white"
+            android:textColor="@color/gray"
+            android:textColorHint="@color/gray_green"
             android:textSize="30sp" />
 
         <EditText
@@ -94,13 +97,14 @@
             android:layout_marginLeft="15dp"
             android:layout_marginTop="15dp"
             android:layout_marginRight="15dp"
+            android:paddingHorizontal="10dp"
             android:background="@drawable/shape"
             android:ems="10"
             android:fontFamily="@font/ahn2006_m"
             android:hint="E-mail"
             android:inputType="textEmailAddress"
-            android:textColor="@color/black"
-            android:textColorHint="@color/white"
+            android:textColor="@color/gray"
+            android:textColorHint="@color/gray_green"
             android:textSize="30sp" />
 
         <EditText
@@ -111,13 +115,14 @@
             android:layout_marginLeft="15dp"
             android:layout_marginTop="15dp"
             android:layout_marginRight="15dp"
+            android:paddingHorizontal="10dp"
             android:background="@drawable/shape"
             android:ems="10"
             android:fontFamily="@font/ahn2006_m"
             android:hint="userNAME"
             android:inputType="textPersonName"
-            android:textColor="@color/black"
-            android:textColorHint="@color/white"
+            android:textColor="@color/gray"
+            android:textColorHint="@color/gray_green"
             android:textSize="30sp" />
 
         <Button
