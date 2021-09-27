@@ -12,16 +12,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/ahn2006_m"
-        android:text="Choose your plant"
+        android:text="키우는 식물을 고르세요"
         android:textColor="@color/white"
-        android:textStyle="bold"
         android:textSize="40sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.076"/>
+        app:layout_constraintVertical_bias="0.076" />
 
     <ScrollView
         android:id="@+id/scrollView2"
