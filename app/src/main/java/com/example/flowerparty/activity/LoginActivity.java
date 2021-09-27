@@ -64,7 +64,7 @@ public class LoginActivity extends AppCompatActivity {
                                 String userName = jsonObject.getString( "userName" );
 
                                 Toast.makeText(getApplicationContext(), String.format("%s님 환영합니다.", userName), Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                Intent intent = new Intent(LoginActivity.this, PlantsChooseActivity.class);
                                 //intent.putExtra("userID", userID);
                                 //intent.putExtra("userPass", userPass);
                                 startActivity(intent);
@@ -85,16 +85,7 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
-        // 로그인 구현 전 액티비티 이동만 구현
-//        Button btnChk = findViewById(R.id.btnSignIn);
-//
-//        btnChk.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-//                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);//액티비티 스택제거
-//                startActivity(intent);
-//            }
-//        });
+
+
     }
 }
