@@ -90,6 +90,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/ahn2006_m"
                 android:text="Enter New E-mail"
+                android:textColor="@color/gray"
                 android:textSize="20sp" />
 
             <EditText
@@ -118,6 +119,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/ahn2006_m"
                 android:text="Confirm New E-mail"
+                android:textColor="@color/gray"
                 android:textSize="20sp" />
 
             <EditText
