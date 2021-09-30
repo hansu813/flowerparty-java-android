@@ -3,17 +3,21 @@ package com.example.flowerparty.activity;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -67,14 +71,27 @@ public class PlantsChooseActivity extends AppCompatActivity {
         btnSelect = findViewById(R.id.btn_plant_select);
         mArrayList = new ArrayList<>();
 
-        GetData task = new GetData();
-        task.execute("http://flowerparty.dothome.co.kr/PlantJson.php");
 
+        GetData task = new GetData();
+        task.execute("http://ci2021flower.dongyangmirae.kr/PlantJson.php");
+
+        // Select 버튼 클릭시 시
         btnSelect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(PlantsChooseActivity.this, MainActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        // ListView 항목 클릭 시
+        mlistView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @SuppressLint("ResourceAsColor")
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                int check_position = mlistView.getCheckedItemPosition();   //리스트뷰의 포지션을 가져옴.
+                Object vo = (Object)parent.getAdapter().getItem(position); // 리스트뷰의 내용을 가져옴.
+                Toast.makeText(PlantsChooseActivity.this, vo.toString(), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -101,12 +118,8 @@ public class PlantsChooseActivity extends AppCompatActivity {
             //mTextViewResult.setText(s);
             Log.d(TAG, "response - " + s);
 
-
                 mJsonString = s;
                 showResult();
-
-
-
         }
 
         @Override
@@ -162,13 +175,13 @@ public class PlantsChooseActivity extends AppCompatActivity {
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject item = jsonArray.getJSONObject(i);
 
-                String idx = item.getString(TAG_ID);
+                //String idx = item.getString(TAG_ID);
                 String no = item.getString(TAG_NO);
                 String name = item.getString(TAG_NAME);
 
                 HashMap<String, String>hashMap = new HashMap<>();
 
-                hashMap.put(TAG_ID, idx);
+                //hashMap.put(TAG_ID, idx);
                 hashMap.put(TAG_NO, no);
                 hashMap.put(TAG_NAME, name);
 
@@ -176,8 +189,8 @@ public class PlantsChooseActivity extends AppCompatActivity {
             }
             ListAdapter adapter = new SimpleAdapter(
               PlantsChooseActivity.this, mArrayList, R.layout.listview_item,
-                    new String[]{TAG_ID, TAG_NAME, TAG_NO},
-            new int[]{R.id.textView_list_id, R.id.textView_list_name, R.id.textView_list_no}
+                    new String[]{TAG_NAME, TAG_NO},
+            new int[]{R.id.textView_list_name, R.id.textView_list_no}
             );
             mlistView.setAdapter(adapter);
         } catch (JSONException e) {

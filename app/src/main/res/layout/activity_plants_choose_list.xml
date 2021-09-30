@@ -55,6 +55,7 @@
                 android:layout_height="430dp"
                 android:layout_weight="6"
                 android:dividerHeight="5dp"
+
                 android:padding="10dp" />
 
         </LinearLayout>

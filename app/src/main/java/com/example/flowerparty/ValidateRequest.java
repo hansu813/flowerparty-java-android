@@ -9,7 +9,8 @@ import java.util.Map;
 
 public class ValidateRequest extends StringRequest {
     // 서버 URL 설정
-    final static private String URL = "http://flowerparty.dothome.co.kr/UserValidate.php";
+    /*final static private String URL = "http://flowerparty.dothome.co.kr/UserValidate.php";*/
+    final static private String URL = "http://ci2021flower.dongyangmirae.kr/UserValidate.php";
     private Map<String, String> map;
 
     public ValidateRequest(String userID, Response.Listener<String> listener){
