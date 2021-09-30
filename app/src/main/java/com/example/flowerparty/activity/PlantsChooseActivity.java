@@ -1,7 +1,6 @@
 package com.example.flowerparty.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
@@ -12,7 +11,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -23,10 +21,15 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.toolbox.Volley;
+import com.example.flowerparty.AddPlantRequest;
+import com.example.flowerparty.ListViewAdapter;
 import com.example.flowerparty.NetworkThread;
-import com.example.flowerparty.PlantItem;
 import com.example.flowerparty.R;
 import com.example.flowerparty.RegisterActivity;
+import com.example.flowerparty.RegisterRequest;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -79,10 +82,14 @@ public class PlantsChooseActivity extends AppCompatActivity {
         btnSelect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent intent = new Intent(PlantsChooseActivity.this, MainActivity.class);
+
                 startActivity(intent);
             }
         });
+
+
 
         // ListView 항목 클릭 시
         mlistView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -92,6 +99,37 @@ public class PlantsChooseActivity extends AppCompatActivity {
                 int check_position = mlistView.getCheckedItemPosition();   //리스트뷰의 포지션을 가져옴.
                 Object vo = (Object)parent.getAdapter().getItem(position); // 리스트뷰의 내용을 가져옴.
                 Toast.makeText(PlantsChooseActivity.this, vo.toString(), Toast.LENGTH_SHORT).show();
+
+                btnSelect.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                    Response.Listener<String> responseListener = new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            try {
+                                JSONObject jsonObject = new JSONObject(response);
+                                boolean success = jsonObject.getBoolean("success");
+
+
+                                    if (success) { // 식물 저장
+                                        Toast.makeText(getApplicationContext(), "식물이 저장되었습니다.", Toast.LENGTH_SHORT).show();
+                                        Intent intent = new Intent(PlantsChooseActivity.this, MainActivity.class);
+                                        startActivity(intent);
+                                    } else {
+                                        Toast.makeText(getApplicationContext(), "식물 등록에 실패하였습니다.", Toast.LENGTH_SHORT).show();
+                                    }
+                                
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                                Log.e("Error", "Response Error", e);
+                            }
+                        }
+                    };
+                    AddPlantRequest addPlantRequest = new AddPlantRequest(vo.toString(), responseListener);
+                    RequestQueue queue = Volley.newRequestQueue(PlantsChooseActivity.this);
+                    queue.add(addPlantRequest);
+                    }
+                });
             }
         });
 
@@ -192,7 +230,12 @@ public class PlantsChooseActivity extends AppCompatActivity {
                     new String[]{TAG_NAME, TAG_NO},
             new int[]{R.id.textView_list_name, R.id.textView_list_no}
             );
+            mlistView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
             mlistView.setAdapter(adapter);
+
+
+
+
         } catch (JSONException e) {
             Log.d(TAG, "showResult: ", e);
         }
