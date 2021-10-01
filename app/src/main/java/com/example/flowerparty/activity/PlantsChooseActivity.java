@@ -25,11 +25,9 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
 import com.example.flowerparty.AddPlantRequest;
-import com.example.flowerparty.ListViewAdapter;
 import com.example.flowerparty.NetworkThread;
 import com.example.flowerparty.R;
-import com.example.flowerparty.RegisterActivity;
-import com.example.flowerparty.RegisterRequest;
+import com.example.flowerparty.RbPreference;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -40,28 +38,25 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class PlantsChooseActivity extends AppCompatActivity {
-
-    // json 관련
+    // json
     private static String TAG = "phptest_PlantChooseActivity";
-    private static final String TAG_JSON="webnautes";
+    private static final String TAG_JSON = "webnautes";
     private static final String TAG_ID = "idx";
     private static final String TAG_NO = "cntntsNo";
     private static final String TAG_NAME = "cntntsSj";
 
-    private TextView mTextViewResult;
+    // list
     ArrayList<HashMap<String, String>> mArrayList;
     ListView mlistView;
     String mJsonString;
+
+    // button
     Button btnSelect;
 
 
-
-
-
-    private NetworkThread thread;
+    //private NetworkThread thread;
     //String apiKey = "20210908LGXOY6G03MU6JAYF22EEQ";
-    String address = "http://api.nongsaro.go.kr/service/garden/gardenList?numOfRows=2&apiKey=20210908LGXOY6G03MU6JAYF22EEQ";
-
+    //String address = "http://api.nongsaro.go.kr/service/garden/gardenList?numOfRows=2&apiKey=20210908LGXOY6G03MU6JAYF22EEQ";
 
 
     @Override
@@ -69,26 +64,33 @@ public class PlantsChooseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plants_choose_list);
 
-        //mTextViewResult = (TextView)findViewById(R.id.textView_main_result);
         mlistView = (ListView) findViewById(R.id.listVIew_main_list);
         btnSelect = findViewById(R.id.btn_plant_select);
         mArrayList = new ArrayList<>();
 
+        // intent 로 아이디 수신
+        /*Intent intent = getIntent();
+        String userID = intent.getExtras().getString("userID");*/
 
+        // 로그인 정보 (사용자 아이디)
+        RbPreference pref = new RbPreference(PlantsChooseActivity.this);
+        String userId = pref.getValue(RbPreference.PREF_INTRO_USER_AGREEMENT, "default");
+
+
+
+        // Json 데이터 리스트에 보여줌 GetData()
         GetData task = new GetData();
         task.execute("http://ci2021flower.dongyangmirae.kr/PlantJson.php");
 
-        // Select 버튼 클릭시 시
+
+
+        // 항목 선택 없이 Select 버튼 클릭시 시
         btnSelect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Intent intent = new Intent(PlantsChooseActivity.this, MainActivity.class);
-
-                startActivity(intent);
+                Toast.makeText(PlantsChooseActivity.this, "식물을 선택하세요.", Toast.LENGTH_SHORT).show();
             }
         });
-
 
 
         // ListView 항목 클릭 시
@@ -97,20 +99,19 @@ public class PlantsChooseActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 int check_position = mlistView.getCheckedItemPosition();   //리스트뷰의 포지션을 가져옴.
-                Object vo = (Object)parent.getAdapter().getItem(position); // 리스트뷰의 내용을 가져옴.
+                Object vo = (Object) parent.getAdapter().getItem(position); // 리스트뷰의 내용을 가져옴.
                 Toast.makeText(PlantsChooseActivity.this, vo.toString(), Toast.LENGTH_SHORT).show();
 
+                // 항목 선택 후 select 버튼 클릭 시
                 btnSelect.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                    Response.Listener<String> responseListener = new Response.Listener<String>() {
-                        @Override
-                        public void onResponse(String response) {
-                            try {
-                                JSONObject jsonObject = new JSONObject(response);
-                                boolean success = jsonObject.getBoolean("success");
-
-
+                        Response.Listener<String> responseListener = new Response.Listener<String>() {
+                            @Override
+                            public void onResponse(String response) {
+                                try {
+                                    JSONObject jsonObject = new JSONObject(response);
+                                    boolean success = jsonObject.getBoolean("success");
                                     if (success) { // 식물 저장
                                         Toast.makeText(getApplicationContext(), "식물이 저장되었습니다.", Toast.LENGTH_SHORT).show();
                                         Intent intent = new Intent(PlantsChooseActivity.this, MainActivity.class);
@@ -118,16 +119,17 @@ public class PlantsChooseActivity extends AppCompatActivity {
                                     } else {
                                         Toast.makeText(getApplicationContext(), "식물 등록에 실패하였습니다.", Toast.LENGTH_SHORT).show();
                                     }
-                                
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                                Log.e("Error", "Response Error", e);
+
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                    Log.e("Error", "Response Error", e);
+                                }
                             }
-                        }
-                    };
-                    AddPlantRequest addPlantRequest = new AddPlantRequest(vo.toString(), responseListener);
-                    RequestQueue queue = Volley.newRequestQueue(PlantsChooseActivity.this);
-                    queue.add(addPlantRequest);
+                        };
+                        // 선택한 포지션의 리스트뷰의 내용: vo && RbPreference 에서 가져온 userId 를 넘겨줌
+                        AddPlantRequest addPlantRequest = new AddPlantRequest(vo.toString(), userId, responseListener);
+                        RequestQueue queue = Volley.newRequestQueue(PlantsChooseActivity.this);
+                        queue.add(addPlantRequest);
                     }
                 });
             }
@@ -135,8 +137,7 @@ public class PlantsChooseActivity extends AppCompatActivity {
 
     }
 
-
-
+    // Json 데이터 가져오기
     private class GetData extends AsyncTask<String, Void, String> {
         ProgressDialog progressDialog;
         String errorString = null;
@@ -144,7 +145,6 @@ public class PlantsChooseActivity extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-
             progressDialog = ProgressDialog.show(PlantsChooseActivity.this, "Please wail", null, true, true);
         }
 
@@ -153,11 +153,9 @@ public class PlantsChooseActivity extends AppCompatActivity {
             super.onPostExecute(s);
 
             progressDialog.dismiss();
-            //mTextViewResult.setText(s);
             Log.d(TAG, "response - " + s);
-
-                mJsonString = s;
-                showResult();
+            mJsonString = s;
+            showResult();
         }
 
         @Override
@@ -217,7 +215,7 @@ public class PlantsChooseActivity extends AppCompatActivity {
                 String no = item.getString(TAG_NO);
                 String name = item.getString(TAG_NAME);
 
-                HashMap<String, String>hashMap = new HashMap<>();
+                HashMap<String, String> hashMap = new HashMap<>();
 
                 //hashMap.put(TAG_ID, idx);
                 hashMap.put(TAG_NO, no);
@@ -226,176 +224,17 @@ public class PlantsChooseActivity extends AppCompatActivity {
                 mArrayList.add(hashMap);
             }
             ListAdapter adapter = new SimpleAdapter(
-              PlantsChooseActivity.this, mArrayList, R.layout.listview_item,
+                    PlantsChooseActivity.this, mArrayList, R.layout.listview_item,
                     new String[]{TAG_NAME, TAG_NO},
-            new int[]{R.id.textView_list_name, R.id.textView_list_no}
+                    new int[]{R.id.textView_list_name, R.id.textView_list_no}
             );
             mlistView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
             mlistView.setAdapter(adapter);
-
-
 
 
         } catch (JSONException e) {
             Log.d(TAG, "showResult: ", e);
         }
     }
-        // textPlant = findViewById(R.id.txtPlant); // test
-        //textPlant1 = findViewById(R.id.textPlant1);
-        //new GetXMLTask().execute();
 
-
-
-
-        // adapt data
-        //mPlantItems = new ArrayList<>();
-//        for ( int i = 1; i <= 10; i++ ) {
-//               mPlantItems.add(new PlantItem("번째"));
-//
-//        }*/
-
-/*
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                txtPlant = getPlantData();
-
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        //mPlantItems.add(new PlantItem(txtPlant));
-                        textPlant1.setText(txtPlant);
-          //              Log.e("Error", "리스트값" + mPlantItems);
-                    }
-
-                });
-            }
-        }).start();*/
-
-        //myRecyclerAdapter.setPlantList(mPlantItems);
-
-    }
-
-  /*  String getPlantData() {
-        StringBuffer buffer = new StringBuffer();
-
-        String apiKey = "20210908LGXOY6G03MU6JAYF22EEQ";
-        String numOfRows = "2";
-
-        String queryUrl = "http://api.nongsaro.go.kr/service/garden/gardenList?apikey="
-                + apiKey + "&numOfRows=" + numOfRows;
-
-        try {
-            URL url = new URL(queryUrl); // 문자열로 된 요청 url 을 URL 객체로 생성
-            InputStream is = url.openStream(); // url 위치로 입력 스트림 연결
-
-            XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
-            XmlPullParser xpp = factory.newPullParser();
-            xpp.setInput(new InputStreamReader(is, "UTF-8")); // inputStream 으로부터 xml 입력 받기
-
-            String tag;
-            int i = 0;
-            int eventType = xpp.getEventType();
-
-            while (eventType != XmlPullParser.END_DOCUMENT) {
-                switch (eventType) {
-                    case XmlPullParser.START_DOCUMENT:
-                        break;
-
-                    case XmlPullParser.START_TAG:
-                        tag = xpp.getName(); // 태그이름 얻어오기
-
-                        if (tag.equals("item")); // 첫번째 검색 결과
-                        else if (tag.equals("cntntsSj")) {
-                            i++;
-                            if (i == 1) {
-                                buffer.append("식물");
-                                xpp.next();
-                                buffer.append(xpp.getText());
-                                buffer.append("\n");
-                            }
-                        }
-                        break;
-
-                    case XmlPullParser.TEXT:
-                        break;
-
-
-
-                    case XmlPullParser.END_TAG:
-                        tag = xpp.getName(); // 태그 이름 얻어오기
-                        if (tag.equals("item")) buffer.append("\n");
-                        break;
-                }
-                eventType = xpp.next();
-            }
-        } catch (Exception e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-            Log.e("Error", "Response Error", e);
-        }
-
-
-
-        return buffer.toString(); // StringBuffer 문자열 객체 반환
-    }*/
-
-
-
-
-
-
-/*
-    private class GetXMLTask extends AsyncTask<String, Void, Document> {
-        Document doc;
-
-        String apiKey = "20210908LGXOY6G03MU6JAYF22EEQ";
-        String numOfRows = "2";
-
-        String queryUrl = "http://api.nongsaro.go.kr/service/garden/gardenList?apikey="
-                + apiKey + "&numOfRows=" + numOfRows;
-
-
-        @Override
-        protected Document doInBackground(String... urls) {
-            URL url;
-            int pageNo = 217;
-            try {
-                url = new URL("http://api.nongsaro.go.kr/service/garden/gardenList?apiKey=20210908LGXOY6G03MU6JAYF22EEQ"+ "&numOfRows=" + pageNo);
-                DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-                DocumentBuilder db = dbf.newDocumentBuilder();
-                doc = db.parse(new InputSource(url.openStream()));
-                doc.getDocumentElement().normalize();
-                Log.e("query", queryUrl);
-
-            } catch (Exception e) {
-                Toast.makeText(getBaseContext(), "Parsing Error", Toast.LENGTH_SHORT).show();
-            }
-            return doc;
-        }
-
-        @Override
-        protected void onPostExecute(Document doc) {
-
-            String s = "";
-            NodeList nodeList = doc.getElementsByTagName("item");
-
-            for (int i = 0; i < nodeList.getLength(); i++) {
-
-                Node node = nodeList.item(i);
-                Element fstElmnt = (Element) node;
-
-               // NodeList cntntsNo = fstElmnt.getElementsByTagName("cntntsNo");
-                //s += "cntntsNo = " + cntntsNo.item(0).getChildNodes().item(0).getNodeValue() + "\n";
-
-                NodeList cntntsSj = fstElmnt.getElementsByTagName("cntntsSj");
-                s += "cntntsSj = " + cntntsSj.item(0).getChildNodes().item(0).getNodeValue() + "\n";
-
-
-                textPlant1.setText(s);
-
-                super.onPostExecute(doc);
-            }
-        }
-
-    }*/
+}

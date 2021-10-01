@@ -16,6 +16,7 @@ import com.android.volley.toolbox.Volley;
 import com.example.flowerparty.LoginRequest;
 import com.example.flowerparty.R;
 import com.example.flowerparty.RegisterActivity;
+import com.example.flowerparty.RbPreference;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -24,6 +25,7 @@ import org.json.JSONObject;
 public class LoginActivity extends AppCompatActivity {
     private EditText editTextID, editTextPW;
     private Button btnSignIn, btnSignUp;
+    private RbPreference pref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +69,14 @@ public class LoginActivity extends AppCompatActivity {
                                 Intent intent = new Intent(LoginActivity.this, PlantsChooseActivity.class);
                                 //intent.putExtra("userID", userID);
                                 //intent.putExtra("userPass", userPass);
+                                //session = new Session(LoginActivity.this);
+                                //session.setUserId(userID);
+                                pref = new RbPreference(LoginActivity.this);
+                                pref.put(RbPreference.PREF_INTRO_USER_AGREEMENT, userID);
+                                //pref.put("userPass", userPass);
+
+                                //intent.putExtra("userID", userID);
+
                                 startActivity(intent);
                             } else { // 로그인 실패
                                 Toast.makeText(getApplicationContext(), "아이디와 비밀번호를 확인하세요.", Toast.LENGTH_SHORT).show();
