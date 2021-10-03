@@ -38,6 +38,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.464" />
 
+
     <EditText
         android:id="@+id/editTextID"
         android:layout_width="300dp"
@@ -45,7 +46,7 @@
         android:background="@drawable/shape"
         android:ems="10"
         android:fontFamily="@font/ahn2006_m"
-        android:hint="ID"
+        android:hint="아이디"
         android:inputType="textPersonName"
         android:padding="7dp"
         android:textColor="@color/gray"
@@ -58,24 +59,47 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4"
         app:layout_constraintVertical_bias="0.04" />
 
-    <EditText
-        android:id="@+id/editTextPW"
+    <LinearLayout
+        android:id="@+id/linearLayout6"
         android:layout_width="300dp"
-        android:layout_height="44dp"
+        android:layout_height="45dp"
         android:background="@drawable/shape"
-        android:ems="10"
-        android:fontFamily="@font/ahn2006_m"
-        android:hint="PASSWORD"
-        android:inputType="textPassword"
-        android:padding="7dp"
-        android:textColor="@color/gray_green"
-        android:textColorHint="@color/gray_green"
-        android:textSize="30sp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextID"
-        app:layout_constraintVertical_bias="0.044" />
+        app:layout_constraintVertical_bias="0.044">
+
+        <EditText
+            android:id="@+id/editTextPW"
+            android:layout_width="208dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/shape"
+            android:ems="10"
+            android:fontFamily="@font/ahn2006_m"
+            android:hint="비밀번호"
+            android:inputType="textPersonName"
+            android:textColor="@color/gray"
+            android:textColorHint="@color/gray_green"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/textView75"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:gravity="center"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1"
+            android:text="비밀번호 찾기"
+            android:textColor="@color/gray"
+            android:textSize="10sp" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/btnSignIn"
@@ -90,9 +114,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPW"
-        app:layout_constraintVertical_bias="0.149" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout6"
+        app:layout_constraintVertical_bias="0.142" />
 
     <Button
         android:id="@+id/btnSignUp"
@@ -103,7 +128,7 @@
         android:fontFamily="@font/ahn2006_m"
         android:text="회원가입"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textColor="@color/gray_green"
+        android:textColor="@color/gray"
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView"
@@ -118,11 +143,13 @@
         android:fontFamily="@font/ahn2006_m"
         android:text="아직 가입하지 않았나요?"
         android:textColor="@color/white"
-        android:textSize="16sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.307"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnSignIn" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
