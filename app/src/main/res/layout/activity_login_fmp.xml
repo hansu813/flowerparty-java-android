@@ -40,15 +40,15 @@
 
         <EditText
             android:id="@+id/editTextID"
-            android:layout_width="298dp"
-            android:layout_height="48dp"
+            android:layout_width="300dp"
+            android:layout_height="45dp"
             android:background="@drawable/shape"
             android:ems="10"
             android:inputType="textPersonName"
             android:padding="7dp"
-            android:text="ID"
+            android:text="아이디"
             android:textColor="@color/white"
-            android:textSize="54.74px"
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.504"
@@ -58,13 +58,13 @@
 
         <EditText
             android:id="@+id/editTextPW"
-            android:layout_width="299dp"
-            android:layout_height="44dp"
+            android:layout_width="300dp"
+            android:layout_height="45dp"
             android:background="@drawable/shape"
             android:ems="10"
             android:inputType="textPersonName"
             android:padding="7dp"
-            android:text="E-mail"
+            android:text="이메일"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -74,15 +74,15 @@
 
         <Button
             android:id="@+id/btnSignIn"
-            android:layout_width="299dp"
-            android:layout_height="45dp"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
             android:background="@drawable/shapebtn"
             android:fontFamily="@font/ahn2006_m"
-            android:text="Request password reset"
-            android:textColor="@color/white"
-            android:textSize="30sp"
-            android:textStyle="bold"
+            android:text="비밀번호 변경 신청"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -90,19 +90,20 @@
             app:layout_constraintVertical_bias="0.149" />
 
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="131dp"
-        android:layout_height="22dp"
-        android:fontFamily="@font/ahn2006_m"
-        android:text="Back to Sign in"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnSignIn"
-        app:layout_constraintVertical_bias="0.131" />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="131dp"
+            android:layout_height="22dp"
+            android:fontFamily="@font/ahn2006_m"
+            android:text="로그인 화면으로 돌아가기"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnSignIn"
+            app:layout_constraintVertical_bias="0.131" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
