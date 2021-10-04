@@ -104,19 +104,20 @@
                                     android:fontFamily="@font/ahn2006_m"
                                     android:gravity="center"
                                     android:text="3"
+                                    android:textColor="@color/gray"
                                     android:textSize="35sp"
-                                    android:textStyle="bold"/>
+                                    android:textStyle="bold" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="0dp"
-                                    android:layout_weight="1"
                                     android:layout_gravity="center"
-                                    android:gravity="center"
-                                    android:text="Posts"
-                                    android:textSize="30sp"
+                                    android:layout_weight="1"
                                     android:fontFamily="@font/ahn2006_m"
-                                    />
+                                    android:gravity="center"
+                                    android:text="게시물"
+                                    android:textColor="@color/gray"
+                                    android:textSize="30sp" />
                             </LinearLayout>
 
                             <LinearLayout
@@ -128,26 +129,26 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="0dp"
-                                    android:layout_weight="1"
                                     android:layout_gravity="center"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/ahn2006_m"
                                     android:gravity="center"
                                     android:text="930"
+                                    android:textColor="@color/gray"
                                     android:textSize="35sp"
-                                    android:textStyle="bold"
-                                    android:fontFamily="@font/ahn2006_m"
 
-                                    />
+                                    android:textStyle="bold" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="0dp"
-                                    android:layout_weight="1"
                                     android:layout_gravity="center"
-                                    android:gravity="center"
-                                    android:text="Followers"
-                                    android:textSize="30sp"
+                                    android:layout_weight="1"
                                     android:fontFamily="@font/ahn2006_m"
-                                    />
+                                    android:gravity="center"
+                                    android:text="팔로워"
+                                    android:textColor="@color/gray"
+                                    android:textSize="30sp" />
                             </LinearLayout>
 
                             <LinearLayout
@@ -159,64 +160,65 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="0dp"
-                                    android:layout_weight="1"
                                     android:layout_gravity="center"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/ahn2006_m"
                                     android:gravity="center"
                                     android:text="29"
+                                    android:textColor="@color/gray"
                                     android:textSize="35sp"
-                                    android:textStyle="bold"
-                                    android:fontFamily="@font/ahn2006_m"
-                                    />
+                                    android:textStyle="bold" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="0dp"
-                                    android:layout_weight="1"
                                     android:layout_gravity="center"
-                                    android:gravity="center"
-                                    android:text="Followings"
-                                    android:textSize="30sp"
+                                    android:layout_weight="1"
                                     android:fontFamily="@font/ahn2006_m"
-                                    />
+                                    android:gravity="center"
+                                    android:text="팔로잉"
+                                    android:textColor="@color/gray"
+                                    android:textSize="30sp" />
                             </LinearLayout>
                         </LinearLayout>
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
-                            android:layout_weight="1"
-                            android:gravity="center_vertical"
                             android:layout_marginLeft="25dp"
                             android:layout_marginTop="10dp"
                             android:layout_marginRight="10dp"
-                            android:text="gleammy"
-                            android:textSize="30sp"
-                            android:textStyle="bold"
+                            android:layout_weight="1"
                             android:fontFamily="@font/ahn2006_m"
-                            />
+                            android:gravity="center_vertical"
+                            android:text="gleammy"
+                            android:textColor="@color/gray"
+                            android:textSize="30sp"
+                            android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
-                            android:layout_weight="1"
                             android:layout_marginLeft="25dp"
                             android:layout_marginRight="10dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/ahn2006_m"
                             android:text="Contact via DM :)"
-                            android:textSize="25sp"
-                            android:fontFamily="@font/ahn2006_m"/>
+                            android:textColor="@color/gray_green"
+                            android:textSize="25sp" />
 
                         <Button
                             android:id="@+id/btnEditProfile"
                             android:layout_width="300dp"
                             android:layout_height="40dp"
-                            android:background="@drawable/shape"
                             android:layout_gravity="center"
-                            android:text="Edit Profile"
+                            android:background="@drawable/shape"
+                            android:fontFamily="@font/ahn2006_m"
+                            android:text="프로필 편집"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                             android:textColor="@color/white"
                             android:textSize="30sp"
-                            android:textStyle="bold"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                            android:fontFamily="@font/ahn2006_m"/>
+                            android:textStyle="bold" />
                     </LinearLayout>
                     <!-- contents -->
                     <LinearLayout
@@ -257,7 +259,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
                             android:layout_weight="1"
-                            android:src="@drawable/lavender"
+                            android:src="@drawable/sunflower"
                             android:scaleType="centerCrop"/>
 
                         <LinearLayout
@@ -318,7 +320,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
                             android:layout_weight="1"
-                            android:src="@drawable/rosemary"
+                            android:src="@drawable/lavender"
                             android:scaleType="centerCrop"/>
 
                         <LinearLayout

@@ -33,6 +33,20 @@
                 android:layout_marginTop="20dp"
                 app:srcCompat="?attr/homeAsUpIndicator" />
 
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="15dp"
+                android:fontFamily="@font/ahn2006_m"
+                android:gravity="left"
+                android:text="폴더"
+                android:textColor="@color/white"
+                android:textSize="35sp"
+                android:textStyle="bold" />
+
             <View
                 android:layout_width="0dp"
                 android:layout_height="0dp"
@@ -45,10 +59,11 @@
                 android:layout_marginRight="20dp"
                 android:fontFamily="@font/ahn2006_m"
                 android:gravity="center"
-                android:text="Edit"
+                android:text="편집"
                 android:textColor="@color/white"
                 android:textSize="30sp"
                 android:textStyle="bold" />
+
         </LinearLayout>
 
         <TextView
@@ -56,13 +71,13 @@
             android:layout_height="80dp"
             android:layout_marginHorizontal="30dp"
             android:layout_marginTop="20dp"
-            android:paddingLeft="10dp"
-            android:gravity="center_vertical"
             android:fontFamily="@font/ahn2006_m"
-            android:text="All Notes"
-            android:textStyle="bold"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:text="모든 메모"
             android:textColor="@color/white"
-            android:textSize="60sp"/>
+            android:textSize="60sp"
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -82,22 +97,24 @@
                     android:id="@+id/imageView33"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:layout_margin="10dp"
                     android:layout_gravity="center"
-                    app:srcCompat="@drawable/icon_search" />
+                    android:layout_margin="10dp"
+                    app:srcCompat="@drawable/search" />
 
                 <EditText
                     android:id="@+id/editTextTextPersonName4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:layout_gravity="center"
+                    android:layout_weight="1"
                     android:background="@null"
                     android:ems="10"
+                    android:fontFamily="@font/ahn2006_m"
+                    android:hint="검색"
                     android:inputType="textPersonName"
-                    android:hint="Search"
                     android:textColorHint="@color/white"
-                    />
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -154,7 +171,7 @@
                     android:layout_marginRight="20dp"
                     android:layout_weight="1"
                     android:fontFamily="@font/ahn2006_m"
-                    android:text="Note"
+                    android:text="개의 메모"
                     android:textColor="@color/gray_green"
                     android:textSize="30sp"
                     android:textStyle="bold" />

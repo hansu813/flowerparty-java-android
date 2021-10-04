@@ -172,7 +172,7 @@
                             android:layout_weight="1"
                             android:fontFamily="@font/ahn2006_m"
                             android:gravity="center"
-                            android:text="followers"
+                            android:text="팔로워"
                             android:textColor="@color/gray_green"
                             android:textSize="20sp" />
 
@@ -206,9 +206,9 @@
                             android:layout_weight="1"
                             android:fontFamily="@font/ahn2006_m"
                             android:gravity="center"
-                            android:text="post"
+                            android:text="개의 게시글"
                             android:textColor="@color/gray_green"
-                            android:textSize="20sp"  />
+                            android:textSize="20sp" />
                     </LinearLayout>
 
                     <TextView
@@ -234,7 +234,7 @@
                             android:layout_weight="1"
                             android:fontFamily="@font/ahn2006_m"
                             android:gravity="center"
-                            android:text="You both follow ali and"
+                            android:text="ali 외"
                             android:textAlignment="textEnd"
                             android:textColor="@color/gray_green"
                             android:textSize="20sp" />
@@ -262,7 +262,7 @@
                             android:layout_weight="1"
                             android:fontFamily="@font/ahn2006_m"
                             android:gravity="center"
-                            android:text="others"
+                            android:text="명을 동시에 팔로우 중입니다."
                             android:textColor="@color/gray_green"
                             android:textSize="20sp" />
                     </LinearLayout>
@@ -278,7 +278,7 @@
                         android:background="@drawable/shape"
                         android:fontFamily="@font/ahn2006_m"
                         android:gravity="center"
-                        android:text="View Profile"
+                        android:text="프로필 보기"
                         android:textAlignment="center"
                         android:textColor="@color/gray"
                         android:textSize="18sp"
@@ -297,12 +297,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:fontFamily="@font/ahn2006_m"
-                    android:text="Yesterday, 7:45PM"
+                    android:text="수요일, 7:45PM"
                     android:textAlignment="center"
                     android:textAllCaps="false"
                     android:textColor="@color/gray"
-                    android:textSize="14sp"
-                    />
+                    android:textSize="14sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -339,7 +338,7 @@
                         android:layout_weight="1"
                         android:fontFamily="@font/ahn2006_m"
                         android:gravity="center"
-                        android:text="Message ..."
+                        android:text="내용을 입력하세요"
                         android:textAlignment="textStart"
                         android:textColor="@color/gray_green"
                         android:textSize="24sp"

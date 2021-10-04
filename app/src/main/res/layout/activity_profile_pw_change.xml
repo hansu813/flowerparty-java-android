@@ -20,10 +20,11 @@
 
             <ImageView
                 android:id="@+id/imageView3"
-                android:layout_width="50dp"
-                android:layout_height="59dp"
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
                 android:layout_weight="1"
-                app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
+                app:srcCompat="@drawable/leftarrow" />
 
             <TextView
                 android:id="@+id/textView7"
@@ -34,7 +35,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/ahn2006_m"
                 android:gravity="center"
-                android:text="Change Your Password"
+                android:text="비밀번호 변경"
                 android:textColor="@color/white"
                 android:textSize="40sp"
                 android:textStyle="bold" />

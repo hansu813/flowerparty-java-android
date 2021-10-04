@@ -72,11 +72,11 @@
 
                 <FrameLayout
                     android:layout_width="match_parent"
-                    android:layout_height="320dp">
+                    android:layout_height="380dp">
                     <ImageView
                     android:id="@+id/imageView14"
                     android:layout_width="match_parent"
-                    android:layout_height="320dp"
+                    android:layout_height="match_parent"
                     android:scaleType="centerCrop"
                     android:src="@drawable/character" />
 
@@ -92,7 +92,7 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="306dp"
+                    android:layout_height="match_parent"
                     android:layout_gravity="bottom"
                     android:layout_marginBottom="50dp"
                     android:orientation="vertical">
@@ -112,13 +112,13 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
+                            android:layout_marginLeft="20dp"
                             android:layout_marginTop="2dp"
-                            android:layout_marginLeft="30dp"
-                            android:gravity="center"
-                            android:text="Seed"
                             android:fontFamily="@font/ahn2006_m"
+                            android:gravity="center"
+                            android:text="새싹이"
                             android:textColor="@color/white"
-                            android:textSize="18sp"/>
+                            android:textSize="18sp" />
 
                         <ImageView
                             android:id="@+id/imgNickname"
@@ -131,6 +131,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
                         android:layout_marginHorizontal="10dp"
                         android:orientation="horizontal">
 
@@ -150,8 +151,8 @@
                                 android:fontFamily="@font/ahn2006_m"
                                 android:gravity="center"
                                 android:text="습도"
-                                android:textColor="@color/white"
-                                android:textSize="20sp"
+                                android:textColor="@color/gray_green"
+                                android:textSize="24sp"
                                 android:textStyle="bold" />
 
                             <TextView
@@ -183,8 +184,8 @@
                                 android:fontFamily="@font/ahn2006_m"
                                 android:gravity="center"
                                 android:text="온도"
-                                android:textColor="@color/white"
-                                android:textSize="20sp"
+                                android:textColor="@color/gray_green"
+                                android:textSize="24sp"
                                 android:textStyle="bold" />
 
                             <TextView
@@ -216,8 +217,8 @@
                                 android:fontFamily="@font/ahn2006_m"
                                 android:gravity="center"
                                 android:text="조도"
-                                android:textColor="@color/white"
-                                android:textSize="20sp"
+                                android:textColor="@color/gray_green"
+                                android:textSize="24sp"
                                 android:textStyle="bold" />
 
                             <TextView
@@ -228,8 +229,9 @@
                                 android:fontFamily="@font/ahn2006_m"
                                 android:gravity="center"
                                 android:text="정보없음"
-                                android:textColor="@color/gray"
-                                android:textSize="15sp" />
+                                android:textColor="@color/gray_green"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
                         </LinearLayout>
 
                     </LinearLayout>
@@ -244,65 +246,45 @@
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="80dp"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginRight="5dp"
-                            android:layout_weight="1"
-                            android:background="@drawable/shape"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:id="@+id/textView12"
-                                android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_marginTop="10dp"
-                                android:layout_weight="1"
-                                android:fontFamily="@font/ahn2006_m"
-                                android:gravity="center"
-                                android:text="LED"
-                                android:textSize="30sp"
-                                android:textStyle="bold"
-                                android:textColor="@color/gray"/>
-
-                            <Switch
-                                android:id="@+id/switch2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="0dp"
-                                android:layout_gravity="center"
-                                android:layout_margin="10dp"
-                                android:layout_weight="1"
-                                android:switchMinWidth="60dp" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="80dp"
                             android:layout_marginRight="10dp"
                             android:layout_marginLeft="5dp"
+                            android:layout_marginTop="10dp"
                             android:layout_weight="1"
                             android:background="@drawable/shape"
                             android:orientation="vertical">
 
-                            <TextView
-                                android:id="@+id/textView13"
+                            <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_marginTop="10dp"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:fontFamily="@font/ahn2006_m"
-                                android:gravity="center"
-                                android:text="Water"
-                                android:textSize="30sp"
-                                android:textStyle="bold"
-                                android:textColor="@color/gray"/>
+                                android:layout_marginTop="5dp"
+                                android:orientation="horizontal">
 
-                            <Switch
-                                android:id="@+id/switch3"
-                                android:layout_width="wrap_content"
-                                android:layout_height="0dp"
-                                android:layout_gravity="center"
-                                android:layout_margin="10dp"
-                                android:layout_weight="1"
-                                android:switchMinWidth="60dp" />
+                                <TextView
+                                    android:id="@+id/textView13"
+                                    android:layout_width="250dp"
+                                    android:layout_height="60dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/ahn2006_m"
+                                    android:layout_gravity="center"
+                                    android:gravity="left"
+                                    android:layout_marginLeft="20dp"
+                                    android:text="자동 급수 설정"
+                                    android:textColor="@color/gray"
+                                    android:textSize="30sp"
+                                    android:textStyle="bold" />
+
+                                <Switch
+                                    android:id="@+id/switch3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="0dp"
+                                    android:layout_gravity="center"
+                                    android:layout_margin="10dp"
+                                    android:layout_weight="1"
+                                    android:switchMinWidth="60dp" />
+                            </LinearLayout>
+
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>

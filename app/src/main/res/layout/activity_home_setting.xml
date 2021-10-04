@@ -44,7 +44,7 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="20dp"
                 android:gravity="center"
-                android:text="SETTINGS"
+                android:text="환경설정"
                 android:textSize="50sp"
                 android:textStyle="bold"
                 android:textColor="@color/white"
@@ -66,21 +66,21 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="20dp"
-
                         android:background="@drawable/shape"
                         android:orientation="vertical"
                         >
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="60dp"
-                            android:layout_marginTop="10dp"
-                            android:paddingHorizontal="30dp"
-                            android:text="In-App Notifications"
-                            android:fontFamily="@font/ahn2006_m"
-                            android:textSize="25sp"
-                            android:textStyle="bold"
-                            android:textColor="@color/gray"
-                            android:gravity="center_vertical"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/ahn2006_m"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="30dp"
+                        android:text="알림 설정"
+                        android:textColor="@color/gray_green"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -91,13 +91,13 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:paddingHorizontal="30dp"
                                 android:fontFamily="@font/ahn2006_m"
-                                android:textSize="25sp"
-                                android:textStyle="bold"
                                 android:gravity="center_vertical"
-                                android:text="음성알림"
-                                android:textColor="@color/gray"/>
+                                android:paddingHorizontal="30dp"
+                                android:text="음성 알림"
+                                android:textColor="@color/gray"
+                                android:textSize="25sp"
+                                android:textStyle="bold" />
 
                             <View
                                 android:layout_width="0dp"
@@ -124,13 +124,13 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:paddingHorizontal="30dp"
                                 android:fontFamily="@font/ahn2006_m"
-                                android:textSize="25sp"
-                                android:textStyle="bold"
                                 android:gravity="center_vertical"
-                                android:text="푸시알림"
-                                android:textColor="@color/gray"/>
+                                android:paddingHorizontal="30dp"
+                                android:text="푸시 알림"
+                                android:textColor="@color/gray"
+                                android:textSize="25sp"
+                                android:textStyle="bold" />
 
                             <View
                                 android:layout_width="0dp"
@@ -158,17 +158,17 @@
                         android:orientation="vertical"
                         >
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="60dp"
-                            android:layout_marginTop="10dp"
-                            android:fontFamily="@font/ahn2006_m"
-                            android:gravity="center_vertical"
-                            android:paddingHorizontal="30dp"
-                            android:text="Community Notifications"
-                            android:textSize="25sp"
-                            android:textStyle="bold"
-                            android:textColor="@color/gray"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/ahn2006_m"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="30dp"
+                        android:text="커뮤니티 알림"
+                        android:textColor="@color/gray_green"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -280,17 +280,17 @@
                         android:orientation="vertical"
                         >
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="60dp"
-                            android:layout_marginTop="10dp"
-                            android:fontFamily="@font/ahn2006_m"
-                            android:gravity="center_vertical"
-                            android:paddingHorizontal="30dp"
-                            android:text="Marketing Notifications"
-                            android:textSize="25sp"
-                            android:textStyle="bold"
-                            android:textColor="@color/gray"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/ahn2006_m"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="30dp"
+                        android:text="광고 알림"
+                        android:textColor="@color/gray_green"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
 
                         <LinearLayout
                             android:layout_width="match_parent"

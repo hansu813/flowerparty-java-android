@@ -19,10 +19,11 @@
 
             <ImageView
                 android:id="@+id/imageView3"
-                android:layout_width="50dp"
-                android:layout_height="59dp"
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
                 android:layout_weight="1"
-                app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
+                app:srcCompat="@drawable/leftarrow"  />
 
             <TextView
                 android:id="@+id/textView7"
@@ -33,7 +34,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/ahn2006_m"
                 android:gravity="center"
-                android:text="Enter Security Code"
+                android:text="보안 코드 입력"
                 android:textColor="@color/white"
                 android:textSize="40sp"
                 android:textStyle="bold" />
@@ -90,7 +91,7 @@
                 android:ems="10"
                 android:fontFamily="@font/ahn2006_m"
                 android:gravity="center"
-                android:hint="Enter Code"
+                android:hint="발송된 코드를 입력하시오"
                 android:inputType="textPersonName"
                 android:textColor="@color/black"
                 android:textColorHint="@color/white"
@@ -110,7 +111,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/shapebtn"
                 android:fontFamily="@font/ahn2006_m"
-                android:text="Confirm"
+                android:text="확인"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textColor="@color/white"
                 android:textSize="34sp"
@@ -131,7 +132,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_weight="1"
                     android:fontFamily="@font/ahn2006_m"
-                    android:text="Did not get a code?"
+                    android:text="아직 코드를 받지 못했나요?"
                     android:textColor="@color/white"
                     android:textSize="16sp" />
 
@@ -143,10 +144,10 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="150dp"
                     android:layout_weight="1"
-                    android:gravity="center"
                     android:background="@drawable/shape"
                     android:fontFamily="@font/ahn2006_m"
-                    android:text="Send again"
+                    android:gravity="center"
+                    android:text="다시 보내기"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     android:textColor="@color/white"
                     android:textSize="16sp"

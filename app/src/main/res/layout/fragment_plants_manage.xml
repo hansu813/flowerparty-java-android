@@ -86,19 +86,9 @@
                                 android:layout_marginLeft="10dp"
                                 android:layout_marginTop="10dp"
                                 android:fontFamily="@font/ahn2006_m"
-                                android:text="Rosemary"
-                                android:textColor="@color/white"
-                                android:textSize="35sp"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="5dp"
-                                android:fontFamily="@font/ahn2006_m"
                                 android:text="로즈마리"
                                 android:textColor="@color/white"
-                                android:textSize="20sp"
+                                android:textSize="35sp"
                                 android:textStyle="bold" />
 
                             <View
@@ -138,15 +128,15 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
+                                android:layout_marginLeft="50dp"
                                 android:layout_marginTop="5dp"
                                 android:layout_marginBottom="5dp"
-                                android:layout_marginLeft="50dp"
-                                android:gravity="center"
                                 android:fontFamily="@font/ahn2006_m"
-                                android:text="Rossy"
+                                android:gravity="center"
+                                android:text="초록이"
+                                android:textColor="@color/white"
                                 android:textSize="23sp"
-                                android:textStyle="bold"
-                                android:textColor="@color/white" />
+                                android:textStyle="bold" />
 
                             <ImageView
                                 android:id="@+id/imageView43"
@@ -260,14 +250,14 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="20dp"
                                 android:layout_marginLeft="20dp"
+                                android:layout_marginTop="20dp"
                                 android:layout_marginBottom="30dp"
-                                android:text="추천식물"
+                                android:fontFamily="@font/ahn2006_m"
+                                android:text="추천 식물"
                                 android:textColor="@color/gray"
                                 android:textSize="30sp"
-                                android:textStyle="bold"
-                                android:fontFamily="@font/ahn2006_m"/>
+                                android:textStyle="bold" />
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -351,14 +341,14 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="20dp"
                                 android:layout_marginLeft="20dp"
+                                android:layout_marginTop="20dp"
                                 android:layout_marginBottom="10dp"
-                                android:text="Searching plants"
+                                android:fontFamily="@font/ahn2006_m"
+                                android:text="식물 정보 검색"
                                 android:textColor="@color/gray"
                                 android:textSize="30sp"
-                                android:textStyle="bold"
-                                android:fontFamily="@font/ahn2006_m"/>
+                                android:textStyle="bold" />
 
                             <LinearLayout
                                 android:layout_width="match_parent"

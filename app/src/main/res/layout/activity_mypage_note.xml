@@ -45,7 +45,7 @@
                 android:layout_marginRight="20dp"
                 android:fontFamily="@font/ahn2006_m"
                 android:gravity="center"
-                android:text="Edit"
+                android:text="편집"
                 android:textColor="@color/white"
                 android:textSize="30sp"
                 android:textStyle="bold" />
@@ -56,12 +56,12 @@
             android:layout_height="80dp"
             android:layout_marginHorizontal="30dp"
             android:layout_marginTop="20dp"
-            android:gravity="center_vertical"
             android:fontFamily="@font/ahn2006_m"
-            android:text="Folders"
-            android:textStyle="bold"
+            android:gravity="center_vertical"
+            android:text="폴더"
             android:textColor="@color/white"
-            android:textSize="60sp"/>
+            android:textSize="60sp"
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -81,22 +81,24 @@
                     android:id="@+id/imageView33"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:layout_margin="10dp"
                     android:layout_gravity="center"
-                    app:srcCompat="@drawable/icon_search" />
+                    android:layout_margin="10dp"
+                    app:srcCompat="@drawable/search" />
 
                 <EditText
                     android:id="@+id/editTextTextPersonName4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:layout_gravity="center"
+                    android:layout_weight="1"
                     android:background="@null"
                     android:ems="10"
+                    android:fontFamily="@font/ahn2006_m"
+                    android:hint="검색"
                     android:inputType="textPersonName"
-                    android:hint="Search"
                     android:textColorHint="@color/white"
-                    />
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -124,21 +126,21 @@
                 android:id="@+id/textView21"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:layout_marginLeft="10dp"
                 android:layout_gravity="center_vertical"
-                android:gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="2"
                 android:fontFamily="@font/ahn2006_m"
-                android:text="All Notes"
-                android:textSize="25sp"
-                android:textStyle="bold"
+                android:gravity="center_vertical"
+                android:text="모든 메모"
                 android:textColor="@color/gray"
-                />
+                android:textSize="25sp"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/editTextNumber1"
                 android:layout_width="30dp"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
                 android:gravity="center"
                 android:layout_gravity="center"
                 android:background="@null"
@@ -186,21 +188,21 @@
                 android:id="@+id/textView22"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:layout_marginLeft="10dp"
                 android:layout_gravity="center_vertical"
-                android:gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="2"
                 android:fontFamily="@font/ahn2006_m"
-                android:text="Recently Deleted"
-                android:textSize="25sp"
-                android:textStyle="bold"
+                android:gravity="center_vertical"
+                android:text="최근 삭제된 메모"
                 android:textColor="@color/gray"
-                />
+                android:textSize="25sp"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/editTextNumber"
                 android:layout_width="30dp"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
                 android:gravity="center"
                 android:layout_gravity="center"
                 android:background="@null"

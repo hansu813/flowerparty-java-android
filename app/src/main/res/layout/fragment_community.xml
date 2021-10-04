@@ -120,12 +120,14 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="15dp"
                             android:layout_marginLeft="15dp"
+                            android:layout_marginTop="15dp"
                             android:layout_marginBottom="15dp"
-                            android:text="저희집 라벤더"
                             android:fontFamily="@font/ahn2006_m"
-                            android:textSize="20sp"/>
+                            android:text="저희집 라벤더입니다 ;) \n예쁘죠?"
+                            android:textColor="@color/gray"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -196,12 +198,14 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="15dp"
                             android:layout_marginLeft="15dp"
+                            android:layout_marginTop="15dp"
                             android:layout_marginBottom="15dp"
-                            android:text="도라지 "
                             android:fontFamily="@font/ahn2006_m"
-                            android:textSize="20sp"/>
+                            android:text="도라지 "
+                            android:textColor="@color/gray"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -271,12 +275,14 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="15dp"
                             android:layout_marginLeft="15dp"
+                            android:layout_marginTop="15dp"
                             android:layout_marginBottom="15dp"
-                            android:text="행운목이랍니다.."
                             android:fontFamily="@font/ahn2006_m"
-                            android:textSize="20sp"/>
+                            android:text="행운목이랍니다.."
+                            android:textColor="@color/gray"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
 
                         <LinearLayout
                             android:layout_width="match_parent"

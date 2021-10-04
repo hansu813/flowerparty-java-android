@@ -117,15 +117,14 @@
                 android:id="@+id/textView21"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:layout_marginLeft="10dp"
                 android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="2"
                 android:fontFamily="@font/ahn2006_m"
-                android:text="My Plants"
-                android:textSize="25sp"
-                android:textStyle="bold"
+                android:text="나의 식물"
                 android:textColor="@color/gray"
-                />
+                android:textSize="25sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textView25"
@@ -161,14 +160,14 @@
                 android:id="@+id/textView22"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:layout_marginLeft="10dp"
                 android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="2"
                 android:fontFamily="@font/ahn2006_m"
-                android:text="Notes"
+                android:text="메모장"
+                android:textColor="@color/gray"
                 android:textSize="25sp"
-                android:textStyle="bold"
-                android:textColor="@color/gray" />
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textView26"
@@ -203,14 +202,14 @@
                 android:id="@+id/textView23"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:layout_marginLeft="10dp"
                 android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="2"
                 android:fontFamily="@font/ahn2006_m"
-                android:text="My Comments"
+                android:text="내가 쓴 댓글"
+                android:textColor="@color/gray"
                 android:textSize="25sp"
-                android:textStyle="bold"
-                android:textColor="@color/gray"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textView27"
@@ -245,14 +244,14 @@
                 android:id="@+id/textView24"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:layout_marginLeft="10dp"
                 android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="2"
                 android:fontFamily="@font/ahn2006_m"
-                android:text="Posts I have liked"
+                android:text="내가 좋아한 게시물"
+                android:textColor="@color/gray"
                 android:textSize="25sp"
-                android:textStyle="bold"
-                android:textColor="@color/gray" />
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textView28"

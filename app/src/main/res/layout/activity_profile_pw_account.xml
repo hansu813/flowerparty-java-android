@@ -34,12 +34,11 @@
                 android:id="@+id/textView7"
                 android:layout_width="250dp"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="20dp"
+                android:layout_marginRight="55dp"
                 android:layout_weight="1"
                 android:fontFamily="@font/ahn2006_m"
                 android:gravity="center"
-                android:text="Verify Your Account"
+                android:text="계정 확인"
                 android:textColor="@color/white"
                 android:textSize="40sp"
                 android:textStyle="bold" />
@@ -62,9 +61,9 @@
                 android:fontFamily="@font/ahn2006_m"
                 android:gravity="center"
                 android:text="이 계정이 회원님 계정인지 확인하는 \n 코드가 발송됩니다."
-                android:textColor="@color/gray"
-                android:textStyle="bold"
-                android:textSize="23sp" />
+                android:textColor="@color/gray_green"
+                android:textSize="23sp"
+                android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -103,7 +102,7 @@
 
                             android:layout_gravity="bottom"
                             android:fontFamily="@font/ahn2006_m"
-                            android:text="Name"
+                            android:text="이름"
                             android:textColor="@color/gray"
                             android:textSize="25sp"
                             android:textStyle="bold" />
@@ -135,7 +134,7 @@
 
                             android:layout_marginTop="10dp"
                             android:fontFamily="@font/ahn2006_m"
-                            android:text="Username"
+                            android:text="닉네임"
                             android:textColor="@color/gray"
                             android:textSize="25sp"
                             android:textStyle="bold" />
@@ -178,10 +177,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/ahn2006_m"
-                        android:text="Send code via e-mail"
-                        android:textStyle="bold"
+                        android:text="이메일로 보안 코드 받기"
                         android:textColor="@color/gray"
-                        android:textSize="25sp"/>
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/textView38"
@@ -215,7 +214,7 @@
                 android:layout_marginRight="40dp"
                 android:background="@drawable/shapebtn"
                 android:fontFamily="@font/ahn2006_m"
-                android:text="Continue"
+                android:text="확인"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textColor="@color/white"
                 android:textSize="34sp"

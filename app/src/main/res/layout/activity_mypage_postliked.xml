@@ -34,11 +34,11 @@
                 android:id="@+id/textView30"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="50dp"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/ahn2006_m"
                 android:gravity="center_vertical"
-                android:text="Posts I have liked"
+                android:text="내가 좋아한 게시물"
                 android:textColor="@color/white"
                 android:textSize="40sp"
                 android:textStyle="bold" />
@@ -104,8 +104,8 @@
                             android:layout_marginRight="10dp"
                             android:fontFamily="@font/ahn2006_m"
                             android:text="2021-05-05"
-                            android:textColor="@color/gray"
-                            android:textSize="15sp"/>
+                            android:textColor="@color/gray_green"
+                            android:textSize="15sp" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -118,10 +118,10 @@
                             android:layout_width="160dp"
                             android:layout_height="160dp"
                             android:layout_marginLeft="20dp"
-                            android:layout_marginBottom="20dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="20dp"
                             android:scaleType="centerCrop"
-                            app:srcCompat="@drawable/cucumber" />
+                            app:srcCompat="@drawable/lavender" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -133,11 +133,12 @@
                                 android:id="@+id/textView32"
                                 android:layout_width="match_parent"
                                 android:layout_height="140dp"
-                                android:padding="10dp"
                                 android:fontFamily="@font/ahn2006_m"
-                                android:text="제가 키운 오이랍니다.\n잘키웠죠?"
-                                android:textStyle="bold"
-                                android:textSize="15sp"/>
+                                android:padding="10dp"
+                                android:text="제가 키운 라벤더입니다. ;) \n예쁘죠?"
+                                android:textColor="@color/gray"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
 
                             <LinearLayout
                                 android:layout_width="match_parent"

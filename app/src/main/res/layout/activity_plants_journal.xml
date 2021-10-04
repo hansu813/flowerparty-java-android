@@ -33,21 +33,21 @@
                 android:id="@+id/textView16"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="95dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginLeft="20dp"
                 android:layout_marginRight="10dp"
+                android:fontFamily="@font/ahn2006_m"
                 android:gravity="center"
-                android:text="Plant Journal"
-                android:textSize="50sp"
-                android:textStyle="bold"
+                android:text="식물일지"
                 android:textColor="@color/white"
-                android:fontFamily="@font/ahn2006_m" />
+                android:textSize="50sp"
+                android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/imageView55"
                 android:layout_width="40dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="70dp"
+                android:layout_marginLeft="80dp"
 
                 app:srcCompat="@drawable/plus_white" />
 
@@ -72,8 +72,7 @@
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/ahn2006_m"
                 android:gravity="center"
-
-                android:text="Add new note"
+                android:text="오늘의 일지가 아직 작성되지 않았어요"
                 android:textColor="@color/white"
                 android:textSize="28sp" />
         </LinearLayout>

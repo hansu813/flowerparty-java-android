@@ -38,9 +38,9 @@
                 android:id="@+id/imageView32"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:layout_marginRight="20dp"
                 android:layout_marginTop="20dp"
-                app:srcCompat="@drawable/icon_search" />
+                android:layout_marginRight="20dp"
+                app:srcCompat="@drawable/search" />
         </LinearLayout>
 
         <!-- title -->
@@ -86,20 +86,11 @@
                             android:layout_marginLeft="10dp"
                             android:layout_marginTop="10dp"
                             android:fontFamily="@font/ahn2006_m"
-                            android:text="Rosemary"
+                            android:text="로즈마리"
                             android:textColor="@color/white"
                             android:textSize="35sp"
                             android:textStyle="bold" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="5dp"
-                            android:fontFamily="@font/ahn2006_m"
-                            android:text="로즈마리"
-                            android:textColor="@color/white"
-                            android:textSize="20sp"
-                            android:textStyle="bold" />
                     </LinearLayout>
 
                     <ImageView
@@ -133,7 +124,7 @@
                                 android:gravity="center"
                                 android:text="습도"
                                 android:textColor="@color/white"
-                                android:textSize="20sp"
+                                android:textSize="24sp"
                                 android:textStyle="bold" />
 
                             <TextView
@@ -166,7 +157,7 @@
                                 android:gravity="center"
                                 android:text="온도"
                                 android:textColor="@color/white"
-                                android:textSize="20sp"
+                                android:textSize="24sp"
                                 android:textStyle="bold" />
 
                             <TextView
@@ -198,7 +189,7 @@
                                 android:gravity="center"
                                 android:text="조도"
                                 android:textColor="@color/white"
-                                android:textSize="20sp"
+                                android:textSize="24sp"
                                 android:textStyle="bold" />
 
                             <TextView
@@ -209,7 +200,7 @@
                                 android:gravity="center"
                                 android:text="정보없음"
                                 android:textColor="@color/gray"
-                                android:textSize="20sp"
+                                android:textSize="24sp"
                                 android:textStyle="bold" />
 
                         </LinearLayout>
@@ -236,20 +227,11 @@
                             android:layout_marginLeft="10dp"
                             android:layout_marginTop="10dp"
                             android:fontFamily="@font/ahn2006_m"
-                            android:text="Aloe"
+                            android:text="알로에"
                             android:textColor="@color/white"
                             android:textSize="35sp"
                             android:textStyle="bold" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="5dp"
-                            android:fontFamily="@font/ahn2006_m"
-                            android:text="알로에"
-                            android:textColor="@color/white"
-                            android:textSize="20sp"
-                            android:textStyle="bold" />
                     </LinearLayout>
 
                     <ImageView
@@ -283,7 +265,7 @@
                                 android:gravity="center"
                                 android:text="습도"
                                 android:textColor="@color/white"
-                                android:textSize="20sp"
+                                android:textSize="24sp"
                                 android:textStyle="bold" />
 
                             <TextView
@@ -316,7 +298,7 @@
                                 android:gravity="center"
                                 android:text="온도"
                                 android:textColor="@color/white"
-                                android:textSize="20sp"
+                                android:textSize="24sp"
                                 android:textStyle="bold" />
 
                             <TextView
@@ -348,7 +330,7 @@
                                 android:gravity="center"
                                 android:text="조도"
                                 android:textColor="@color/white"
-                                android:textSize="20sp"
+                                android:textSize="24sp"
                                 android:textStyle="bold" />
 
                             <TextView
