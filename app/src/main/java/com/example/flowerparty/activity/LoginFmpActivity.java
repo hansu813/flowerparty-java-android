@@ -1,13 +1,12 @@
 package com.example.flowerparty.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.flowerparty.R;
 
-public class LoginFmp extends AppCompatActivity {
-
+public class LoginFmpActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
