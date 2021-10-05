@@ -97,8 +97,10 @@
             android:layout_marginBottom="5dp"
             android:layout_weight="1"
             android:text="비밀번호 찾기"
+            android:fontFamily="@font/ahn2006_m"
             android:textColor="@color/gray"
-            android:textSize="10sp" />
+            android:textStyle="bold"
+            android:textSize="15sp" />
     </LinearLayout>
 
     <Button
