@@ -58,16 +58,6 @@
                         android:layout_height="0dp"
                         android:layout_weight="1"/>
 
-                    <ImageButton
-                        android:id="@+id/imgBtnHomeManage"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_gravity="center_vertical"
-                        android:backgroundTint="@color/main"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/manage" />
                 </LinearLayout>
 
                 <FrameLayout
@@ -84,8 +74,8 @@
                         android:id="@+id/imgBlueIcon"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:layout_marginLeft="239dp"
-                        android:layout_marginTop="107dp"
+                        android:layout_marginLeft="279dp"
+                        android:layout_marginTop="130dp"
                         android:src="@drawable/blueicon" />
 
                 </FrameLayout>
