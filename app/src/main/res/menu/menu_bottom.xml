@@ -4,28 +4,28 @@
 
     <item
         android:id="@+id/tab_home"
-        android:title="home"
+        android:title="HOME"
         android:enabled="true"
         android:icon="@drawable/home"
         app:showAsAction="ifRoom"
         />
     <item
         android:id="@+id/tab_plants"
-        android:title="plants"
+        android:title="PLANTS"
         android:enabled="true"
         android:icon="@drawable/myplants"
         app:showAsAction="ifRoom"
         />
     <item
-        android:id="@+id/tab_community"
-        android:title="community"
+        android:id="@+id/tab_Journal"
+        android:title="JOURNAL"
         android:enabled="true"
         android:icon="@drawable/community"
         app:showAsAction="ifRoom"
         />
     <item
         android:id="@+id/tab_mypage"
-        android:title="mypage"
+        android:title="MY PAGE"
         android:enabled="true"
         android:icon="@drawable/mypage"
         app:showAsAction="ifRoom"

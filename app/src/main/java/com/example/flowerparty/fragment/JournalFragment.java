@@ -12,9 +12,8 @@ import android.widget.ImageView;
 
 import com.example.flowerparty.R;
 import com.example.flowerparty.activity.CommunityChatlistActivity;
-import com.example.flowerparty.activity.ProfileSettingActivity;
 
-public class CommunityFragment extends Fragment {
+public class JournalFragment extends Fragment {
 
     ImageView chatList;
 
@@ -22,16 +21,16 @@ public class CommunityFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_community, container, false);
+        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_journal, container, false);
 
-        chatList = (ImageView) rootView.findViewById(R.id.chatList);
-        chatList.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), CommunityChatlistActivity.class);
-                startActivity(intent);
-            }
-        });
+        //chatList = (ImageView) rootView.findViewById(R.id.chatList);
+//        chatList.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(getActivity(), CommunityChatlistActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
         return rootView;
     }

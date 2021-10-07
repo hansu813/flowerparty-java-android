@@ -3,26 +3,21 @@ package com.example.flowerparty.activity;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.LinearLayout;
 
-import com.example.flowerparty.fragment.CommunityFragment;
+import com.example.flowerparty.fragment.JournalFragment;
 import com.example.flowerparty.fragment.HomeFragment;
 import com.example.flowerparty.fragment.MypageFragment;
 import com.example.flowerparty.fragment.PlantsFragment;
 import com.example.flowerparty.R;
-import com.example.flowerparty.fragment.PlantsManageFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
     Fragment homeFragment;
     Fragment plantsFragment;
-    Fragment communityFragment;
+    Fragment JournalFragment;
     Fragment mypageFragment;
 
 
@@ -33,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
         homeFragment = new HomeFragment();
         plantsFragment = new PlantsFragment();
-        communityFragment = new CommunityFragment();
+        JournalFragment = new JournalFragment();
         mypageFragment = new MypageFragment();
 
 
@@ -55,8 +50,8 @@ public class MainActivity extends AppCompatActivity {
                         getSupportFragmentManager().beginTransaction().replace(R.id.container, plantsFragment).commit();
                         return true;
 
-                    case R.id.tab_community:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.container, communityFragment).commit();
+                    case R.id.tab_Journal:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.container, JournalFragment).commit();
                         return true;
 
                     case R.id.tab_mypage:
