@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
@@ -25,6 +26,7 @@ import org.json.JSONObject;
 public class LoginActivity extends AppCompatActivity {
     private EditText editTextID, editTextPW;
     private Button btnSignIn, btnSignUp;
+    private TextView textViewFmp;
     private RbPreference pref;
 
     @Override
@@ -37,7 +39,8 @@ public class LoginActivity extends AppCompatActivity {
         btnSignIn = findViewById(R.id.btnSignIn);
         btnSignUp = findViewById(R.id.btnSignUp);
 
-        // By.Jongwon  Sign up (회원가입) 버튼 클릭시 RegisterActivity로 이동
+
+        // By.Jongwon : Sign up (회원가입) 버튼 클릭시 RegisterActivity로 이동
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,11 +49,11 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        // Sign In (로그인) 버튼 클릭시 수행
+        // By. Jongwon : Sign In (로그인) 버튼 클릭시 수행
         btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // editText 에 입력되어 있는 값 가져오기
+                /* editText 에 입력되어 있는 값 가져오기 */
                 String userID = editTextID.getText().toString();
                 String userPass = editTextPW.getText().toString();
 
@@ -67,16 +70,14 @@ public class LoginActivity extends AppCompatActivity {
 
                                 Toast.makeText(getApplicationContext(), String.format("%s님 환영합니다.", userName), Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(LoginActivity.this, PlantsChooseActivity.class);
-                                //intent.putExtra("userID", userID);
-                                //intent.putExtra("userPass", userPass);
-                                //session = new Session(LoginActivity.this);
-                                //session.setUserId(userID);
+                                /*intent.putExtra("userID", userID);
+                                intent.putExtra("userPass", userPass);
+                                session = new Session(LoginActivity.this);
+                                session.setUserId(userID);*/
                                 pref = new RbPreference(LoginActivity.this);
                                 pref.put(RbPreference.PREF_INTRO_USER_AGREEMENT, userID);
-                                //pref.put("userPass", userPass);
-
-                                //intent.putExtra("userID", userID);
-
+                                /*pref.put("userPass", userPass);
+                                intent.putExtra("userID", userID);*/
                                 startActivity(intent);
                             } else { // 로그인 실패
                                 Toast.makeText(getApplicationContext(), "아이디와 비밀번호를 확인하세요.", Toast.LENGTH_SHORT).show();
@@ -91,6 +92,16 @@ public class LoginActivity extends AppCompatActivity {
                 LoginRequest loginRequest = new LoginRequest(userID, userPass, responseListener);
                 RequestQueue queue = Volley.newRequestQueue(LoginActivity.this);
                 queue.add(loginRequest);
+            }
+        });
+
+
+        // By. Jongwon : 비밀번호 찾기 클릭 시 액티비티 이동
+        textViewFmp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, LoginFmpActivity.class);
+                startActivity(intent);
             }
         });
 

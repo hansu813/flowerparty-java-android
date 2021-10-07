@@ -29,14 +29,14 @@ public class HomeFragment extends Fragment {
         // 이미지 버튼 객체를 가져오기 위해서 변경
         ViewGroup rootview = (ViewGroup) inflater.inflate(R.layout.fragment_home, container, false);
 
-        imgBtnManage = (ImageButton) rootview.findViewById(R.id.imgBtnHomeManage);
-        imgBtnManage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), homeSettingActivity.class);
-                startActivity(intent);
-            }
-        });
+//        imgBtnManage = (ImageButton) rootview.findViewById(R.id.imgBtnHomeManage);
+//        imgBtnManage.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(getActivity(), homeSettingActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
         imgNickname = (ImageView) rootview.findViewById(R.id.imgNickname);
         imgNickname.setOnClickListener(new View.OnClickListener() {

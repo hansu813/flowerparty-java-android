@@ -39,16 +39,18 @@
             app:layout_constraintVertical_bias="0.464" />
 
         <EditText
-            android:id="@+id/editTextID"
+            android:id="@+id/et_changePW_ID"
             android:layout_width="300dp"
             android:layout_height="45dp"
             android:background="@drawable/shape"
             android:ems="10"
             android:inputType="textPersonName"
             android:padding="7dp"
-            android:text="아이디"
+            android:hint="아이디"
             android:textColor="@color/white"
-            android:textSize="18sp"
+            android:textSize="25sp"
+            android:fontFamily="@font/ahn2006_m"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.504"
@@ -57,23 +59,26 @@
             app:layout_constraintVertical_bias="0.04" />
 
         <EditText
-            android:id="@+id/editTextPW"
+            android:id="@+id/et_changePW_Email"
             android:layout_width="300dp"
             android:layout_height="45dp"
             android:background="@drawable/shape"
             android:ems="10"
             android:inputType="textPersonName"
             android:padding="7dp"
-            android:text="이메일"
+            android:hint="이메일"
+            android:textStyle="bold"
+            android:fontFamily="@font/ahn2006_m"
             android:textColor="@color/white"
+            android:textSize="25sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextID"
+            app:layout_constraintTop_toBottomOf="@+id/et_changePW_ID"
             app:layout_constraintVertical_bias="0.044" />
 
         <Button
-            android:id="@+id/btnSignIn"
+            android:id="@+id/btnChangePW"
             android:layout_width="300dp"
             android:layout_height="40dp"
             android:background="@drawable/shapebtn"
@@ -86,7 +91,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextPW"
+            app:layout_constraintTop_toBottomOf="@+id/et_changePW_Email"
             app:layout_constraintVertical_bias="0.149" />
 
 

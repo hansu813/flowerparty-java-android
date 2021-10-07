@@ -90,17 +90,17 @@
         <TextView
             android:id="@+id/textViewFmp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="14dp"
             android:layout_gravity="bottom"
-            android:gravity="center"
             android:layout_marginRight="10dp"
             android:layout_marginBottom="5dp"
             android:layout_weight="1"
-            android:text="비밀번호 찾기"
             android:fontFamily="@font/ahn2006_m"
+            android:gravity="center"
+            android:text="비밀번호 찾기"
             android:textColor="@color/gray"
-            android:textStyle="bold"
-            android:textSize="15sp" />
+            android:textSize="15sp"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <Button
