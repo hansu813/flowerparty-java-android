@@ -38,6 +38,7 @@ public class LoginActivity extends AppCompatActivity {
         editTextPW = findViewById(R.id.editTextPW);
         btnSignIn = findViewById(R.id.btnSignIn);
         btnSignUp = findViewById(R.id.btnSignUp);
+        textViewFmp = findViewById(R.id.textViewFmp);
 
 
         // By.Jongwon : Sign up (회원가입) 버튼 클릭시 RegisterActivity로 이동
@@ -67,18 +68,22 @@ public class LoginActivity extends AppCompatActivity {
                                 String userID = jsonObject.getString("userID");
                                 String userPass = jsonObject.getString("userPassword");
                                 String userName = jsonObject.getString( "userName" );
+                                //String cntPlant = jsonObject.getString("cntPlant");
 
+                                // DB에 식물이 저장되어 있다면 바로 메인
                                 Toast.makeText(getApplicationContext(), String.format("%s님 환영합니다.", userName), Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(LoginActivity.this, PlantsChooseActivity.class);
+
                                 /*intent.putExtra("userID", userID);
                                 intent.putExtra("userPass", userPass);
                                 session = new Session(LoginActivity.this);
                                 session.setUserId(userID);*/
                                 pref = new RbPreference(LoginActivity.this);
                                 pref.put(RbPreference.PREF_INTRO_USER_AGREEMENT, userID);
+                                startActivity(intent);
                                 /*pref.put("userPass", userPass);
                                 intent.putExtra("userID", userID);*/
-                                startActivity(intent);
+
                             } else { // 로그인 실패
                                 Toast.makeText(getApplicationContext(), "아이디와 비밀번호를 확인하세요.", Toast.LENGTH_SHORT).show();
                                 return;
@@ -108,5 +113,5 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-    }
+    } /* onCreate */
 }
