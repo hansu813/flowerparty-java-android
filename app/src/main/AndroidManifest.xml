@@ -23,12 +23,9 @@
             android:name=".RegisterActivity"
             android:exported="true" />
         <activity android:name=".fragment.PlantsManageFragment" />
-        <activity android:name=".activity.CommunityChatActivity" />
         <activity android:name=".activity.PlantsChooseActivity" />
         <activity android:name=".activity.ProfileCEmailActivity" />
         <activity android:name=".activity.ProfileCnameActivity" />
-        <activity android:name=".activity.CommunityUserprofileActivity" />
-        <activity android:name=".activity.CommunityChatlistActivity" />
         <activity android:name=".activity.PlantsJournalDetailActivity" />
         <activity android:name=".activity.PlantsJournalActivity" />
         <activity android:name=".activity.PlantsControlDetailActivity" />
@@ -38,7 +35,6 @@
         <activity android:name=".activity.MypageNoteDetailActivity" />
         <activity android:name=".activity.MypageNoteActivity" />
         <activity android:name=".activity.MypagePlantsActivity" />
-        <activity android:name=".fragment.MypageSettingFragment" />
         <activity android:name=".activity.PlantsNicknameActivity" />
         <activity android:name=".activity.homeSettingActivity" />
         <activity android:name=".activity.BlueConnectActivity" />

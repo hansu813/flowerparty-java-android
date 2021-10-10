@@ -6,11 +6,13 @@ import android.os.Bundle;
 
 import com.example.flowerparty.R;
 
-public class CommunityUserprofileActivity extends AppCompatActivity {
+public class JournalDiaryActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_community_userprofile);
+        setContentView(R.layout.activity_journal_diary);
     }
+
+
 }

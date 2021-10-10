@@ -1,6 +1,5 @@
 package com.example.flowerparty.fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -11,7 +10,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.example.flowerparty.R;
-import com.example.flowerparty.activity.CommunityChatlistActivity;
 
 public class JournalFragment extends Fragment {
 

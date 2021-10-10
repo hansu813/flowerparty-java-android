@@ -9,7 +9,7 @@ import android.view.MenuItem;
 
 import com.example.flowerparty.fragment.JournalFragment;
 import com.example.flowerparty.fragment.HomeFragment;
-import com.example.flowerparty.fragment.MypageFragment;
+import com.example.flowerparty.fragment.MypageAFragment;
 import com.example.flowerparty.fragment.PlantsFragment;
 import com.example.flowerparty.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     Fragment homeFragment;
     Fragment plantsFragment;
     Fragment JournalFragment;
-    Fragment mypageFragment;
+    Fragment MypageAFragment;
 
 
     @Override
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         homeFragment = new HomeFragment();
         plantsFragment = new PlantsFragment();
         JournalFragment = new JournalFragment();
-        mypageFragment = new MypageFragment();
+        MypageAFragment = new MypageAFragment();
 
 
 
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
                         return true;
 
                     case R.id.tab_mypage:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.container, mypageFragment).commit();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.container, MypageAFragment).commit();
                         return true;
                 }
                 return false;
