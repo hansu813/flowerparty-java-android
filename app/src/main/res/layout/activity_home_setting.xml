@@ -63,12 +63,12 @@
                 android:orientation="vertical">
 
                 <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="20dp"
-                        android:background="@drawable/shape"
-                        android:orientation="vertical"
-                        >
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/shape"
+                    android:orientation="vertical">
 
                     <TextView
                         android:layout_width="match_parent"
@@ -82,257 +82,73 @@
                         android:textSize="25sp"
                         android:textStyle="bold" />
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="70dp"
-                            android:orientation="horizontal"
-                            android:background="@drawable/shape">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:fontFamily="@font/ahn2006_m"
-                                android:gravity="center_vertical"
-                                android:paddingHorizontal="30dp"
-                                android:text="음성 알림"
-                                android:textColor="@color/gray"
-                                android:textSize="25sp"
-                                android:textStyle="bold" />
-
-                            <View
-                                android:layout_width="0dp"
-                                android:layout_height="0dp"
-                                android:layout_weight="1" />
-
-                            <Switch
-                                android:id="@+id/switch4"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_marginRight="15dp"
-                                android:switchMinWidth="60dp"
-
-                                />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="70dp"
-                            android:layout_marginBottom="10dp"
-                            android:orientation="horizontal"
-                            android:background="@drawable/shape">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:fontFamily="@font/ahn2006_m"
-                                android:gravity="center_vertical"
-                                android:paddingHorizontal="30dp"
-                                android:text="푸시 알림"
-                                android:textColor="@color/gray"
-                                android:textSize="25sp"
-                                android:textStyle="bold" />
-
-                            <View
-                                android:layout_width="0dp"
-                                android:layout_height="0dp"
-                                android:layout_weight="1" />
-
-                            <Switch
-                                android:id="@+id/switch5"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_marginRight="15dp"
-                                android:switchMinWidth="60dp"
-
-                                />
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                <LinearLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="20dp"
-                        android:layout_marginTop="20dp"
+                        android:layout_height="70dp"
                         android:background="@drawable/shape"
-                        android:orientation="vertical"
-                        >
+                        android:orientation="horizontal">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="60dp"
-                        android:layout_marginTop="10dp"
-                        android:fontFamily="@font/ahn2006_m"
-                        android:gravity="center_vertical"
-                        android:paddingHorizontal="30dp"
-                        android:text="커뮤니티 알림"
-                        android:textColor="@color/gray_green"
-                        android:textSize="25sp"
-                        android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/ahn2006_m"
+                            android:gravity="center_vertical"
+                            android:paddingHorizontal="30dp"
+                            android:text="음성 알림"
+                            android:textColor="@color/gray"
+                            android:textSize="25sp"
+                            android:textStyle="bold" />
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="70dp"
-                            android:background="@drawable/shape"
-                            android:orientation="horizontal">
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="1" />
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:fontFamily="@font/ahn2006_m"
-                                android:gravity="center_vertical"
-                                android:paddingHorizontal="30dp"
-                                android:text="댓글알림"
-                                android:textSize="25sp"
-                                android:textStyle="bold"
-                                android:textColor="@color/gray"/>
+                        <Switch
+                            android:id="@+id/switch4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="15dp"
+                            android:switchMinWidth="60dp"
 
-                            <View
-                                android:layout_width="0dp"
-                                android:layout_height="0dp"
-                                android:layout_weight="1" />
-
-                            <Switch
-                                android:id="@+id/switch6"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_marginRight="15dp"
-                                android:switchMinWidth="60dp"
-
-                                />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="70dp"
-                            android:background="@drawable/shape"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:fontFamily="@font/ahn2006_m"
-                                android:gravity="center_vertical"
-                                android:paddingHorizontal="30dp"
-                                android:text="좋아요 알림"
-                                android:textSize="25sp"
-                                android:textStyle="bold"
-                                android:textColor="@color/gray"/>
-
-                            <View
-                                android:layout_width="0dp"
-                                android:layout_height="0dp"
-                                android:layout_weight="1" />
-
-                            <Switch
-                                android:id="@+id/switch7"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_marginRight="15dp"
-                                android:switchMinWidth="60dp"
-
-                                />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="70dp"
-                            android:layout_marginBottom="10dp"
-                            android:background="@drawable/shape"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:fontFamily="@font/ahn2006_m"
-                                android:gravity="center_vertical"
-                                android:paddingHorizontal="30dp"
-                                android:text="추천 게시글"
-                                android:textSize="25sp"
-                                android:textStyle="bold"
-                                android:textColor="@color/gray"/>
-
-                            <View
-                                android:layout_width="0dp"
-                                android:layout_height="0dp"
-                                android:layout_weight="1" />
-
-                            <Switch
-                                android:id="@+id/switch3"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_marginRight="15dp"
-                                android:switchMinWidth="60dp"
-
-                                />
-                        </LinearLayout>
-
-
+                            />
                     </LinearLayout>
 
-                <LinearLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="20dp"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginBottom="100dp"
+                        android:layout_height="70dp"
+                        android:layout_marginBottom="10dp"
                         android:background="@drawable/shape"
-                        android:orientation="vertical"
-                        >
+                        android:orientation="horizontal">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="60dp"
-                        android:layout_marginTop="10dp"
-                        android:fontFamily="@font/ahn2006_m"
-                        android:gravity="center_vertical"
-                        android:paddingHorizontal="30dp"
-                        android:text="광고 알림"
-                        android:textColor="@color/gray_green"
-                        android:textSize="25sp"
-                        android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/ahn2006_m"
+                            android:gravity="center_vertical"
+                            android:paddingHorizontal="30dp"
+                            android:text="푸시 알림"
+                            android:textColor="@color/gray"
+                            android:textSize="25sp"
+                            android:textStyle="bold" />
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="70dp"
-                            android:layout_marginBottom="10dp"
-                            android:background="@drawable/shape"
-                            android:orientation="horizontal">
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="1" />
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:fontFamily="@font/ahn2006_m"
-                                android:gravity="center_vertical"
-                                android:paddingHorizontal="30dp"
-                                android:text="이벤트 알림"
-                                android:textSize="25sp"
-                                android:textStyle="bold"
-                                android:textColor="@color/gray"/>
+                        <Switch
+                            android:id="@+id/switch5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="15dp"
+                            android:switchMinWidth="60dp"
 
-                            <View
-                                android:layout_width="0dp"
-                                android:layout_height="0dp"
-                                android:layout_weight="1" />
-
-                            <Switch
-                                android:id="@+id/switch2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_marginRight="15dp"
-                                android:switchMinWidth="60dp"
-
-                                />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/shape"
-                            android:orientation="horizontal"/>
-
-
+                            />
                     </LinearLayout>
+
+                </LinearLayout>
+
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>
 

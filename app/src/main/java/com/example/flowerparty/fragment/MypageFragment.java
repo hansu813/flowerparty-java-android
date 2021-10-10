@@ -12,9 +12,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.example.flowerparty.R;
-import com.example.flowerparty.activity.MypageSettingActivity;
 import com.example.flowerparty.activity.ProfileSettingActivity;
-import com.example.flowerparty.activity.homeSettingActivity;
 
 public class MypageFragment extends Fragment {
     Button btnEditProfile;
@@ -40,7 +38,7 @@ public class MypageFragment extends Fragment {
         imgDot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent =  new Intent(getActivity(), MypageSettingActivity.class);
+                Intent intent =  new Intent(getActivity(), MypageSettingFragment.class);
                 startActivity(intent);
             }
         });

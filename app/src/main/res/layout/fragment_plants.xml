@@ -96,6 +96,7 @@
                             android:layout_marginTop="5dp"
                             android:layout_marginBottom="5dp"
                             android:background="@drawable/shapebtn"
+                            android:backgroundTint="@color/main"
                             android:gravity="center"
                             android:text="초록이"
                             android:textColor="@color/white" />
@@ -122,6 +123,7 @@
                                 android:layout_marginLeft="10dp"
                                 android:layout_marginTop="10dp"
                                 android:fontFamily="@font/ahn2006_m"
+                                android:backgroundTint="@color/main"
                                 android:text="알로에"
                                 android:textColor="@color/white"
                                 android:textSize="35sp"
@@ -143,6 +145,7 @@
                             android:layout_gravity="center"
                             android:layout_marginTop="5dp"
                             android:layout_marginBottom="5dp"
+                            android:backgroundTint="@color/main"
                             android:background="@drawable/shapebtn"
                             android:gravity="center"
                             android:text="연두"

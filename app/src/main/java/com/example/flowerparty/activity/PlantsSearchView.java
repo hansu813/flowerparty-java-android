@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import com.example.flowerparty.R;
 
-public class MypagePostlikedActivity extends AppCompatActivity {
+public class PlantsSearchView extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mypage_postliked);
+        setContentView(R.layout.activity_plants_search_view);
     }
 }

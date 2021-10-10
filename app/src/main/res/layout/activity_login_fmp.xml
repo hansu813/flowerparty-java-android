@@ -99,6 +99,7 @@
             android:id="@+id/textView"
             android:layout_width="131dp"
             android:layout_height="22dp"
+            android:layout_marginBottom="124dp"
             android:fontFamily="@font/ahn2006_m"
             android:text="로그인 화면으로 돌아가기"
             android:textAlignment="center"
