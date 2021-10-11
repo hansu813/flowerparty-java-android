@@ -76,7 +76,7 @@
                 />
         </LinearLayout>
 
-        <!--<LinearLayout
+        <LinearLayout
             android:id="@+id/blueOn"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -216,37 +216,7 @@
                         android:text="Flower pot"/>
                 </LinearLayout>
             </LinearLayout>
-        </LinearLayout>-->
+        </LinearLayout>
 
-        <ListView
-            android:id="@+id/listviewBT"
-            android:layout_width="wrap_content"
-            android:layout_height="185dp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent" />
-
-        <TextView
-            android:id="@+id/textViewStatus"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="status" />
-
-        <Button
-            android:id="@+id/btnPaired"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="paired" />
-
-        <Button
-            android:id="@+id/btnSearch"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="search" />
-
-        <Button
-            android:id="@+id/btnSend"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="send" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
