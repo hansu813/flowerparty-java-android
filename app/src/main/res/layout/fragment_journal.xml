@@ -46,7 +46,6 @@
                 <TextView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-
                     android:layout_marginRight="20dp"
                     android:fontFamily="@font/ahn2006_m"
                     android:gravity="center"
@@ -99,15 +98,17 @@
 
             </LinearLayout>
 
-            <View
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_weight="1" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:orientation="vertical"></LinearLayout>
+
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="230dp"
+                android:layout_height="194dp"
                 android:layout_gravity="bottom"
+                android:layout_marginTop="10dp"
                 android:background="@color/sub"
                 android:orientation="horizontal">
 
@@ -154,15 +155,17 @@
         </LinearLayout>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab_btn2"
+            android:id="@+id/wbtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end|bottom"
             android:layout_marginRight="16dp"
-            android:layout_marginBottom="250dp"
+            android:layout_marginBottom="220dp"
             android:src="@drawable/newpost"
             app:backgroundTint="@color/gray"
             app:elevation="6dp"
-            app:fabSize="normal"></com.google.android.material.floatingactionbutton.FloatingActionButton>
+            app:fabSize="normal">
+
+        </com.google.android.material.floatingactionbutton.FloatingActionButton>
     </FrameLayout>
 </LinearLayout>

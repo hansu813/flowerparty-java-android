@@ -31,7 +31,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView19"
+                    android:id="@+id/xmark1"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_gravity="center"
@@ -39,28 +39,34 @@
                     android:gravity="left"
                     android:src="@drawable/xmark" />
 
-                <EditText
-                    android:id="@+id/DateText"
-                    android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/datetxt"
+                    android:layout_width="135dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/main"
                     android:ems="10"
                     android:fontFamily="@font/ahn2006_m"
-                    android:inputType="date"
-                    android:textColor="@color/gray" />
+                    android:gravity="center"
+                    android:text="2021.10.04"
+                    android:textColor="@color/gray"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
 
                 <Button
                     android:id="@+id/button2"
                     android:layout_width="30dp"
-                    android:layout_height="40dp"
+                    android:layout_height="30dp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/flower"
+                    android:background="@drawable/shape"
+                    android:backgroundTint="@color/party"
                     android:fontFamily="@font/ahn2006_m"
                     android:gravity="center"
                     android:text="완료"
-                    android:textSize="20sp" />
+                    android:textSize="21sp"
+                    android:textStyle="bold" />
             </LinearLayout>
         </LinearLayout>
 
@@ -71,16 +77,20 @@
             android:background="@drawable/shape"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/textView23"
+            <EditText
+                android:id="@+id/editText23"
                 android:layout_width="match_parent"
                 android:layout_height="410dp"
                 android:layout_margin="20dp"
+                android:backgroundTint="@color/sub"
+                android:ems="10"
                 android:fontFamily="@font/ahn2006_m"
+                android:gravity="left|top"
                 android:inputType="textPersonName"
                 android:text="내용을 작성하시오."
-                android:textColor="@color/gray_green"
-                android:textSize="24sp"
+                android:textColor="@color/gray"
+                android:textColorHint="@color/gray_green"
+                android:textSize="30sp"
                 android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>
