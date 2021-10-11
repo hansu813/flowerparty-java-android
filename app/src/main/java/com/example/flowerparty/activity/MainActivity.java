@@ -3,15 +3,20 @@ package com.example.flowerparty.activity;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.LinearLayout;
 
-import com.example.flowerparty.fragment.JournalFragment;
 import com.example.flowerparty.fragment.HomeFragment;
+import com.example.flowerparty.fragment.JournalFragment;
 import com.example.flowerparty.fragment.MypageAFragment;
 import com.example.flowerparty.fragment.PlantsFragment;
 import com.example.flowerparty.R;
+import com.example.flowerparty.fragment.PlantsManageFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -19,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     Fragment plantsFragment;
     Fragment JournalFragment;
     Fragment MypageAFragment;
+
 
 
     @Override
@@ -30,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         plantsFragment = new PlantsFragment();
         JournalFragment = new JournalFragment();
         MypageAFragment = new MypageAFragment();
+
 
 
 
@@ -50,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
                         getSupportFragmentManager().beginTransaction().replace(R.id.container, plantsFragment).commit();
                         return true;
 
-                    case R.id.tab_Journal:
+                    case R.id.tab_journal:
                         getSupportFragmentManager().beginTransaction().replace(R.id.container, JournalFragment).commit();
                         return true;
 

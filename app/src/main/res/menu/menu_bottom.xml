@@ -17,7 +17,7 @@
         app:showAsAction="ifRoom"
         />
     <item
-        android:id="@+id/tab_Journal"
+        android:id="@+id/tab_journal"
         android:title="JOURNAL"
         android:enabled="true"
         android:icon="@drawable/community"
@@ -25,7 +25,7 @@
         />
     <item
         android:id="@+id/tab_mypage"
-        android:title="MY PAGE"
+        android:title="MYPAGE"
         android:enabled="true"
         android:icon="@drawable/mypage"
         app:showAsAction="ifRoom"
