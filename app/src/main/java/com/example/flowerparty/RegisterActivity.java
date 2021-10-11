@@ -61,7 +61,7 @@ public class RegisterActivity extends AppCompatActivity {
         textValidate = findViewById(R.id.textValidate);
 
 
-        // 아이디 중복 체크
+        // By. Jongwon : 아이디 중복 체크
         textValidate = findViewById(R.id.textValidate);
         textValidate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -109,7 +109,7 @@ public class RegisterActivity extends AppCompatActivity {
 
 
 
-        // 회원 가입 클릭시 수행
+        // By. Jongwon : 회원 가입 버튼 클릭시 수행
         btnRegister = findViewById(R.id.btnRegister);
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -120,6 +120,26 @@ public class RegisterActivity extends AppCompatActivity {
                 String userEmail = et_Email.getText().toString();
                 String userName = et_Name.getText().toString();
 
+
+                // By. Jongwon : 모든 항목 입력 확인 및 아이디 중복 확인
+                if (userID.equals("") || userPassword.equals("") || userCPassword.equals("") || userEmail.equals("") || userName.equals("")) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
+                    dialog = builder.setMessage("항목을 모두 입력하세요.").setPositiveButton("확인", null).create();
+                    dialog.show();
+                    return;
+                } else if (!validate) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
+                    dialog = builder.setMessage("아이디 중복확인이 필요합니다.").setNegativeButton("확인", null).create();
+                    dialog.show();
+                    return;
+                } else if (!userPassword.equals(userCPassword)){
+                    AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
+                    dialog = builder.setMessage("비밀번호가 동일하지 않습니다.").setNegativeButton("확인", null).create();
+                    dialog.show();
+                    return;
+                }
+
+                // By. Jongwon : 회원 가입 요청
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -127,7 +147,7 @@ public class RegisterActivity extends AppCompatActivity {
                             JSONObject jsonObject = new JSONObject(response);
                             boolean success = jsonObject.getBoolean("success");
 
-                            if (userPassword.equals(userCPassword) && !userName.equals("") && !userEmail.equals("")) {
+                            if (validate == true && userPassword.equals(userCPassword) && !userName.equals("") && !userEmail.equals("")) {
                                 if (success) { // 회원가입 성공
                                     Toast.makeText(getApplicationContext(), "회원 등록에 성공하였습니다.", Toast.LENGTH_SHORT).show();
                                     Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
@@ -135,16 +155,6 @@ public class RegisterActivity extends AppCompatActivity {
                                 } else {
                                     Toast.makeText(getApplicationContext(), "회원 등록에 실패하였습니다.", Toast.LENGTH_SHORT).show();
                                 }
-                            } else if (!userPassword.equals(userCPassword)){
-                                AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
-                                dialog = builder.setMessage("비밀번호가 동일하지 않습니다.").setNegativeButton("확인", null).create();
-                                dialog.show();
-                                return;
-                            } else {
-                                AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
-                                dialog = builder.setMessage("항목을 모두 입력하세요.").setPositiveButton("확인", null).create();
-                                dialog.show();
-                                return;
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();

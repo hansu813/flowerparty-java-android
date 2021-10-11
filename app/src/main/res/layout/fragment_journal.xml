@@ -154,14 +154,13 @@
         </LinearLayout>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/wbtn"
+            android:id="@+id/fab_btn2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end|bottom"
             android:layout_marginRight="16dp"
             android:layout_marginBottom="250dp"
             android:src="@drawable/newpost"
-            android:onClick="JournalDiaryActivity"
             app:backgroundTint="@color/gray"
             app:elevation="6dp"
             app:fabSize="normal"></com.google.android.material.floatingactionbutton.FloatingActionButton>

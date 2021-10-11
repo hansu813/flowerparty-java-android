@@ -40,20 +40,15 @@
                     android:src="@drawable/xmark" />
 
                 <EditText
-                    android:id="@+id/datetxt"
+                    android:id="@+id/DateText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/main"
                     android:ems="10"
                     android:fontFamily="@font/ahn2006_m"
-                    android:gravity="center"
                     android:inputType="date"
-                    android:text="2021.10.04"
-                    android:textColor="@color/gray"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:textColor="@color/gray" />
 
                 <Button
                     android:id="@+id/button2"
@@ -65,8 +60,7 @@
                     android:fontFamily="@font/ahn2006_m"
                     android:gravity="center"
                     android:text="완료"
-                    android:textSize="20sp"
-                    android:textStyle="bold"/>
+                    android:textSize="20sp" />
             </LinearLayout>
         </LinearLayout>
 
