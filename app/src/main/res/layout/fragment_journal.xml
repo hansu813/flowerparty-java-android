@@ -106,7 +106,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="230dp"
                 android:layout_gravity="bottom"
                 android:background="@color/sub"
                 android:orientation="horizontal">
@@ -153,6 +153,16 @@
 
         </LinearLayout>
 
-
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_btn2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="250dp"
+            android:src="@drawable/newpost"
+            app:backgroundTint="@color/gray"
+            app:elevation="6dp"
+            app:fabSize="normal"></com.google.android.material.floatingactionbutton.FloatingActionButton>
     </FrameLayout>
 </LinearLayout>

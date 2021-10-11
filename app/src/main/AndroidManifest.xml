@@ -32,8 +32,6 @@
         <activity android:name=".activity.PlantsControlActivity" />
         <activity android:name=".activity.ProfilePwAccountActivity" />
         <activity android:name=".activity.ProfileSettingActivity" />
-        <activity android:name=".activity.MypageNoteDetailActivity" />
-        <activity android:name=".activity.MypageNoteActivity" />
         <activity android:name=".activity.MypagePlantsActivity" />
         <activity android:name=".activity.PlantsNicknameActivity" />
         <activity android:name=".activity.homeSettingActivity" />
