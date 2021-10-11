@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import com.example.flowerparty.R;
 
-public class MypageNoteActivity extends AppCompatActivity {
+public class PlantsSearchActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mypage_note);
+        setContentView(R.layout.activity_plants_search);
     }
 }

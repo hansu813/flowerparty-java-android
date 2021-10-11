@@ -17,31 +17,28 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
         android:theme="@style/Theme.AppCompat.NoActionBar"
-        >
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".activity.PlantsSearchView"
+            android:exported="true" />
+        <activity
+            android:name=".activity.PlantsSearchActivity"
+            android:exported="true" />
         <activity
             android:name=".RegisterActivity"
             android:exported="true" />
         <activity android:name=".fragment.PlantsManageFragment" />
-        <activity android:name=".activity.CommunityChatActivity" />
         <activity android:name=".activity.PlantsChooseActivity" />
         <activity android:name=".activity.ProfileCEmailActivity" />
         <activity android:name=".activity.ProfileCnameActivity" />
-        <activity android:name=".activity.CommunityUserprofileActivity" />
-        <activity android:name=".activity.CommunityChatlistActivity" />
         <activity android:name=".activity.PlantsJournalDetailActivity" />
         <activity android:name=".activity.PlantsJournalActivity" />
         <activity android:name=".activity.PlantsControlDetailActivity" />
         <activity android:name=".activity.PlantsControlActivity" />
         <activity android:name=".activity.ProfilePwAccountActivity" />
         <activity android:name=".activity.ProfileSettingActivity" />
-        <activity android:name=".activity.MypagePostlikedActivity" />
-        <activity android:name=".activity.MypageMycommentsActivity" />
-        <activity android:name=".activity.MypageNoteDetailActivity" />
-        <activity android:name=".activity.MypageNoteActivity" />
         <activity android:name=".activity.MypagePlantsActivity" />
-        <activity android:name=".activity.MypageSettingActivity" />
         <activity android:name=".activity.PlantsNicknameActivity" />
         <activity android:name=".activity.homeSettingActivity" />
         <activity android:name=".activity.BlueConnectActivity" />

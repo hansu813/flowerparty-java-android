@@ -27,7 +27,7 @@
                 android:id="@+id/imgClose"
                 android:layout_width="46dp"
                 android:layout_height="46dp"
-                app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
+                app:srcCompat="@drawable/xmark" />
 
             <View
                 android:layout_width="0dp"
@@ -67,23 +67,11 @@
             android:layout_gravity="center"
             app:srcCompat="@drawable/profile128" />
 
-        <TextView
-            android:id="@+id/textView59"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="30dp"
-            android:fontFamily="@font/ahn2006_m"
-            android:text="프로필 사진 변경"
-            android:textColor="@color/gray_green"
-            android:textSize="25sp"
-            android:textStyle="bold" />
-
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="250dp"
             android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="50dp"
             android:orientation="vertical">
 
             <LinearLayout
@@ -115,8 +103,8 @@
                     android:fontFamily="@font/ahn2006_m"
                     android:text="pitt"
                     android:textColor="@color/white"
-                    android:textStyle="bold"
-                    android:textSize="25sp"/>
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <LinearLayout
@@ -148,8 +136,8 @@
                     android:fontFamily="@font/ahn2006_m"
                     android:text="gleammy"
                     android:textColor="@color/white"
-                    android:textStyle="bold"
-                    android:textSize="25sp"/>
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
 
                 <ImageView
                     android:id="@+id/imgUNameEdit"
@@ -188,8 +176,8 @@
                     android:fontFamily="@font/ahn2006_m"
                     android:text="pitt27188@gmail.com"
                     android:textColor="@color/white"
-                    android:textStyle="bold"
-                    android:textSize="25sp"/>
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
 
                 <ImageView
                     android:id="@+id/imgEmailEdit"
@@ -202,12 +190,13 @@
                 android:id="@+id/ChangePW"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginBottom="50dp"
                 android:layout_weight="1"
                 android:fontFamily="@font/ahn2006_m"
                 android:text="비밀번호 변경"
                 android:textColor="@color/gray_green"
-                android:textSize="25sp"
+                android:textSize="21sp"
                 android:textStyle="bold" />
 
         </LinearLayout>
