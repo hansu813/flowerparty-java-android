@@ -146,7 +146,7 @@
                                 android:textStyle="bold" />
 
                             <TextView
-                                android:id="@+id/textView8"
+                                android:id="@+id/textViewH"
                                 android:layout_width="match_parent"
                                 android:layout_height="0dp"
                                 android:layout_weight="1"
@@ -179,7 +179,7 @@
                                 android:textStyle="bold" />
 
                             <TextView
-                                android:id="@+id/textView9"
+                                android:id="@+id/textViewT"
                                 android:layout_width="match_parent"
                                 android:layout_height="0dp"
                                 android:layout_weight="1"
