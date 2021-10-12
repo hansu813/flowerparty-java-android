@@ -60,12 +60,13 @@
             android:textStyle="bold" />
 
         <ImageView
-            android:id="@+id/imageView70"
+            android:id="@+id/imgProfile"
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:layout_marginTop="30dp"
             android:layout_gravity="center"
-            app:srcCompat="@drawable/profile128" />
+            app:srcCompat="@drawable/profile128"
+            android:onClick="clickImg"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -96,7 +97,7 @@
                     android:layout_weight="1" />
 
                 <TextView
-                    android:id="@+id/textView64"
+                    android:id="@+id/pSetting_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="40dp"
@@ -129,7 +130,7 @@
                     android:layout_weight="1" />
 
                 <TextView
-                    android:id="@+id/textView65"
+                    android:id="@+id/pSetting_nName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="10dp"
@@ -169,7 +170,7 @@
                     android:layout_weight="1" />
 
                 <TextView
-                    android:id="@+id/textView66"
+                    android:id="@+id/pSetting_email"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="10dp"

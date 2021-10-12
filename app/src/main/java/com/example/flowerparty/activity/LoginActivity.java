@@ -68,6 +68,8 @@ public class LoginActivity extends AppCompatActivity {
                                 String userID = jsonObject.getString("userID");
                                 String userPass = jsonObject.getString("userPassword");
                                 String userName = jsonObject.getString( "userName" );
+                                String userEmail = jsonObject.getString("userEmail");
+                                String userImg = jsonObject.getString("imgPath");
                                 //String cntPlant = jsonObject.getString("cntPlant");
 
                                 // DB에 식물이 저장되어 있다면 바로 메인
@@ -79,7 +81,9 @@ public class LoginActivity extends AppCompatActivity {
                                 session = new Session(LoginActivity.this);
                                 session.setUserId(userID);*/
                                 pref = new RbPreference(LoginActivity.this);
-                                pref.put(RbPreference.PREF_INTRO_USER_AGREEMENT, userID);
+                                pref.putId(RbPreference.PREF_INTRO_USER_AGREEMENT, userID);
+                                pref.putEmail(RbPreference.PREF_MAIN_VALUE, userEmail);
+                                pref.putName(RbPreference.PREF_SUB_VALUE, userName);
                                 startActivity(intent);
                                 /*pref.put("userPass", userPass);
                                 intent.putExtra("userID", userID);*/

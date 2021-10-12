@@ -13,6 +13,7 @@ public class RbPreference {
 
     public final static String PREF_INTRO_USER_AGREEMENT = "PREF_USER_AGREEMENT";
     public final static String PREF_MAIN_VALUE = "PREF_MAIN_VALUE";
+    public final static String PREF_SUB_VALUE = "PREF_SUB_VALUE";
 
     static Context mContext;
 
@@ -20,7 +21,21 @@ public class RbPreference {
         mContext = c;
     }
 
-    public void put(String key, String value) {
+    public void putId(String key, String value) {
+        SharedPreferences pref = mContext.getSharedPreferences(PREF_NAME, Activity.MODE_PRIVATE); // 접근 권한: 해당 앱에서만 접근 가능하게 Mode_Private
+        SharedPreferences.Editor editor = pref.edit();
+
+        editor.putString(key, value); // 저장하는 값을 나타내는 키 값, 저장할 값
+        editor.commit();
+    }
+    public void putEmail(String key, String value) {
+        SharedPreferences pref = mContext.getSharedPreferences(PREF_NAME, Activity.MODE_PRIVATE); // 접근 권한: 해당 앱에서만 접근 가능하게 Mode_Private
+        SharedPreferences.Editor editor = pref.edit();
+
+        editor.putString(key, value); // 저장하는 값을 나타내는 키 값, 저장할 값
+        editor.commit();
+    }
+    public void putName(String key, String value) {
         SharedPreferences pref = mContext.getSharedPreferences(PREF_NAME, Activity.MODE_PRIVATE); // 접근 권한: 해당 앱에서만 접근 가능하게 Mode_Private
         SharedPreferences.Editor editor = pref.edit();
 
@@ -53,6 +68,16 @@ public class RbPreference {
             return dftValue;
         }
     }
+    public String getEmail(String key, String dftValue) {
+        SharedPreferences pref = mContext.getSharedPreferences(PREF_NAME, Activity.MODE_PRIVATE);
+
+        try {
+            return pref.getString(key, dftValue); // put에서 지정한 키 값, 값이 없을 경우 디폴트 값
+        } catch (Exception e) {
+            return dftValue;
+        }
+    }
+
 
     public int getValue(String key, int dftValue) {
         SharedPreferences pref = mContext.getSharedPreferences(PREF_NAME, Activity.MODE_PRIVATE);
