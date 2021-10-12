@@ -38,7 +38,7 @@ dependencies {
     implementation 'com.android.volley:volley:1.2.1'
     //implementation 'dev.dworks.libs:volleyplus:1.1'
     implementation "androidx.recyclerview:recyclerview:1.1.0"
-
+    implementation "com.akexorcist:bluetoothspp:1.0.0"
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'

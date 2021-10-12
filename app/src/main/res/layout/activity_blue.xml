@@ -89,7 +89,7 @@
             />
 
         <TextView
-            android:id="@+id/textView18"
+            android:id="@+id/textViewtest"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
@@ -101,98 +101,27 @@
             android:textStyle="bold"
             android:text="등록된 화분" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/btnConnect"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:background="@drawable/shape"
-            android:orientation="vertical"
-            >
+            android:text="연결"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:orientation="horizontal"
-                android:background="@drawable/shape">
-
-                <TextView
-                    android:layout_width="300dp"
-                    android:layout_height="match_parent"
-                    android:fontFamily="@font/ahn2006_m"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="30dp"
-                    android:text="식물 01"
-                    android:textColor="@color/gray"
-                    android:textSize="30sp"
-                    android:textStyle="bold" />
-
-                <Switch
-                    android:id="@+id/switch2"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:layout_marginRight="15dp"
-                    android:switchMinWidth="60dp"
-
-                    />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:orientation="horizontal"
-                android:background="@drawable/shape">
-
-                <TextView
-                    android:layout_width="300dp"
-                    android:layout_height="match_parent"
-                    android:fontFamily="@font/ahn2006_m"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="30dp"
-                    android:text="식물 02"
-                    android:textColor="@color/gray"
-                    android:textSize="30sp"
-                    android:textStyle="bold" />
-
-                <Switch
-                    android:id="@+id/switch3"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:layout_marginRight="15dp"
-                    android:switchMinWidth="60dp"
-
-                    />
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/textView19"
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/btnSend"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginBottom="10dp"
-            android:fontFamily="@font/ahn2006_m"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:text="등록 가능한 화분" />
+            android:layout_marginTop="8dp"
+            android:text="보내기"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnConnect" />
 
-        <TextView
-            android:id="@+id/textView20"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginHorizontal="20dp"
-            android:background="@drawable/shape"
-            android:fontFamily="@font/ahn2006_m"
-            android:gravity="center_vertical"
-            android:paddingLeft="30dp"
-            android:text="화분 01"
-            android:textColor="@color/gray"
-            android:textSize="30sp"
-            android:textStyle="bold" />
+
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

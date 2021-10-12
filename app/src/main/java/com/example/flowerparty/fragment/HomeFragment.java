@@ -12,6 +12,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import com.example.flowerparty.R;
+import com.example.flowerparty.activity.BlueActivity;
 import com.example.flowerparty.activity.BlueConnectActivity;
 import com.example.flowerparty.activity.PlantsNicknameActivity;
 import com.example.flowerparty.activity.homeSettingActivity;
@@ -51,7 +52,7 @@ public class HomeFragment extends Fragment {
         imgBlueIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), BlueConnectActivity.class);
+                Intent intent = new Intent(getActivity(), BlueActivity.class);
                 startActivity(intent);
             }
         });
