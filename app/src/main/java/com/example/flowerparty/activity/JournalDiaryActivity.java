@@ -32,6 +32,7 @@ import com.example.flowerparty.fragment.JournalFragment;
 public class JournalDiaryActivity extends AppCompatActivity {
 
     TextView datetxt;
+    ImageView xmark1;
     Button Button2;
 
 
@@ -48,6 +49,15 @@ public class JournalDiaryActivity extends AppCompatActivity {
 
         datetxt =(TextView) findViewById(R.id.datetxt);
         datetxt.setText(formatDate);
+
+        //activity 종료
+        xmark1 = findViewById(R.id.xmark1);
+        xmark1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
 }
