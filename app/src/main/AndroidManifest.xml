@@ -52,6 +52,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.MainActivity" />
+        <activity android:name=".activity.JournalDiaryActivity" />
 
         <uses-library android:name="org.apache.http.legacy" android:required="false" />
     </application>
