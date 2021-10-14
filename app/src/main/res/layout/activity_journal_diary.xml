@@ -87,7 +87,7 @@
                 android:fontFamily="@font/ahn2006_m"
                 android:gravity="left|top"
                 android:inputType="textPersonName"
-                android:text="내용을 작성하시오."
+                android:hint="내용을 작성하시오."
                 android:textColor="@color/gray"
                 android:textColorHint="@color/gray_green"
                 android:textSize="30sp"
