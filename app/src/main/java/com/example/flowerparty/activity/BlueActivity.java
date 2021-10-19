@@ -72,7 +72,7 @@ public class BlueActivity extends AppCompatActivity {
                 }
             }
         });
-    }
+    } /* onCreate */
 
     public void onDestroy() {
         super.onDestroy();

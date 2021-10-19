@@ -88,24 +88,17 @@
             android:textStyle="bold"
             />
 
-        <TextView
-            android:id="@+id/textViewtest"
+
+        <View
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginBottom="10dp"
-            android:fontFamily="@font/ahn2006_m"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:text="등록된 화분" />
+            android:layout_height="100dp"/>
 
         <Button
             android:id="@+id/btnConnect"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="연결"
+            android:layout_gravity="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -117,10 +110,22 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="보내기"
+            android:layout_gravity="center"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btnConnect" />
 
+        <TextView
+            android:id="@+id/textViewtest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/ahn2006_m"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:textColor="@color/gray"
+            android:gravity="center"
+            android:text="TextView" />
 
 
     </LinearLayout>

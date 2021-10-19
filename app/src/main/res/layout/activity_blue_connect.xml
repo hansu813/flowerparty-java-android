@@ -76,54 +76,43 @@
                 />
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/text_status"
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="100dp"/>
+
+        <Button
+            android:id="@+id/btnConnect"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:text="status"
-            android:textSize="20dp"
+            android:text="연결"
+            android:layout_gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/btn_paired"
-            android:text="Paired Devices"
-            android:onClick="onClickButtonPaired"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/text_status"/>
-
-        <Button
-            android:id="@+id/btn_search"
-            android:text="Search"
-            android:onClick="onClickButtonSearch"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn_paired"/>
-
-        <Button
-            android:id="@+id/btn_send"
-            android:text="Send a"
-            android:onClick="onClickButtonSend"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn_search"/>
-
-        <ListView
-            android:id="@+id/listview"
+            android:id="@+id/btnSend"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="보내기"
+            android:layout_gravity="center"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn_send"/>
+            app:layout_constraintTop_toBottomOf="@+id/btnConnect" />
+
+        <TextView
+            android:id="@+id/textViewtest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/ahn2006_m"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:textColor="@color/gray"
+            android:gravity="center"
+            android:text="TextView" />
 <!--        <LinearLayout-->
 <!--            android:id="@+id/blueOn"-->
 <!--            android:layout_width="match_parent"-->

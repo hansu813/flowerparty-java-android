@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
@@ -15,6 +16,7 @@ import android.content.IntentFilter;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.text.Html;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -36,26 +38,15 @@ import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Set;
 
+import app.akexorcist.bluetotohspp.library.BluetoothSPP;
+import app.akexorcist.bluetotohspp.library.BluetoothState;
+import app.akexorcist.bluetotohspp.library.DeviceList;
+
  public class BlueConnectActivity extends AppCompatActivity {
      ImageView imgLArrowBlue;
      Switch switchBlue;
 
-     BluetoothAdapter btAdapter;
-     private final static int REQUEST_ENABLE_BT = 1;
-     TextView textStatus;
-     Button btnParied, btnSearch, btnSend;
-     ListView listView;
-
-     Set<BluetoothDevice> pairedDevices;
-     ArrayAdapter<String> btArrayAdapter;
-     ArrayList<String> deviceAddressArray;
-     private OutputStream mOutputStream;
-     private InputStream mInputStream;
-     private BluetoothDevice mRemoteDevice;
-     public ProgressDialog asyncDialog;
-     public boolean onBT = false;
-     public byte[] sendByte = new byte[4];
-     private BluetoothSocket btSocket;
+     private BluetoothSPP bt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,13 +54,9 @@ import java.util.Set;
         setContentView(R.layout.activity_blue_connect);
 
         // variables blue
-        textStatus = (TextView) findViewById(R.id.text_status);
-        btnParied = (Button) findViewById(R.id.btn_paired);
-        btnSearch = (Button) findViewById(R.id.btn_search);
-        btnSend = (Button) findViewById(R.id.btn_send);
-        listView = (ListView) findViewById(R.id.listview);
 
-        //listView.setOnItemClickListener(new myOnItemClickListener());
+
+
 
         imgLArrowBlue = findViewById(R.id.imgLArrowBlue);
         imgLArrowBlue.setOnClickListener(new View.OnClickListener() {
@@ -81,128 +68,129 @@ import java.util.Set;
 
         // 블루투스 on, off 스위치
         switchBlue = findViewById(R.id.switchBlue);
-//        switchBlue.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-//            LinearLayout blueOn = (LinearLayout) findViewById(R.id.blueOn);
-//            @Override
-//            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-//                if (isChecked) {
-//                    blueOn.setVisibility(View.VISIBLE);
+        switchBlue.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            //LinearLayout blueOn = (LinearLayout) findViewById(R.id.blueOn);
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    //blueOn.setVisibility(View.VISIBLE);
+                    if (bt.getServiceState() == BluetoothState.STATE_CONNECTED) {
+                        bt.disconnect();
+                    } else {
+                        Intent intent = new Intent(getApplicationContext(), DeviceList.class);
+                        startActivityForResult(intent, BluetoothState.REQUEST_CONNECT_DEVICE);
+                    }
+                } else {
+                    //blueOn.setVisibility(View.INVISIBLE);
+                    bt.disconnect();
+                    Log.i("bluetooth", "disconnect");
+                }
+
+            }
+        });
+
+//        Button btnConnect = findViewById(R.id.btnConnect); //연결시도
+//        btnConnect.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View v) {
+//                if (bt.getServiceState() == BluetoothState.STATE_CONNECTED) {
+//                    bt.disconnect();
 //                } else {
-//                    blueOn.setVisibility(View.INVISIBLE);
+//                    Intent intent = new Intent(getApplicationContext(), DeviceList.class);
+//                    startActivityForResult(intent, BluetoothState.REQUEST_CONNECT_DEVICE);
 //                }
 //            }
 //        });
 
-        // Get permission
-        String[] permission_list = {
-                Manifest.permission.ACCESS_FINE_LOCATION,
-                Manifest.permission.ACCESS_COARSE_LOCATION
-        };
+        bt = new BluetoothSPP(this); //Initializing
 
-        ActivityCompat.requestPermissions(BlueConnectActivity.this, permission_list,  1);
-
-        // Enable bluetooth
-        btAdapter = BluetoothAdapter.getDefaultAdapter();
-        if (!btAdapter.isEnabled()) {
-            Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-            startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
+        if (!bt.isBluetoothAvailable()) { //블루투스 사용 불가
+            Toast.makeText(getApplicationContext()
+                    , "Bluetooth is not available"
+                    , Toast.LENGTH_SHORT).show();
+            finish();
         }
 
-        // show paired devices
-        btArrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1);
-        deviceAddressArray = new ArrayList<>();
-        listView.setAdapter(btArrayAdapter);
+        bt.setOnDataReceivedListener(new BluetoothSPP.OnDataReceivedListener() { //데이터 수신
+            TextView temp = findViewById(R.id.textViewtest);
+            public void onDataReceived(byte[] data, String message) {
+                //Toast.makeText(BlueConnectActivity.this, message, Toast.LENGTH_SHORT).show();
+                Log.e("blue", message);
+                String[] array = message.split(",");
+                temp.setText(array[0].concat("C"));
+            }
+        });
+
+        bt.setBluetoothConnectionListener(new BluetoothSPP.BluetoothConnectionListener() { //연결됐을 때
+            public void onDeviceConnected(String name, String address) {
+                Toast.makeText(getApplicationContext()
+                        , "Connected to " + name + "\n" + address
+                        , Toast.LENGTH_SHORT).show();
+            }
+
+            public void onDeviceDisconnected() { //연결해제
+                Toast.makeText(getApplicationContext()
+                        , "Connection lost", Toast.LENGTH_SHORT).show();
+            }
+
+            public void onDeviceConnectionFailed() { //연결실패
+                Toast.makeText(getApplicationContext()
+                        , "Unable to connect", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+
+
 
     } /* onCreate */
 
-     public void onClickButtonPaired(View view){
-         btArrayAdapter.clear();
-         if(deviceAddressArray!=null && !deviceAddressArray.isEmpty()){ deviceAddressArray.clear(); }
-         pairedDevices = btAdapter.getBondedDevices();
-         if (pairedDevices.size() > 0) {
-             // There are paired devices. Get the name and address of each paired device.
-             for (BluetoothDevice device : pairedDevices) {
-                 String deviceName = device.getName();
-                 String deviceHardwareAddress = device.getAddress(); // MAC address
-                 btArrayAdapter.add(deviceName);
-                 deviceAddressArray.add(deviceHardwareAddress);
-             }
-         }
-     }
-
-     public void onClickButtonSearch(View view){
-         // Check if the device is already discovering
-         if(btAdapter.isDiscovering()){
-             btAdapter.cancelDiscovery();
-         } else {
-             if (btAdapter.isEnabled()) {
-                 btAdapter.startDiscovery();
-                 btArrayAdapter.clear();
-                 if (deviceAddressArray != null && !deviceAddressArray.isEmpty()) {
-                     deviceAddressArray.clear();
-                 }
-                 IntentFilter filter = new IntentFilter(BluetoothDevice.ACTION_FOUND);
-                 registerReceiver(receiver, filter);
-             } else {
-                 Toast.makeText(getApplicationContext(), "bluetooth not on", Toast.LENGTH_SHORT).show();
-             }
-         }
-     }
-
-     // Create a BroadcastReceiver for ACTION_FOUND.
-     private final BroadcastReceiver receiver = new BroadcastReceiver() {
-         public void onReceive(Context context, Intent intent) {
-             String action = intent.getAction();
-             if (BluetoothDevice.ACTION_FOUND.equals(action)) {
-                 // Discovery has found a device. Get the BluetoothDevice
-                 // object and its info from the Intent.
-                 BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
-                 String deviceName = device.getName();
-                 String deviceHardwareAddress = device.getAddress(); // MAC address
-                 btArrayAdapter.add(deviceName);
-                 deviceAddressArray.add(deviceHardwareAddress);
-                 btArrayAdapter.notifyDataSetChanged();
-             }
-         }
-     };
-
-     @Override
-     protected void onDestroy() {
+     public void onDestroy() {
          super.onDestroy();
-
-         // Don't forget to unregister the ACTION_FOUND receiver.
-         unregisterReceiver(receiver);
+         bt.stopService(); //블루투스 중지
      }
 
-     //public class myOnItemClickListener implements AdapterView.OnItemClickListener {
-
-      //   @Override
-//         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//             Toast.makeText(getApplicationContext(), btArrayAdapter.getItem(position), Toast.LENGTH_SHORT).show();
-//
-//             textStatus.setText("try...");
-//
-//             final String name = btArrayAdapter.getItem(position); // get name
-//             final String address = deviceAddressArray.get(position); // get address
-//             boolean flag = true;
-//
-//             BluetoothDevice device = btAdapter.getRemoteDevice(address);
-//
-//             // create & connect socket
-//             try {
-//                 btSocket = createBluetoothSocket(device);
-//                 btSocket.connect();
-//             } catch (IOException e) {
-//                 flag = false;
-//                 textStatus.setText("connection failed!");
-//                 e.printStackTrace();
-//             }
-//
-//             if(flag){
-//                 textStatus.setText("connected to "+name);
-//                 connectedThread = new ConnectedThread(btSocket);
-//                 connectedThread.start();
-//             }
-//
-         //}
+     public void onStart() {
+         super.onStart();
+         if (!bt.isBluetoothEnabled()) { //
+             Intent intent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+             startActivityForResult(intent, BluetoothState.REQUEST_ENABLE_BT);
+         } else {
+             if (!bt.isServiceAvailable()) {
+                 bt.setupService();
+                 bt.startService(BluetoothState.DEVICE_OTHER); //DEVICE_ANDROID는 안드로이드 기기 끼리
+                 setup();
+             }
+         }
      }
+
+     public void setup() {
+         Button btnSend = findViewById(R.id.btnSend); //데이터 전송
+         btnSend.setOnClickListener(new View.OnClickListener() {
+             public void onClick(View v) {
+                 bt.send("Text", true);
+             }
+         });
+     }
+
+
+     public void onActivityResult(int requestCode, int resultCode, Intent data) {
+         super.onActivityResult(requestCode, resultCode, data);
+         if (requestCode == BluetoothState.REQUEST_CONNECT_DEVICE) {
+             if (resultCode == Activity.RESULT_OK)
+                 bt.connect(data);
+         } else if (requestCode == BluetoothState.REQUEST_ENABLE_BT) {
+             if (resultCode == Activity.RESULT_OK) {
+                 bt.setupService();
+                 bt.startService(BluetoothState.DEVICE_OTHER);
+                 setup();
+             } else {
+                 Toast.makeText(getApplicationContext()
+                         , "Bluetooth was not enabled."
+                         , Toast.LENGTH_SHORT).show();
+                 finish();
+             }
+         }
+     }
+
+
+ } /* end */
