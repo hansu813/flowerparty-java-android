@@ -7,6 +7,7 @@ import android.bluetooth.BluetoothSocket;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AlertDialog;
@@ -26,12 +27,20 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.toolbox.Volley;
 import com.example.flowerparty.BluetoothTest;
+import com.example.flowerparty.GetPlantNickRequest;
 import com.example.flowerparty.R;
+import com.example.flowerparty.RbPreference;
 import com.example.flowerparty.activity.BlueActivity;
 import com.example.flowerparty.activity.BlueConnectActivity;
 import com.example.flowerparty.activity.PlantsNicknameActivity;
 import com.example.flowerparty.activity.homeSettingActivity;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -67,6 +76,9 @@ public class HomeFragment extends Fragment {
     final static int BT_MESSAGE_READ = 2;
     final static int BT_CONNECTING_STATUS = 3;
     final static UUID BT_UUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
+
+    TextView text_pnickHome;
+    private RbPreference pref;
 
 
     @Override
@@ -160,6 +172,40 @@ public class HomeFragment extends Fragment {
 //            }
 //        });
 
+        // 닉네임 띄우기
+        text_pnickHome = (TextView) rootview.findViewById(R.id.text_pnickHome);
+        pref = new RbPreference(ct);
+        Response.Listener<String> responseListener = new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+                    boolean success = jsonObject.getBoolean("success");
+                    if (success) {
+                        String pNick = jsonObject.getString("plantNick");
+                        text_pnickHome.setText(pNick);
+                        text_pnickHome.setTextColor(Color.BLACK);
+
+//                        if (plantNick.equals("null")) {
+//                            String dNick = "닉네임";
+//                            text_pnickHome.setText(dNick);
+//                            text_pnickHome.setTextColor(Color.BLACK);
+//                        } else {
+//                            text_pnickHome.setText(plantNick);
+//                            text_pnickHome.setTextColor(Color.BLACK);
+//                        }
+                    }
+                } catch (JSONException e){
+                    e.printStackTrace();
+                    Log.e("Error", "Response Error", e);
+                }
+            }
+        };
+        String userID = pref.getValue(RbPreference.PREF_INTRO_USER_AGREEMENT, "default");
+        GetPlantNickRequest getPlantNickRequest = new GetPlantNickRequest(userID, responseListener);
+        RequestQueue queue = Volley.newRequestQueue(ct);
+        queue.add(getPlantNickRequest);
+
         //
         switchWater = (Switch) rootview.findViewById(R.id.switchWater);
         switchWater.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -192,7 +238,9 @@ public class HomeFragment extends Fragment {
         };
 
         return rootview;
-    }
+
+
+    } /* onCreateView */
 
     void bluetoothOn() {
         if(mBluetoothAdapter == null) {
