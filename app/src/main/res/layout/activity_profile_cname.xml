@@ -65,7 +65,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/cname_txt"
+                android:id="@+id/text_userNickname"
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
                 android:layout_gravity="center"
@@ -100,7 +100,7 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/nnmae_txt"
+                android:id="@+id/et_userNickname"
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
                 android:layout_gravity="center"
@@ -115,39 +115,8 @@
                 android:textColor="@color/black"
                 android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/textView6"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_gravity="center"
-                android:gravity="bottom"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="40dp"
-                android:layout_weight="1"
-                android:fontFamily="@font/ahn2006_m"
-                android:text="닉네임 확인"
-                android:textColor="@color/gray_green"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/nname2_txt"
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:layout_gravity="center"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_weight="1"
-                android:background="@drawable/shape"
-                android:ems="10"
-                android:fontFamily="@font/ahn2006_m"
-                android:inputType="textPersonName"
-                android:textColor="@color/black"
-                android:textSize="30sp" />
-
             <Button
-                android:id="@+id/save_btn"
+                android:id="@+id/btn_cNickname"
                 android:layout_width="260dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center_horizontal"

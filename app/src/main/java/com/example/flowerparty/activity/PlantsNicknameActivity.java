@@ -104,6 +104,8 @@ public class PlantsNicknameActivity extends AppCompatActivity {
 
                                 plantNickName.setText(plantNick);
                                 plantNickName.setTextColor(Color.BLACK);
+                                et_plantNickName.setText(null);
+                                et_plantNickName.clearFocus();
                                 Toast.makeText(getApplicationContext(), "닉네임을 변경했습니다.", Toast.LENGTH_SHORT).show();
                             } else {
                                 System.out.println(success);

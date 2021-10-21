@@ -52,6 +52,7 @@ public class ProfileSettingActivity extends AppCompatActivity {
             }
         });
 
+        // 펜 이미지 클릭 시 사용자 닉네임 변경 액티비티로 이동
         imgUNameEdit = findViewById(R.id.imgUNameEdit);
         imgUNameEdit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,6 +63,7 @@ public class ProfileSettingActivity extends AppCompatActivity {
             }
         });
 
+        // 펜 이미지 클릭 시 이메일 수정 액티비티로 이동
         imgEmailEdit = findViewById(R.id.imgEmailEdit);
         imgEmailEdit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,6 +73,7 @@ public class ProfileSettingActivity extends AppCompatActivity {
             }
         });
 
+        // 텍스트 클릭 시 비밀번호 변경 액티비티로 이동
         changePW = findViewById(R.id.ChangePW);
         changePW.setOnClickListener(new View.OnClickListener() {
             @Override
