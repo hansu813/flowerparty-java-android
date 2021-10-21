@@ -70,6 +70,7 @@
                             android:orientation="horizontal">
 
                             <TextView
+                                android:id="@+id/txt_myplant_name"
                                 android:layout_width="wrap_content"
                                 android:layout_height="40dp"
                                 android:layout_marginLeft="10dp"
@@ -91,6 +92,7 @@
                             android:scaleType="centerCrop"/>
 
                         <TextView
+                            android:id="@+id/txt_myplant_nick"
                             android:layout_width="130dp"
                             android:layout_height="30dp"
                             android:layout_gravity="center"
@@ -100,56 +102,6 @@
                             android:backgroundTint="@color/main"
                             android:gravity="center"
                             android:text="초록이"
-                            android:textColor="@color/white" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="330dp"
-                        android:layout_marginHorizontal="20dp"
-                        android:orientation="vertical"
-                        android:background="@drawable/shape"
-                        >
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="45dp"
-                            android:layout_marginBottom="5dp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="10dp"
-                                android:layout_marginTop="10dp"
-                                android:fontFamily="@font/ahn2006_m"
-                                android:backgroundTint="@color/main"
-                                android:text="알로에"
-                                android:textColor="@color/white"
-                                android:textSize="35sp"
-                                android:textStyle="bold" />
-
-                        </LinearLayout>
-
-                        <ImageView
-                            android:id="@+id/imageView16"
-                            android:layout_width="match_parent"
-                            android:layout_height="0dp"
-                            android:layout_weight="1"
-                            android:src="@drawable/aloe"
-                            android:scaleType="centerCrop"/>
-
-                        <TextView
-                            android:layout_width="130dp"
-                            android:layout_height="30dp"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginBottom="5dp"
-                            android:backgroundTint="@color/main"
-                            android:background="@drawable/shapebtn"
-                            android:gravity="center"
-                            android:text="연두"
                             android:textColor="@color/white" />
 
                     </LinearLayout>

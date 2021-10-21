@@ -15,7 +15,7 @@ import android.widget.Toast;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
-import com.example.flowerparty.GetPlantNickRequest;
+import com.example.flowerparty.GetPlantRequest;
 import com.example.flowerparty.PlantChangeNickRequest;
 import com.example.flowerparty.R;
 import com.example.flowerparty.RbPreference;
@@ -78,9 +78,9 @@ public class PlantsNicknameActivity extends AppCompatActivity {
             }
         };
         String userID = pref.getValue(RbPreference.PREF_INTRO_USER_AGREEMENT, "default");
-        GetPlantNickRequest getPlantNickRequest = new GetPlantNickRequest(userID, responseListener);
+        GetPlantRequest getPlantRequest = new GetPlantRequest(userID, responseListener);
         RequestQueue queue = Volley.newRequestQueue(PlantsNicknameActivity.this);
-        queue.add(getPlantNickRequest);
+        queue.add(getPlantRequest);
 
         // 수정할 닉네임
         btn_plantNickName.setOnClickListener(new View.OnClickListener() {

@@ -1,6 +1,5 @@
 package com.example.flowerparty.fragment;
 
-import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
@@ -30,14 +29,10 @@ import android.widget.Toast;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
-import com.example.flowerparty.BluetoothTest;
-import com.example.flowerparty.GetPlantNickRequest;
+import com.example.flowerparty.GetPlantRequest;
 import com.example.flowerparty.R;
 import com.example.flowerparty.RbPreference;
-import com.example.flowerparty.activity.BlueActivity;
-import com.example.flowerparty.activity.BlueConnectActivity;
 import com.example.flowerparty.activity.PlantsNicknameActivity;
-import com.example.flowerparty.activity.homeSettingActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -52,8 +47,6 @@ import java.util.Set;
 import java.util.UUID;
 
 import app.akexorcist.bluetotohspp.library.BluetoothSPP;
-import app.akexorcist.bluetotohspp.library.BluetoothState;
-import app.akexorcist.bluetotohspp.library.DeviceList;
 
 public class HomeFragment extends Fragment {
     ImageButton imgBtnManage;
@@ -202,9 +195,9 @@ public class HomeFragment extends Fragment {
             }
         };
         String userID = pref.getValue(RbPreference.PREF_INTRO_USER_AGREEMENT, "default");
-        GetPlantNickRequest getPlantNickRequest = new GetPlantNickRequest(userID, responseListener);
+        GetPlantRequest getPlantRequest = new GetPlantRequest(userID, responseListener);
         RequestQueue queue = Volley.newRequestQueue(ct);
-        queue.add(getPlantNickRequest);
+        queue.add(getPlantRequest);
 
         //
         switchWater = (Switch) rootview.findViewById(R.id.switchWater);

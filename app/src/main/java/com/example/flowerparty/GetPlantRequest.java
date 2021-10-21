@@ -9,12 +9,12 @@ import com.android.volley.toolbox.StringRequest;
 import java.util.HashMap;
 import java.util.Map;
 
-public class GetPlantNickRequest extends StringRequest {
+public class GetPlantRequest extends StringRequest {
     // Setting Server URL (php)
-    final static private String URL = "http://ci2021flower.dongyangmirae.kr/getPlantNick.php";
+    final static private String URL = "http://ci2021flower.dongyangmirae.kr/getPlant.php";
     private Map<String, String> map;
 
-    public GetPlantNickRequest(String userID, Response.Listener<String> listener) {
+    public GetPlantRequest(String userID, Response.Listener<String> listener) {
         super(Method.POST, URL, listener, null);
 
         map = new HashMap<>();
