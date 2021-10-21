@@ -9,16 +9,17 @@ import com.android.volley.toolbox.StringRequest;
 import java.util.HashMap;
 import java.util.Map;
 
-public class GetUserNickRequest extends StringRequest {
+public class UserChangeEmailRequest extends StringRequest {
     // Setting Server URL (php)
-    final static private String URL = "http://ci2021flower.dongyangmirae.kr/getUserNick.php";
+    final static private String URL = "http://ci2021flower.dongyangmirae.kr/UserChangeEmail.php";
     private Map<String, String> map;
 
-    public GetUserNickRequest(String userID, Response.Listener<String> listener) {
+    public UserChangeEmailRequest(String userID, String nUserEmail, Response.Listener<String> listener) {
         super(Method.POST, URL, listener, null);
 
         map = new HashMap<>();
         map.put("userID", userID);
+        map.put("nUserEmail", nUserEmail);
     }
 
     @Nullable

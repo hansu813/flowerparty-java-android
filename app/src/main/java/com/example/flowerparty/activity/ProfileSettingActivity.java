@@ -6,33 +6,38 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.loader.content.CursorLoader;
 
 import android.Manifest;
-import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 //import com.android.volley.error.VolleyError;
 //import com.android.volley.request.SimpleMultiPartRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.flowerparty.GetUserRequest;
 import com.example.flowerparty.R;
 import com.example.flowerparty.RbPreference;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class ProfileSettingActivity extends AppCompatActivity {
     ImageView imgClose;
     ImageView imgUNameEdit, imgEmailEdit;
     ImageView imgProfile;
     TextView changePW, pSetting_name, pSetting_nName, pSetting_email;
+    private RbPreference pref;
 
     //업로드할 이미지의 절대경로(실제 경로)
     String imgPath;
@@ -93,19 +98,49 @@ public class ProfileSettingActivity extends AppCompatActivity {
             }
         }
 
+        // userID
+        pref = new RbPreference(ProfileSettingActivity.this);
 
-
+        // 사용자 이름 띄우기
         pSetting_name = findViewById(R.id.pSetting_name);
-        pSetting_nName = findViewById(R.id.pSetting_nName);
-        pSetting_email = findViewById(R.id.pSetting_email);
-
-        RbPreference pref = new RbPreference(ProfileSettingActivity.this);
         String userId = pref.getValue(RbPreference.PREF_INTRO_USER_AGREEMENT, "default");
-        String userEmail = pref.getValue(RbPreference.PREF_MAIN_VALUE, "default");
-        String userName = pref.getValue(RbPreference.PREF_SUB_VALUE, "default");
         pSetting_name.setText(userId);
-        pSetting_nName.setText(userName);
-        pSetting_email.setText(userEmail);
+
+        // 사용자 닉네임 , 이메일 띄우기
+       pSetting_nName = findViewById(R.id.pSetting_nName);
+        pSetting_email = findViewById(R.id.pSetting_email);
+        Response.Listener<String> responseListener = new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+                    boolean success = jsonObject.getBoolean("success");
+                    if (success) {
+                        String userNick = jsonObject.getString("userName");
+                        String userEmail = jsonObject.getString("userEmail");
+
+                        pSetting_nName.setText(userNick);
+                        pSetting_nName.setTextColor(Color.WHITE);
+
+                        pSetting_email.setText(userEmail);
+                        pSetting_email.setTextColor(Color.WHITE);
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Log.e("Error", "Response Error", e);
+                }
+            }
+        };
+        String userID = pref.getValue(RbPreference.PREF_INTRO_USER_AGREEMENT, "default");
+        GetUserRequest getUserRequest = new GetUserRequest(userID, responseListener);
+        RequestQueue queue = Volley.newRequestQueue(ProfileSettingActivity.this);
+        queue.add(getUserRequest);
+
+
+
+
+
+
     }
 
     @Override

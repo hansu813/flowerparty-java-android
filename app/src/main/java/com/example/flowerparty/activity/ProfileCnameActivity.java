@@ -15,8 +15,7 @@ import android.widget.Toast;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
-import com.example.flowerparty.GetPlantNickRequest;
-import com.example.flowerparty.GetUserNickRequest;
+import com.example.flowerparty.GetUserRequest;
 import com.example.flowerparty.R;
 import com.example.flowerparty.RbPreference;
 import com.example.flowerparty.UserChangeNickRequest;
@@ -70,9 +69,9 @@ public class ProfileCnameActivity extends AppCompatActivity {
             }
         };
         String userID = pref.getValue(RbPreference.PREF_INTRO_USER_AGREEMENT, "default");
-        GetUserNickRequest getUserNickRequest = new GetUserNickRequest(userID, responseListener);
+        GetUserRequest getUserRequest = new GetUserRequest(userID, responseListener);
         RequestQueue queue = Volley.newRequestQueue(ProfileCnameActivity.this);
-        queue.add(getUserNickRequest);
+        queue.add(getUserRequest);
 
         // 새로운 닉네임 받아서 수정
         et_userNickname = findViewById(R.id.et_userNickname);

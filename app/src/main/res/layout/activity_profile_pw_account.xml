@@ -109,7 +109,7 @@
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/textView33"
+                            android:id="@+id/txt_userID"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="bottom"
@@ -141,7 +141,7 @@
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/textView35"
+                            android:id="@+id/txt_userNick"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
@@ -184,7 +184,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView38"
+                        android:id="@+id/txt_userEmail"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -206,7 +206,7 @@
             </LinearLayout>
 
             <Button
-                android:id="@+id/confirm_btn"
+                android:id="@+id/btn_send"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
