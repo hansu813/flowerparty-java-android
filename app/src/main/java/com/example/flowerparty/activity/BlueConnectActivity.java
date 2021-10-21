@@ -75,7 +75,7 @@ import app.akexorcist.bluetotohspp.library.DeviceList;
                 if (isChecked) {
                     //blueOn.setVisibility(View.VISIBLE);
                     if (bt.getServiceState() == BluetoothState.STATE_CONNECTED) {
-                        bt.disconnect();
+                        //bt.disconnect();
                     } else {
                         Intent intent = new Intent(getApplicationContext(), DeviceList.class);
                         startActivityForResult(intent, BluetoothState.REQUEST_CONNECT_DEVICE);
@@ -111,12 +111,16 @@ import app.akexorcist.bluetotohspp.library.DeviceList;
         }
 
         bt.setOnDataReceivedListener(new BluetoothSPP.OnDataReceivedListener() { //데이터 수신
-            TextView temp = findViewById(R.id.textViewtest);
+           // TextView temp = findViewById(R.id.textViewtest);
+            //TextView temp2 = findViewById(R.id.textViewtest2);
+            //TextView temp3 = findViewById(R.id.textViewtest3);
             public void onDataReceived(byte[] data, String message) {
                 //Toast.makeText(BlueConnectActivity.this, message, Toast.LENGTH_SHORT).show();
-                Log.e("blue", message);
+                Log.e("blue", "fail");
                 String[] array = message.split(",");
-                temp.setText(array[0].concat("C"));
+               // temp.setText(array[0].concat(".jodo"));
+                //temp2.setText(array[1].concat("%"));
+                //temp3.setText(array[2].concat("^C"));
             }
         });
 
@@ -146,7 +150,7 @@ import app.akexorcist.bluetotohspp.library.DeviceList;
 
      public void onDestroy() {
          super.onDestroy();
-         bt.stopService(); //블루투스 중지
+         //bt.stopService(); //블루투스 중지
      }
 
      public void onStart() {
@@ -164,12 +168,12 @@ import app.akexorcist.bluetotohspp.library.DeviceList;
      }
 
      public void setup() {
-         Button btnSend = findViewById(R.id.btnSend); //데이터 전송
-         btnSend.setOnClickListener(new View.OnClickListener() {
-             public void onClick(View v) {
-                 bt.send("Text", true);
-             }
-         });
+        // Button btnSend = findViewById(R.id.btnSend); //데이터 전송
+//         btnSend.setOnClickListener(new View.OnClickListener() {
+//             public void onClick(View v) {
+//                 bt.send("Text", true);
+//             }
+//         });
      }
 
 

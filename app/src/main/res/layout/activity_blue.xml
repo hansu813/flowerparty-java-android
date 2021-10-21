@@ -4,129 +4,76 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.BlueActivity"
+    tools:context="BluetoothTest"
     android:background="@color/main">
 
     <!--전체 화면 -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+    <Button
+        android:id="@+id/btnBluetoothOn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:text="블루투스 ON"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <!--상-->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:orientation="horizontal">
+    <Button
+        android:id="@+id/btnBluetoothOff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="블루투스 OFF"
+        app:layout_constraintStart_toEndOf="@+id/btnBluetoothOn"
+        app:layout_constraintTop_toTopOf="@+id/btnBluetoothOn" />
 
-            <ImageView
-                android:id="@+id/imageView22"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginLeft="25dp"
-                android:layout_gravity="center"
-                app:srcCompat="@drawable/leftarrow"/>
+    <TextView
+        android:id="@+id/tvBluetoothStatus"
+        android:layout_width="170dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="10dp"
+        android:text="status"
+        app:layout_constraintStart_toStartOf="@+id/btnBluetoothOn"
+        app:layout_constraintTop_toBottomOf="@+id/btnBluetoothOn" />
 
-            <TextView
-                android:id="@+id/textView16"
-                android:layout_width="140dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="135dp"
-                android:layout_marginTop="20dp"
-                android:fontFamily="@font/ahn2006_m"
-                android:gravity="right"
-                 android:text="블루투스"
-                android:textColor="@color/white"
-                android:textSize="50sp"
-                android:textStyle="bold" />
-        </LinearLayout>
+    <Button
+        android:id="@+id/btnConnect"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:text="연결하기"
+        app:layout_constraintStart_toStartOf="@+id/tvBluetoothStatus"
+        app:layout_constraintTop_toBottomOf="@+id/tvBluetoothStatus" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:orientation="horizontal"
-            android:background="@drawable/shape">
+    <TextView
+        android:id="@+id/tvReceiveData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Receive"
+        app:layout_constraintStart_toStartOf="@+id/btnSendData"
+        app:layout_constraintTop_toBottomOf="@+id/btnSendData" />
 
-            <TextView
-                android:layout_width="300dp"
-                android:layout_height="match_parent"
-                android:fontFamily="@font/ahn2006_m"
-                android:gravity="center_vertical"
-                android:paddingLeft="30dp"
-                android:text="블루투스"
-                android:textColor="@color/gray"
-                android:textSize="30sp"
-                android:textStyle="bold" />
+    <Button
+        android:id="@+id/btnSendData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="전송"
+        app:layout_constraintStart_toStartOf="@+id/btnConnect"
+        app:layout_constraintTop_toBottomOf="@+id/btnConnect" />
 
-            <Switch
-                android:id="@+id/switch1"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_marginRight="15dp"
-                android:switchMinWidth="60dp"
-
-                />
-        </LinearLayout>
-        <TextView
-            android:id="@+id/textView17"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
-            android:text="현재 화면을 유지하면 나의 화분 검색할 수 있습니다."
-            android:fontFamily="@font/ahn2006_m"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            />
-
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="100dp"/>
-
-        <Button
-            android:id="@+id/btnConnect"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="연결"
-            android:layout_gravity="center"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Button
-            android:id="@+id/btnSend"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="보내기"
-            android:layout_gravity="center"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnConnect" />
-
-        <TextView
-            android:id="@+id/textViewtest"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:fontFamily="@font/ahn2006_m"
-            android:textStyle="bold"
-            android:textSize="30sp"
-            android:textColor="@color/gray"
-            android:gravity="center"
-            android:text="TextView" />
-
-
-    </LinearLayout>
+    <EditText
+        android:id="@+id/tvSendData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Send Data"
+        app:layout_constraintStart_toEndOf="@+id/btnSendData"
+        app:layout_constraintTop_toTopOf="@+id/btnSendData" />
 </androidx.constraintlayout.widget.ConstraintLayout>
