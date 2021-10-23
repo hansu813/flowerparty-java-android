@@ -4,30 +4,19 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.example.flowerparty.SQLiteHelper;
 import com.example.flowerparty.R;
 
-import java.util.Calendar;
 import java.util.Date;
 import java.text.SimpleDateFormat;
-import java.util.*;
 
 import android.content.Intent;
-import android.content.Context;
-import android.os.Bundle;
 
-import androidx.fragment.app.Fragment;
-
-import android.widget.ImageButton;
+import android.widget.EditText;
 import android.widget.ImageView;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
-import android.view.ViewGroup;
 import android.widget.Button;
-
-import com.example.flowerparty.R;
-import com.example.flowerparty.activity.MainActivity;
-import com.example.flowerparty.fragment.JournalFragment;
 
 public class JournalDiaryActivity extends AppCompatActivity {
 
@@ -35,11 +24,42 @@ public class JournalDiaryActivity extends AppCompatActivity {
     ImageView xmark1;
     Button Button2;
 
+    EditText et_journal_title, et_journal_contents;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_journal_diary);
+
+
+
+
+
+        et_journal_title  = findViewById(R.id.et_journal_title);
+        et_journal_contents = findViewById(R.id.et_journal_contents);
+        Button btnSave = findViewById(R.id.btn_journal_save);
+
+        btnSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 받아온 데이터 값 변경. 받아온 title로 조회해서 변경
+               String titleStr = et_journal_title.getText().toString();
+               String contentsStr = et_journal_contents.getText().toString();
+
+               if(titleStr.length() > 0 && contentsStr.length() > 0) {
+                    Intent intent = new Intent();
+                    intent.putExtra("title", titleStr);
+                    intent.putExtra("contents", contentsStr);
+                    setResult(0, intent);
+
+                    finish();
+               }
+            }
+        });
+
+
 
         //현재시간출력
         long systemTime = System.currentTimeMillis();
@@ -58,6 +78,11 @@ public class JournalDiaryActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
     }
 
 }

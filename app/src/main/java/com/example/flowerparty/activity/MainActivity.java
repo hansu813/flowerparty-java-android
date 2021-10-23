@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         MypageAFragment = new MypageAFragment();
 
         //초기화면 설정
+        android.app.FragmentTransaction transaction = getFragmentManager().beginTransaction();
         getSupportFragmentManager().beginTransaction().replace(R.id.container, homeFragment).commit();
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom);
@@ -44,18 +45,26 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.tab_home:
+                        transaction.addToBackStack(null);
                         getSupportFragmentManager().beginTransaction().replace(R.id.container, homeFragment).commit();
+
+
                         return true;
 
                     case R.id.tab_plants:
+                        transaction.addToBackStack(null);
                         getSupportFragmentManager().beginTransaction().replace(R.id.container, plantsFragment).commit();
                         return true;
 
                     case R.id.tab_journal:
+                        transaction.addToBackStack(null);
                         getSupportFragmentManager().beginTransaction().replace(R.id.container, JournalFragment).commit();
+
+
                         return true;
 
                     case R.id.tab_mypage:
+                        transaction.addToBackStack(null);
                         getSupportFragmentManager().beginTransaction().replace(R.id.container, MypageAFragment).commit();
                         return true;
                 }

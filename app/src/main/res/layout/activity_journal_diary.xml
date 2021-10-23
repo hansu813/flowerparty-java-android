@@ -55,7 +55,7 @@
                     android:textStyle="bold" />
 
                 <Button
-                    android:id="@+id/button2"
+                    android:id="@+id/btn_journal_save"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_gravity="center"
@@ -72,15 +72,39 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="460dp"
+            android:layout_height="60dp"
+            android:layout_marginHorizontal="15dp"
+            android:background="@drawable/shape"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/et_journal_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="5dp"
+                android:backgroundTint="@color/sub"
+                android:ems="10"
+                android:fontFamily="@font/ahn2006_m"
+                android:gravity="bottom"
+                android:inputType="textPersonName"
+                android:hint="제목"
+                android:textColor="@color/gray"
+                android:textColorHint="@color/gray_green"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
             android:layout_margin="15dp"
             android:background="@drawable/shape"
             android:orientation="vertical">
 
             <EditText
-                android:id="@+id/editText23"
+                android:id="@+id/et_journal_contents"
                 android:layout_width="match_parent"
-                android:layout_height="410dp"
+                android:layout_height="wrap_content"
                 android:layout_margin="20dp"
                 android:backgroundTint="@color/sub"
                 android:ems="10"
