@@ -77,14 +77,16 @@
 
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="45dp"
+                            android:layout_height="50dp"
                             android:orientation="horizontal">
 
                             <TextView
+                                android:id="@+id/txt_myplantM_name"
                                 android:layout_width="wrap_content"
                                 android:layout_height="40dp"
                                 android:layout_marginLeft="10dp"
                                 android:layout_marginTop="10dp"
+                                android:layout_marginBottom="5dp"
                                 android:fontFamily="@font/ahn2006_m"
                                 android:text="로즈마리"
                                 android:textColor="@color/white"
@@ -111,7 +113,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
                             android:layout_weight="1"
-                            android:src="@drawable/rosemary"
+                            android:src="@drawable/will"
                             android:scaleType="centerCrop"/>
 
                         <LinearLayout
@@ -125,6 +127,7 @@
                             android:orientation="horizontal">
 
                             <TextView
+                                android:id="@+id/txt_myplantM_nick"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
@@ -152,7 +155,7 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="290dp"
+                        android:layout_height="wrap_content"
                         android:layout_margin="20dp"
                         android:orientation="vertical"
                         android:background="@drawable/shape"
@@ -210,6 +213,7 @@
                         </LinearLayout>
 
                         <TextView
+                            android:id="@+id/txt_myplantM_name2"
                             android:layout_width="match_parent"
                             android:layout_height="30dp"
                             android:fontFamily="@font/ahn2006_m"
@@ -220,8 +224,9 @@
                             android:textStyle="bold" />
 
                         <TextView
+                            android:id="@+id/txt_myplant_dtl"
                             android:layout_width="match_parent"
-                            android:layout_height="100dp"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:layout_gravity="center"
                             android:padding="20dp"

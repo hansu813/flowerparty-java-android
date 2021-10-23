@@ -73,6 +73,8 @@ public class LoginActivity extends AppCompatActivity {
                                 //String cntPlant = jsonObject.getString("cntPlant");
 
                                 // DB에 식물이 저장되어 있다면 바로 메인
+
+                                //
                                 Toast.makeText(getApplicationContext(), String.format("%s님 환영합니다.", userName), Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(LoginActivity.this, PlantsChooseActivity.class);
 

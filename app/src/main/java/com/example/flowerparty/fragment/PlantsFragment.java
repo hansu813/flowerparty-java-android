@@ -48,6 +48,9 @@ public class PlantsFragment extends Fragment {
         mainActivity = null;
     }
 
+    public static PlantsFragment newInstance() {
+        return new PlantsFragment();
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -57,12 +60,15 @@ public class PlantsFragment extends Fragment {
         ct = container.getContext();
         pref = new RbPreference(ct);
 
+
         plantsManage = (LinearLayout) rootView.findViewById(R.id.plantsDetail);
         plantsManage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), PlantsManageFragment.class);
-                startActivity(intent);
+//                Intent intent = new Intent(getActivity(), PlantsManageFragment.class);
+//                startActivity(intent);
+                ((MainActivity)getActivity()).replaceFragment(PlantsManageFragment.newInstance());
+
             }
         });
 

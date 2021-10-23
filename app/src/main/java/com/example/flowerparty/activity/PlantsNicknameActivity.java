@@ -63,12 +63,12 @@ public class PlantsNicknameActivity extends AppCompatActivity {
 
 
                         if (plantNick.equals("null")) {
-                            String dNick = "닉네임";
+                            String dNick = "닉네임을 변경해주세요.";
                             plantNickName.setText(dNick);
-                            plantNickName.setTextColor(Color.BLACK);
+                            plantNickName.setTextColor(Color.GRAY);
                         } else {
                             plantNickName.setText(plantNick);
-                            plantNickName.setTextColor(Color.BLACK);
+                            plantNickName.setTextColor(Color.GRAY);
                         }
                     }
                 } catch (JSONException e){

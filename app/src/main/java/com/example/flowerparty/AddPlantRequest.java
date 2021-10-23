@@ -13,8 +13,6 @@ public class AddPlantRequest extends StringRequest {
     /*final static private String URL = "http://flowerparty.dothome.co.kr/Register.php";*/
     final static private String URL = "http://ci2021flower.dongyangmirae.kr/AddPlantRequest.php";
     private Map<String, String> map;
-    private RbPreference session;
-    String userId;
 
     public AddPlantRequest(String vo, String userId, Response.Listener<String> listener) {
         super(Request.Method.POST, URL, listener, null);

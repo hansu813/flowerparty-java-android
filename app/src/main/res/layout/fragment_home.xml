@@ -108,7 +108,8 @@
                             android:gravity="center"
                             android:text="새싹이"
                             android:textColor="@color/white"
-                            android:textSize="18sp" />
+                            android:textSize="18sp"
+                            android:textStyle="bold"/>
 
                         <ImageView
                             android:id="@+id/imgNickname"
@@ -219,8 +220,8 @@
                                 android:fontFamily="@font/ahn2006_m"
                                 android:gravity="center"
                                 android:text="0"
-                                android:textColor="@color/gray_green"
-                                android:textSize="20sp"
+                                android:textColor="@color/gray"
+                                android:textSize="30sp"
                                 android:textStyle="bold" />
                         </LinearLayout>
 

@@ -177,16 +177,16 @@ public class HomeFragment extends Fragment {
                     if (success) {
                         String pNick = jsonObject.getString("plantNick");
                         text_pnickHome.setText(pNick);
-                        text_pnickHome.setTextColor(Color.BLACK);
+                        text_pnickHome.setTextColor(Color.WHITE);
 
-//                        if (plantNick.equals("null")) {
-//                            String dNick = "닉네임";
-//                            text_pnickHome.setText(dNick);
-//                            text_pnickHome.setTextColor(Color.BLACK);
-//                        } else {
-//                            text_pnickHome.setText(plantNick);
-//                            text_pnickHome.setTextColor(Color.BLACK);
-//                        }
+                        if (pNick.equals("null")) {
+                            String dNick = "닉네임";
+                            text_pnickHome.setText(dNick);
+                            text_pnickHome.setTextColor(Color.WHITE);
+                        } else {
+                            text_pnickHome.setText(pNick);
+                            text_pnickHome.setTextColor(Color.WHITE);
+                        }
                     }
                 } catch (JSONException e){
                     e.printStackTrace();

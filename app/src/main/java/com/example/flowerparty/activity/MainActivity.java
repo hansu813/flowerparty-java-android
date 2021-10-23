@@ -25,8 +25,6 @@ public class MainActivity extends AppCompatActivity {
     Fragment JournalFragment;
     Fragment MypageAFragment;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,10 +34,6 @@ public class MainActivity extends AppCompatActivity {
         plantsFragment = new PlantsFragment();
         JournalFragment = new JournalFragment();
         MypageAFragment = new MypageAFragment();
-
-
-
-
 
         //초기화면 설정
         getSupportFragmentManager().beginTransaction().replace(R.id.container, homeFragment).commit();
@@ -68,8 +62,11 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+    } /* onCreate */
 
+    public void replaceFragment(Fragment fragment) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.container, fragment).commit();      // Fragment로 사용할 MainActivity내의 layout공간을 선택합니다.
     }
-
-
 }

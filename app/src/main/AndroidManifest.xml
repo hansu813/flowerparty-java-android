@@ -26,7 +26,6 @@
         <activity
             android:name=".RegisterActivity"
             android:exported="true" />
-        <activity android:name=".fragment.PlantsManageFragment" />
         <activity android:name=".activity.PlantsChooseActivity" />
         <activity android:name=".activity.ProfileCEmailActivity" />
         <activity android:name=".activity.ProfileCnameActivity" />

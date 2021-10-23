@@ -73,14 +73,15 @@ public class MypageAFragment extends Fragment {
 
 
         // 프로필
-        // userID
+        // 닉네임 띄우기
         pref = new RbPreference(ct);
-        textViewName = (TextView) rootView.findViewById(R.id.textView_mypage_name);
 
-        String userId = pref.getValue(RbPreference.PREF_INTRO_USER_AGREEMENT, "default");
-        textViewName.setText(userId);
+
+        //String userId = pref.getValue(RbPreference.PREF_INTRO_USER_AGREEMENT, "default");
+        //textViewName.setText(userId);
 
         // 이메일 띄우기
+        textViewName = (TextView) rootView.findViewById(R.id.textView_mypage_name);
         textViewEmail = (TextView) rootView.findViewById(R.id.textView_mypage_email);
         Response.Listener<String> responseListener = new Response.Listener<String>() {
             @Override
@@ -92,7 +93,9 @@ public class MypageAFragment extends Fragment {
                         String userNick = jsonObject.getString("userName");
                         String userEmail = jsonObject.getString("userEmail");
 
-                        textViewEmail.setText(userNick);
+                        textViewName.setText(userNick);
+                        textViewName.setTextColor(Color.WHITE);
+                        textViewEmail.setText(userEmail);
                         textViewEmail.setTextColor(Color.WHITE);
                     }
                 } catch (JSONException e) {
