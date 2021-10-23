@@ -35,7 +35,7 @@
                 android:layout_weight="1" />
 
             <Button
-                android:id="@+id/button5"
+                android:id="@+id/btn_set_save"
                 android:layout_width="70dp"
                 android:layout_height="30dp"
                 android:background="@drawable/shape"
@@ -67,7 +67,7 @@
             android:layout_marginTop="30dp"
             android:layout_gravity="center"
             app:srcCompat="@drawable/profile128"
-            android:onClick="clickImg"/>
+            />
 
         <LinearLayout
             android:layout_width="match_parent"
