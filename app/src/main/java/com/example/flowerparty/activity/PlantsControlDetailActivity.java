@@ -107,7 +107,7 @@ public class PlantsControlDetailActivity extends AppCompatActivity {
             int style2 = AlertDialog.THEME_HOLO_DARK;
 
             TimePickerDialog timePickerDialog2 = new TimePickerDialog(this, style2, onTimeSetListener2, hour, minute, true);
-            timePickerDialog2.setTitle("Select Time");
+            timePickerDialog2.setTitle("시간 설정");
             timePickerDialog2.show();
         }
     }

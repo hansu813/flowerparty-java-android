@@ -45,35 +45,48 @@
                 android:textStyle="bold" />
         </LinearLayout>
 
+
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="100dp"
+            android:layout_marginHorizontal="25dp"
             android:layout_marginTop="10dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:orientation="horizontal"
-            android:background="@drawable/shape">
+            android:orientation="vertical"
+            android:background="@drawable/shape"
+            >
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:fontFamily="@font/ahn2006_m"
-                android:gravity="center_vertical"
-                android:paddingHorizontal="30dp"
-                android:text="블루투스"
-                android:textColor="@color/gray"
-                android:textSize="30sp"
-                android:textStyle="bold" />
 
-            <Switch
-                android:id="@+id/switchBlue"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
                 android:layout_weight="1"
-                android:layout_marginRight="15dp"
-                android:switchMinWidth="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="30dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                >
 
-                />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/ahn2006_m"
+                    android:gravity="center_vertical"
+                    android:text="블루투스"
+                    android:textColor="@color/gray"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <Switch
+                    android:id="@+id/switchBlue"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+
+                    android:switchMinWidth="60dp"
+
+                    />
+            </LinearLayout>
         </LinearLayout>
 
         <View
@@ -176,7 +189,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
-                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginHorizontal="25dp"
                     android:layout_marginTop="10dp"
                     android:orientation="vertical"
                     android:background="@drawable/shape"
@@ -186,7 +199,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1"
-                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginHorizontal="30dp"
                         android:layout_marginTop="30dp"
                         android:gravity="center_vertical"
                         android:orientation="horizontal">
@@ -215,7 +228,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1"
-                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginHorizontal="30dp"
                         android:layout_marginBottom="30dp"
                         android:gravity="center_vertical"
                         android:orientation="horizontal">

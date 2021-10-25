@@ -11,7 +11,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -50,19 +49,19 @@
             android:id="@+id/textView17"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="25dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginVertical="10dp"
             android:text="현재 이름"
             android:fontFamily="@font/ahn2006_m"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold"
+            android:gravity="left|bottom"
             />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:layout_marginHorizontal="20dp"
+            android:layout_marginHorizontal="30dp"
             android:orientation="horizontal"
             android:background="@drawable/shape">
 
@@ -70,7 +69,7 @@
                 android:id="@+id/plantNickName"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingLeft="30dp"
+                android:paddingHorizontal="30dp"
                 android:fontFamily="@font/ahn2006_m"
                 android:textSize="30sp"
                 android:textStyle="bold"
@@ -85,18 +84,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="70dp"
-            android:layout_marginHorizontal="25dp"
+            android:layout_marginHorizontal="30dp"
             android:layout_marginBottom="10dp"
             android:fontFamily="@font/ahn2006_m"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold"
+            android:gravity="left|bottom"
             android:text="바꿀 이름" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
+            android:layout_marginHorizontal="30dp"
             android:background="@drawable/shape"
             android:orientation="vertical"
             android:paddingVertical="40dp"
@@ -112,17 +112,20 @@
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:fontFamily="@font/ahn2006_m"
-                android:textSize="25sp"
-                android:textColorHint="@color/gray"
-                android:hint="새로운 이름을 입력하시오" />
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textColor="@color/gray"
+                android:textColorHint="@color/gray_green"
+                android:hint="새로운 이름을 입력하시오." />
 
 
         </LinearLayout>
 
         <Button
             android:id="@+id/btn_plantNickName"
-            android:layout_width="260dp"
+            android:layout_width="match_parent"
             android:layout_height="40dp"
+            android:layout_marginHorizontal="50dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="120dp"
             android:background="@drawable/shapebtn"
