@@ -150,7 +150,7 @@
                             android:layout_weight="1"
                             android:fontFamily="@font/ahn2006_m"
                             android:gravity="center"
-                            android:text="종료시간"
+                            android:text="종료 시간"
                            android:textColor="@color/gray"
                             android:textSize="28sp"
                             android:textStyle="bold" />
