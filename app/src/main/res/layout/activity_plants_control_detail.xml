@@ -28,6 +28,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:fontFamily="@font/ahn2006_m"
+                android:layout_gravity="center"
                 android:gravity="center"
                 android:text="물주기 일정 추가"
                 android:textAlignment="gravity"
@@ -62,22 +63,76 @@
 
                         <TextView
                             android:id="@+id/textView70"
-                            android:layout_width="128dp"
+                            android:layout_width="100dp"
                             android:layout_height="match_parent"
                             android:layout_marginLeft="20dp"
                             android:layout_weight="1"
                             android:fontFamily="@font/ahn2006_m"
                             android:gravity="center"
                             android:text="시작 시간"
-                            android:textAlignment="viewStart"
+
                             android:textColor="@color/gray"
                             android:textSize="28sp"
                             android:textStyle="bold" />
+
+                        <Button
+                            android:id="@+id/timebtn1"
+                            android:layout_width="80dp"
+                            android:layout_height="35dp"
+                            android:layout_gravity="center"
+                            android:layout_marginHorizontal="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/shape"
+                            android:backgroundTint="@color/gray_green"
+                            android:gravity="center"
+                            android:onClick="popTimePicker"
+                            android:text="Select time"
+                            tools:ignore="OnClick" />
+
+                        <RadioGroup
+                            android:id="@+id/toggle"
+                            android:layout_width="80dp"
+                            android:layout_height="35dp"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="20dp"
+                            android:checkedButton="@+id/offer"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/am1"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="1dp"
+                                android:layout_marginTop="1dp"
+                                android:layout_marginBottom="1dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/ampm_back"
+                                android:button="@null"
+                                android:gravity="center"
+                                android:text="오전"
+                                android:textColor="@color/white" />
+
+                            <RadioButton
+                                android:id="@+id/pm1"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="1dp"
+                                android:layout_marginRight="1dp"
+                                android:layout_marginBottom="1dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/ampm_back"
+                                android:button="@null"
+                                android:gravity="center"
+                                android:text="오후"
+
+                                android:textColor="@color/white" />
+                        </RadioGroup>
 
                     </LinearLayout>
                 </LinearLayout>
 
                 <LinearLayout
+
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
@@ -89,17 +144,69 @@
 
                         <TextView
                             android:id="@+id/textView71"
-                            android:layout_width="128dp"
+                            android:layout_width="100dp"
                             android:layout_height="match_parent"
                             android:layout_marginLeft="20dp"
                             android:layout_weight="1"
                             android:fontFamily="@font/ahn2006_m"
                             android:gravity="center"
                             android:text="종료시간"
-                            android:textAlignment="textStart"
-                            android:textColor="@color/gray"
+                           android:textColor="@color/gray"
                             android:textSize="28sp"
                             android:textStyle="bold" />
+
+                        <Button
+                            android:id="@+id/timebtn2"
+                            android:layout_width="80dp"
+                            android:layout_height="35dp"
+                            android:layout_weight="1"
+                            android:layout_marginHorizontal="10dp"
+                            android:background="@drawable/shape"
+                            android:backgroundTint="@color/gray_green"
+                            android:onClick="popTimePicker2"
+                            android:text="Select Time"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            tools:ignore="OnClick" />
+
+                        <RadioGroup
+                            android:checkedButton="@+id/offer"
+                            android:id="@+id/toggle2"
+                            android:layout_width="80dp"
+                            android:layout_height="35dp"
+                            android:layout_marginRight="20dp"
+
+                            android:layout_gravity="center"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/am2"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="1dp"
+                                android:layout_marginTop="1dp"
+                                android:layout_marginBottom="1dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/ampm_back"
+                                android:button="@null"
+                                android:gravity="center"
+                                android:text="오전"
+                                android:textColor="@color/white" />
+
+                            <RadioButton
+                                android:layout_marginRight="1dp"
+                                android:layout_marginTop="1dp"
+                                android:layout_marginBottom="1dp"
+                                android:id="@+id/pm2"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="@drawable/ampm_back"
+                                android:button="@null"
+                                android:gravity="center"
+                                android:text="오후"
+                                android:textColor="@color/white" />
+                        </RadioGroup>
 
                         " />
 
@@ -143,4 +250,6 @@
         app:layout_constraintBaseline_toBaselineOf="@+id/button3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/button3" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

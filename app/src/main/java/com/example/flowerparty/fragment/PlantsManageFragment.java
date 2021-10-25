@@ -1,5 +1,6 @@
 package com.example.flowerparty.fragment;
 
+import android.content.Intent;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.volley.RequestQueue;
@@ -22,6 +24,7 @@ import com.example.flowerparty.GetPlantRequest;
 import com.example.flowerparty.R;
 import com.example.flowerparty.RbPreference;
 import com.example.flowerparty.activity.MainActivity;
+import com.example.flowerparty.activity.PlantsControlDetailActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -36,6 +39,8 @@ import java.net.URLEncoder;
 public class PlantsManageFragment extends Fragment {
     TextView txt_myplantM_name,txt_myplantM_name2, txt_myplantM_nick;
     TextView txt_myplant_dtl;
+
+    ImageView controlbtn;
 
     MainActivity mainActivity;
     private RbPreference pref;
@@ -55,6 +60,17 @@ public class PlantsManageFragment extends Fragment {
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_plants_manage, container, false);
         ct = container.getContext();
         pref = new RbPreference(ct);
+
+        controlbtn = (ImageView) rootView.findViewById(R.id.controlbtn);
+        controlbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), PlantsControlDetailActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
 
         // 식물 이름, 별명 띄우기
         txt_myplantM_name = (TextView) rootView.findViewById(R.id.txt_myplantM_name);

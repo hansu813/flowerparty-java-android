@@ -47,7 +47,7 @@
                     android:layout_weight="1"/>
 
                 <ImageView
-                    android:id="@+id/imageView41"
+                    android:id="@+id/controlbtn"
                     android:layout_width="43dp"
                     android:layout_height="43dp"
                     android:layout_marginRight="20dp"

@@ -50,6 +50,6 @@ public class SQLiteHelper {
        }
 
        // DELETE FROM JournalTable WHERE seq = 0;
-       public void 
+
    }
 }
