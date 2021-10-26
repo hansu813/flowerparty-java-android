@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:padding="10dp"
-    android:shape="rectangle"
-    >
+ >
 
 
-    <item android:drawable="@color/main" android:state_checked="true" />
-    <item android:drawable="@color/main2" android:state_pressed="true" />
-    <item android:drawable="@color/gray_green" />
+    <item android:drawable="@drawable/shape" android:state_checked="true" />
+
+    <item android:drawable="@drawable/grayshapebtn" />
 
 
 

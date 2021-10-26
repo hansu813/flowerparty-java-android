@@ -61,7 +61,7 @@
                 android:textColor="@color/gray_green"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:gravity="left|bottom"/>
+                android:gravity="bottom"/>
 
             <TextView
                 android:id="@+id/txt_email"
@@ -76,9 +76,9 @@
                 android:fontFamily="@font/ahn2006_m"
                 android:text="pitt27188@gmail.com"
                 android:inputType="textPersonName"
-                android:textColorhint="@color/white"
-                android:textColor="@color/gray"
-                android:textSize="30sp" />
+                android:textColor="@color/gray_green"
+                android:textStyle="bold"
+                android:textSize="30sp"  />
 
             <TextView
                 android:id="@+id/textView5"
@@ -88,7 +88,7 @@
                 android:layout_marginBottom="10dp"
                 android:layout_marginHorizontal="30dp"
                 android:layout_weight="1"
-                android:gravity="left|bottom"
+                android:gravity="bottom"
                 android:fontFamily="@font/ahn2006_m"
                 android:text="새로운 이메일"
                 android:textColor="@color/gray_green"
@@ -108,7 +108,6 @@
                 android:fontFamily="@font/ahn2006_m"
                 android:inputType="textPersonName"
                 android:textColor="@color/gray"
-                android:textStyle="bold"
                 android:textSize="30sp" />
 
             <Button
