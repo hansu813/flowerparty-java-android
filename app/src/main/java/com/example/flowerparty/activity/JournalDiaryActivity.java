@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import com.example.flowerparty.SQLiteHelper;
 import com.example.flowerparty.R;
 
 import java.util.Date;
@@ -45,17 +44,17 @@ public class JournalDiaryActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // 받아온 데이터 값 변경. 받아온 title로 조회해서 변경
-               String titleStr = et_journal_title.getText().toString();
-               String contentsStr = et_journal_contents.getText().toString();
+                String titleStr = et_journal_title.getText().toString();
+                String contentsStr = et_journal_contents.getText().toString();
 
-               if(titleStr.length() > 0 && contentsStr.length() > 0) {
+                if(titleStr.length() > 0 && contentsStr.length() > 0) {
                     Intent intent = new Intent();
                     intent.putExtra("title", titleStr);
                     intent.putExtra("contents", contentsStr);
                     setResult(0, intent);
 
                     finish();
-               }
+                }
             }
         });
 

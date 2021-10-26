@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.flowerparty.SQLiteHelper;
 import com.example.flowerparty.Journal;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -28,10 +29,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class JournalFragment extends Fragment {
+    SQLiteHelper dbHelper;
 
     FloatingActionButton wbtn;
 
-    ArrayList<Journal> journalArrayList = new ArrayList<>();
+    //ArrayList<Journal> journalArrayList = new ArrayList<>();
 
     Context ct;
 
@@ -48,12 +50,9 @@ public class JournalFragment extends Fragment {
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_journal, container, false);
         ct = container.getContext();
 
+        dbHelper = new SQLiteHelper(ct);
         journalList = new ArrayList<>();
-        journalList.add(new Journal("test1", "testtest", 0));
-        journalList.add(new Journal("test2", "testtest", 0));
-        journalList.add(new Journal("test3", "testtest", 0));
-        journalList.add(new Journal("test4", "testtest", 1));
-        journalList.add(new Journal("test5", "testtest", 1));
+        journalList = dbHelper.selectAll();
 
 
 
@@ -184,6 +183,8 @@ public class JournalFragment extends Fragment {
             Journal journal = new Journal(strTitle, strContents, 0);
             rAdapter.addItem(journal);
             rAdapter.notifyDataSetChanged();
+
+            dbHelper.insertJournal(journal);
         }
     }
 
@@ -209,6 +210,8 @@ public class JournalFragment extends Fragment {
         @Override
         public void onBindViewHolder(@NonNull ItemViewHolder holder, int position) {
             Journal journal = listdata.get(position);
+
+            holder.title.setTag(journal.getSeq());
 
             holder.contents.setText(journal.getContents());
             holder.title.setText(journal.getTitle());
@@ -237,8 +240,23 @@ public class JournalFragment extends Fragment {
 
                 title = itemView.findViewById(R.id.item_title);
                 contents = itemView.findViewById(R.id.item_contents);
-                img = itemView.findViewById(R.id.item_image);
+//                img = itemView.findViewById(R.id.item_image);
 
+                itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                    @Override
+                    public boolean onLongClick(View v) {
+                        int position = getAdapterPosition();
+                        int seq = (int)title.getTag();
+
+                        if(position != RecyclerView.NO_POSITION) {
+                            dbHelper.deleteJournal(seq);
+                            removeItem(position);
+                            notifyDataSetChanged();
+                        }
+
+                        return false;
+                    }
+                });
             }
         }
     }

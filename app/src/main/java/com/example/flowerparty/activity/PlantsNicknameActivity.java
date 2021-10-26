@@ -82,6 +82,13 @@ public class PlantsNicknameActivity extends AppCompatActivity {
         RequestQueue queue = Volley.newRequestQueue(PlantsNicknameActivity.this);
         queue.add(getPlantRequest);
 
+
+        btn_plantNickName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
         // 수정할 닉네임
         btn_plantNickName.setOnClickListener(new View.OnClickListener() {
             @Override

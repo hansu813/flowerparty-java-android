@@ -21,11 +21,13 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="120dp"
+            android:paddingTop="20dp"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
                 android:layout_marginHorizontal="20dp"
                 android:orientation="horizontal">
 
@@ -35,25 +37,13 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_gravity="center"
-                    android:layout_weight="1"
                     android:gravity="left"
                     android:src="@drawable/xmark" />
 
-                <TextView
-                    android:id="@+id/datetxt"
-                    android:layout_width="135dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom"
-                    android:layout_weight="1"
-                    android:backgroundTint="@color/main"
-                    android:ems="10"
-                    android:fontFamily="@font/ahn2006_m"
-                    android:gravity="center"
-                    android:text="2021.10.04"
-                    android:textColor="@color/gray"
-                    android:textSize="28sp"
-                    android:textStyle="bold" />
-
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="4"/>
                 <Button
                     android:id="@+id/btn_journal_save"
                     android:layout_width="30dp"
@@ -68,12 +58,27 @@
                     android:textSize="21sp"
                     android:textStyle="bold" />
             </LinearLayout>
+            <TextView
+                android:id="@+id/datetxt"
+                android:layout_width="135dp"
+                android:layout_height="30dp"
+                android:layout_gravity="bottom|center"
+                android:layout_weight="1"
+                android:backgroundTint="@color/main"
+                android:ems="10"
+                android:fontFamily="@font/ahn2006_m"
+                android:gravity="center"
+                android:text="2021.10.04"
+                android:textColor="@color/gray"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:layout_marginHorizontal="30dp"
+            android:layout_marginHorizontal="15dp"
             android:background="@drawable/shape"
             android:orientation="vertical">
 
@@ -97,22 +102,22 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="400dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginHorizontal="30dp"
+            android:layout_margin="15dp"
             android:background="@drawable/shape"
             android:orientation="vertical">
 
             <EditText
                 android:id="@+id/et_journal_contents"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="335dp"
+                android:layout_height="351dp"
                 android:layout_margin="20dp"
                 android:backgroundTint="@color/sub"
                 android:ems="10"
                 android:fontFamily="@font/ahn2006_m"
                 android:gravity="left|top"
-                android:inputType="textPersonName"
                 android:hint="내용을 작성하시오."
+                android:inputType="textPersonName"
+                android:singleLine="false"
                 android:textColor="@color/gray"
                 android:textColorHint="@color/gray_green"
                 android:textSize="30sp"

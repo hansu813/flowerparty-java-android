@@ -16,6 +16,8 @@
         app:itemBackground="@color/nav"
         app:itemTextColor="#ffffff"
         app:itemIconTint="#E3F2EB"
+        android:theme="@style/Widget.BottomNavigationView"
+
         app:labelVisibilityMode="labeled"
         app:menu="@menu/menu_bottom"
         />
