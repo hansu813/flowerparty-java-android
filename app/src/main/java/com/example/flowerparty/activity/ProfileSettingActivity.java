@@ -112,7 +112,7 @@ public class ProfileSettingActivity extends AppCompatActivity implements View.On
         changePW.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), ProfilePwAccountActivity.class);
+                Intent intent = new Intent(getApplicationContext(), ProfilePwChangeActivity.class);
                 startActivity(intent);
             }
         });

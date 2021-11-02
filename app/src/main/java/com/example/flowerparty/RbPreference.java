@@ -15,6 +15,7 @@ public class RbPreference {
     public final static String PREF_MAIN_VALUE = "PREF_MAIN_VALUE";
     public final static String PREF_SUB_VALUE = "PREF_SUB_VALUE";
     public final static String PREF_NO_VALUE = "PREF_NO_VALUE";
+    public final static String PREF_PASS_VALUE = "PREF_PASS_VALUE";
 
     static Context mContext;
 
@@ -48,6 +49,14 @@ public class RbPreference {
         SharedPreferences.Editor editor = pref.edit();
 
         editor.putString(key, value); // 저장하는 값을 나타내는 키 값, 저장할 값
+        editor.commit();
+    }
+
+    public void putPass(String key, String value) {
+        SharedPreferences pref = mContext.getSharedPreferences(PREF_NAME, Activity.MODE_PRIVATE);
+        SharedPreferences.Editor editor = pref.edit();
+
+        editor.putString(key, value);
         editor.commit();
     }
 

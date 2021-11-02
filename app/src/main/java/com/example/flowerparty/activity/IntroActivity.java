@@ -27,7 +27,9 @@ public class IntroActivity extends AppCompatActivity {
         public void handleMessage(@NonNull Message msg) {
             if (msg.what == 1) {
                 Intent intent = new Intent(IntroActivity.this, LoginActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
+                finish();
             }
         }
     };

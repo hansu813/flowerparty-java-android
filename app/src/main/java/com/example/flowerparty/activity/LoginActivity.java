@@ -28,6 +28,7 @@ public class LoginActivity extends AppCompatActivity {
     private Button btnSignIn, btnSignUp;
     private TextView textViewFmp;
     private RbPreference pref;
+    private long backBtnTime = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,6 +87,7 @@ public class LoginActivity extends AppCompatActivity {
                                 pref.putId(RbPreference.PREF_INTRO_USER_AGREEMENT, userID);
                                 pref.putEmail(RbPreference.PREF_MAIN_VALUE, userEmail);
                                 pref.putName(RbPreference.PREF_SUB_VALUE, userName);
+                                pref.putPass(RbPreference.PREF_PASS_VALUE, userPass);
                                 startActivity(intent);
                                 /*pref.put("userPass", userPass);
                                 intent.putExtra("userID", userID);*/
@@ -120,4 +122,19 @@ public class LoginActivity extends AppCompatActivity {
 
 
     } /* onCreate */
+
+    @Override
+    public void onBackPressed() {
+        long curTime = System.currentTimeMillis();
+        long gapTime = curTime - backBtnTime;
+
+        if (0 <= gapTime && 2000 >= gapTime) {
+            finish();
+        } else {
+            backBtnTime = curTime;
+            Toast.makeText(LoginActivity.this, "한 번 더 누르면 종료됩니다.", Toast.LENGTH_SHORT).show();
+        }
+
+
+    }
 }

@@ -35,6 +35,7 @@
         <activity android:name=".activity.PlantsControlDetailActivity" />
         <activity android:name=".activity.PlantsControlActivity" />
         <activity android:name=".activity.ProfilePwAccountActivity" />
+        <activity android:name=".activity.ProfilePwChangeActivity" />
         <activity android:name=".activity.ProfileSettingActivity" />
         <activity android:name=".activity.MypagePlantsActivity" />
         <activity android:name=".activity.PlantsNicknameActivity" />

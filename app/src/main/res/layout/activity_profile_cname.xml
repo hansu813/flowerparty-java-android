@@ -10,7 +10,11 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -23,8 +27,8 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
 
-                android:layout_marginLeft="20dp"
                 android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
                 app:srcCompat="@drawable/leftarrow" />
 
             <TextView
@@ -53,14 +57,14 @@
                 android:id="@+id/textView10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="70dp"
                 android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="70dp"
                 android:layout_marginBottom="10dp"
                 android:fontFamily="@font/ahn2006_m"
+                android:text="현재 닉네임"
                 android:textColor="@color/gray_green"
                 android:textSize="20sp"
-                android:textStyle="bold"
-                android:text="현재 닉네임" />
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/text_userNickname"
@@ -69,29 +73,29 @@
                 android:layout_gravity="center"
                 android:layout_marginHorizontal="30dp"
                 android:layout_weight="1"
-                android:gravity="center_vertical"
-                android:paddingHorizontal="20dp"
                 android:background="@drawable/shape"
                 android:ems="10"
                 android:fontFamily="@font/ahn2006_m"
-                android:text="gleammy"
+                android:gravity="center_vertical"
                 android:inputType="textPersonName"
+                android:paddingHorizontal="20dp"
+                android:text="gleammy"
                 android:textColor="@color/white"
                 android:textSize="30sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
-              <TextView
+            <TextView
                 android:id="@+id/textView5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
                 android:layout_marginTop="70dp"
-                  android:layout_marginHorizontal="30dp"
                 android:layout_marginBottom="10dp"
                 android:fontFamily="@font/ahn2006_m"
+                android:text="새로운 닉네임"
                 android:textColor="@color/gray_green"
                 android:textSize="20sp"
-                android:textStyle="bold"
-                android:text="새로운 닉네임" />
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/et_userNickname"
@@ -100,21 +104,21 @@
                 android:layout_gravity="center"
                 android:layout_marginHorizontal="30dp"
                 android:layout_weight="1"
-                android:paddingHorizontal="20dp"
                 android:background="@drawable/shape"
                 android:ems="10"
                 android:fontFamily="@font/ahn2006_m"
                 android:inputType="textPersonName"
+                android:paddingHorizontal="20dp"
                 android:textColor="@color/gray"
                 android:textSize="30sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/btn_cNickname"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:layout_marginHorizontal="50dp"
                 android:layout_gravity="center_horizontal"
+                android:layout_marginHorizontal="50dp"
                 android:layout_marginTop="110dp"
                 android:background="@drawable/shapebtn"
                 android:fontFamily="@font/ahn2006_m"
