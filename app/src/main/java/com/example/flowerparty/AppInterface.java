@@ -9,8 +9,11 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 public interface AppInterface {
-    @GET("JournalSelect.php")
-    Call<List<Journal>> getTitle();
+    @FormUrlEncoded
+    @POST("JournalSelect.php")
+    Call<List<Journal>> selectJournal(
+            @Field("userID") String userID
+    );
 
     @FormUrlEncoded
     @POST("JournalInsert.php")

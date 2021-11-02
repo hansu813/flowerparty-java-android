@@ -73,7 +73,7 @@ public class JournalFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(ct));
         recyclerView.addItemDecoration(new DividerItemDecoration(ct, DividerItemDecoration.VERTICAL));
 
-        selectJournal();
+        selectJournal(userID);
 
         itemClickListener = new JournalAdapter.ItemClickListener() {
             @Override
@@ -108,9 +108,9 @@ public class JournalFragment extends Fragment {
 
 
 
-    private void selectJournal() {
+    private void selectJournal(String userID) {
         AppInterface apiInterface = ApiClient.getClient().create(AppInterface.class);
-        Call<List<Journal>> call = apiInterface.getTitle();
+        Call<List<Journal>> call = apiInterface.selectJournal(userID);
         call.enqueue(new Callback<List<Journal>>() {
             @Override
             public void onResponse(@NonNull Call<List<Journal>> call, @NonNull Response<List<Journal>> response) {

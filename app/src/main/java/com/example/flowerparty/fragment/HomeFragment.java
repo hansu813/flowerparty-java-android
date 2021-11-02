@@ -32,6 +32,7 @@ import com.android.volley.toolbox.Volley;
 import com.example.flowerparty.GetPlantRequest;
 import com.example.flowerparty.R;
 import com.example.flowerparty.RbPreference;
+import com.example.flowerparty.activity.PlantsChooseActivity;
 import com.example.flowerparty.activity.PlantsNicknameActivity;
 
 import org.json.JSONException;
@@ -80,6 +81,8 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         // 이미지 버튼 객체를 가져오기 위해서 변경
         ViewGroup rootview = (ViewGroup) inflater.inflate(R.layout.fragment_home, container, false);
+
+
 
 //        imgBtnManage = (ImageButton) rootview.findViewById(R.id.imgBtnHomeManage);
 //        imgBtnManage.setOnClickListener(new View.OnClickListener() {
@@ -187,6 +190,17 @@ public class HomeFragment extends Fragment {
                             text_pnickHome.setText(pNick);
                             text_pnickHome.setTextColor(Color.WHITE);
                         }
+                    } else if (success == false) {
+                        AlertDialog.Builder builder = new AlertDialog.Builder(ct);
+                        builder.setTitle("식물 선택").setMessage("식물을 선택해야합니다.");
+                        builder.setPositiveButton("OK",
+                                new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        Intent intent = new Intent(ct, PlantsChooseActivity.class);
+                                        startActivity(intent);
+                                    }
+                                });
                     }
                 } catch (JSONException e){
                     e.printStackTrace();

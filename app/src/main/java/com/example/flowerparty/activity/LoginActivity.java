@@ -77,7 +77,7 @@ public class LoginActivity extends AppCompatActivity {
 
                                 //
                                 Toast.makeText(getApplicationContext(), String.format("%s님 환영합니다.", userName), Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(LoginActivity.this, PlantsChooseActivity.class);
+                                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
 
                                 /*intent.putExtra("userID", userID);
                                 intent.putExtra("userPass", userPass);
@@ -91,7 +91,7 @@ public class LoginActivity extends AppCompatActivity {
                                 startActivity(intent);
                                 /*pref.put("userPass", userPass);
                                 intent.putExtra("userID", userID);*/
-
+                                finish();
                             } else { // 로그인 실패
                                 Toast.makeText(getApplicationContext(), "아이디와 비밀번호를 확인하세요.", Toast.LENGTH_SHORT).show();
                                 return;
