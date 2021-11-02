@@ -1,58 +1,74 @@
 package com.example.flowerparty;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 import java.io.Serializable;
 
-public class Journal implements Serializable {
+public class Journal {
+    @Expose
+    @SerializedName("idx") private int idx;
 
+    @Expose
+    @SerializedName("title") private String title;
 
-    int seq;
-    String title;
-    String contents;
-    int isdone;
+    @Expose
+    @SerializedName("content") private String content;
 
-    public Journal(int seq, String title, String contents, int isdone) {
-        this.seq = seq;
-        this.title = title;
-        this.contents = contents;
-        this.isdone = isdone;
+    @Expose
+    @SerializedName("userID") private String userID;
+
+    @Expose
+    @SerializedName("success") private Boolean success;
+
+    @Expose
+    @SerializedName("message") private String message;
+
+    public int getIdx() {
+        return idx;
     }
 
-
-    public Journal(String title, String contents, int isdone) {
-        this.title = title;
-        this.contents = contents;
-        this.isdone = isdone;
-    }
-
-    public int getSeq() {
-        return seq;
-    }
-
-    public void setSeq(int seq) {
-        this.seq = seq;
-    }
-
-    public String getContents() {
-        return contents;
-    }
-
-    public void setContents() {
-        this.contents = contents;
+    public void setIdx(int idx) {
+        this.idx = idx;
     }
 
     public String getTitle() {
         return title;
     }
 
-    public void setTitle() {
+    public void setTitle(String title) {
         this.title = title;
     }
 
-    public int getIsdone() {
-        return isdone;
+    public String getContent() {
+        return content;
     }
 
-    public void setIsdone() {
-        this.isdone = isdone;
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public String getUserID() {
+        return userID;
+    }
+
+    public void setUserID(String userID) {
+        this.userID = userID;
+    }
+
+    public Boolean getSuccess() {
+        return success;
+    }
+
+    public void setSuccess(Boolean success) {
+        this.success = success;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 }

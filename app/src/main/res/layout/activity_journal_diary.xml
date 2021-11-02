@@ -123,5 +123,16 @@
                 android:textSize="30sp"
                 android:textStyle="bold" />
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/text_Journal_Delete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:fontFamily="@font/ahn2006_m"
+            android:textColor="@color/gray"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:text="삭제하기" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

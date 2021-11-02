@@ -224,8 +224,8 @@ public class HomeFragment extends Fragment {
                     }
                     String[] array = readMessage.split(",");
                     textViewHum.setText(array[1].concat("%"));
-                    textViewCal.setText(array[0].concat(".C"));
-                    textViewTemp.setText(array[2]);
+                    textViewCal.setText(array[0].concat(" lx"));
+                    textViewTemp.setText(array[2].concat(".C"));
                 }
             }
         };
