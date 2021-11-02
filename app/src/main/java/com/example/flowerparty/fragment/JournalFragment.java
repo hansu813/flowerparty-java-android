@@ -21,6 +21,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Filterable;
 import android.widget.Toast;
 
 import com.example.flowerparty.ApiClient;
@@ -36,6 +37,7 @@ import com.example.flowerparty.activity.JournalDiaryActivity;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -54,11 +56,7 @@ public class JournalFragment extends Fragment {
     List<Journal> list = new ArrayList<>();
 
     private RbPreference pref;
-    private OnItemLongClickListener mLongListener = null;
 
-    public void setOnItemLongClickListener(OnItemLongClickListener listener){
-        this.mLongListener = listener;
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -108,9 +106,7 @@ public class JournalFragment extends Fragment {
         return rootView;
     }
 
-    public interface OnItemLongClickListener {
-        void onItemLongClick(View v, int pos);
-    }
+
 
     private void selectJournal() {
         AppInterface apiInterface = ApiClient.getClient().create(AppInterface.class);
@@ -137,10 +133,5 @@ public class JournalFragment extends Fragment {
 
         list = lists;
     }
-
-
-
-
-
 
 }
