@@ -29,6 +29,7 @@ import com.example.flowerparty.AddPlantRequest;
 import com.example.flowerparty.NetworkThread;
 import com.example.flowerparty.R;
 import com.example.flowerparty.RbPreference;
+import com.example.flowerparty.UserChangeHavePlantRequest;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -54,6 +55,8 @@ public class PlantsChooseActivity extends AppCompatActivity {
     // button
     Button btnSelect;
 
+    private RbPreference pref;
+
 
     //private NetworkThread thread;
     //String apiKey = "20210908LGXOY6G03MU6JAYF22EEQ";
@@ -64,6 +67,9 @@ public class PlantsChooseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plants_choose_list);
+        // userID
+        pref = new RbPreference(PlantsChooseActivity.this);
+        String userID = pref.getValue(RbPreference.PREF_INTRO_USER_AGREEMENT, "default");
 
         mlistView = (ListView) findViewById(R.id.listVIew_main_list);
         btnSelect = findViewById(R.id.btn_plant_select);
@@ -78,11 +84,9 @@ public class PlantsChooseActivity extends AppCompatActivity {
         String userId = pref.getValue(RbPreference.PREF_INTRO_USER_AGREEMENT, "default");
 
 
-
         // Json 데이터 리스트에 보여줌 GetData()
         GetData task = new GetData();
         task.execute("http://ci2021flower.dongyangmirae.kr/PlantJson.php");
-
 
 
         // 항목 선택 없이 Select 버튼 클릭시 시
@@ -114,9 +118,11 @@ public class PlantsChooseActivity extends AppCompatActivity {
                                     JSONObject jsonObject = new JSONObject(response);
                                     boolean success = jsonObject.getBoolean("success");
                                     if (success) { // 식물 저장
+                                        havePlant(userID);
                                         Toast.makeText(getApplicationContext(), "식물이 저장되었습니다.", Toast.LENGTH_SHORT).show();
                                         Intent intent = new Intent(PlantsChooseActivity.this, MainActivity.class);
                                         startActivity(intent);
+                                        finish();
                                     } else {
                                         Toast.makeText(getApplicationContext(), "식물 등록에 실패하였습니다.", Toast.LENGTH_SHORT).show();
                                     }
@@ -238,4 +244,25 @@ public class PlantsChooseActivity extends AppCompatActivity {
         }
     }
 
+    public void havePlant(String userID) {
+        String havePlant = "1";
+        Response.Listener<String> responseListener = new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+                    boolean success = jsonObject.getBoolean("success");
+                    if (success) { // 로그인 성공
+
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Log.e("Error", "Response Error", e);
+                }
+            }
+        };
+        UserChangeHavePlantRequest userChangeHavePlantRequest = new UserChangeHavePlantRequest(userID, havePlant, responseListener);
+        RequestQueue queue = Volley.newRequestQueue(PlantsChooseActivity.this);
+        queue.add(userChangeHavePlantRequest);
+    }
 }

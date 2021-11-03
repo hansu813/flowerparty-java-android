@@ -70,28 +70,30 @@ public class LoginActivity extends AppCompatActivity {
                                 String userPass = jsonObject.getString("userPassword");
                                 String userName = jsonObject.getString( "userName" );
                                 String userEmail = jsonObject.getString("userEmail");
-                                String userImg = jsonObject.getString("imgPath");
+                                Integer havePlant = jsonObject.getInt("havePlant");
                                 //String cntPlant = jsonObject.getString("cntPlant");
 
                                 // DB에 식물이 저장되어 있다면 바로 메인
 
                                 //
                                 Toast.makeText(getApplicationContext(), String.format("%s님 환영합니다.", userName), Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-
-                                /*intent.putExtra("userID", userID);
-                                intent.putExtra("userPass", userPass);
-                                session = new Session(LoginActivity.this);
-                                session.setUserId(userID);*/
                                 pref = new RbPreference(LoginActivity.this);
                                 pref.putId(RbPreference.PREF_INTRO_USER_AGREEMENT, userID);
                                 pref.putEmail(RbPreference.PREF_MAIN_VALUE, userEmail);
                                 pref.putName(RbPreference.PREF_SUB_VALUE, userName);
                                 pref.putPass(RbPreference.PREF_PASS_VALUE, userPass);
-                                startActivity(intent);
-                                /*pref.put("userPass", userPass);
-                                intent.putExtra("userID", userID);*/
-                                finish();
+                                System.out.println(havePlant);
+
+                                if (havePlant.equals(0)) {
+                                    Intent intent = new Intent(LoginActivity.this, PlantsChooseActivity.class);
+                                    startActivity(intent);
+                                    finish();
+                                } else if(havePlant.equals(1)) {
+                                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                    startActivity(intent);
+                                    finish();
+                                }
+
                             } else { // 로그인 실패
                                 Toast.makeText(getApplicationContext(), "아이디와 비밀번호를 확인하세요.", Toast.LENGTH_SHORT).show();
                                 return;

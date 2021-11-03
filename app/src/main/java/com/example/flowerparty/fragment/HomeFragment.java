@@ -78,23 +78,13 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        // 이미지 버튼 객체를 가져오기 위해서 변경
+        /* Inflate the layout for this fragment */
         ViewGroup rootview = (ViewGroup) inflater.inflate(R.layout.fragment_home, container, false);
 
-
-
-//        imgBtnManage = (ImageButton) rootview.findViewById(R.id.imgBtnHomeManage);
-//        imgBtnManage.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(getActivity(), homeSettingActivity.class);
-//                startActivity(intent);
-//            }
-//        });
-
+        // 블루투스
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
+        // 식물 닉네임 출력 & 식물 닉네임 변경 액티비티 이동
         imgNickname = (ImageView) rootview.findViewById(R.id.imgNickname);
         imgNickname.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,6 +93,7 @@ public class HomeFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
 
         imgBlueIcon = (ImageView) rootview.findViewById(R.id.imgBlueIcon);
 //        imgBlueIcon.setOnClickListener(new View.OnClickListener() {
