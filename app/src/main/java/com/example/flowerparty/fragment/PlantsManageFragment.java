@@ -25,6 +25,7 @@ import com.example.flowerparty.R;
 import com.example.flowerparty.RbPreference;
 import com.example.flowerparty.activity.MainActivity;
 import com.example.flowerparty.activity.PlantsControlDetailActivity;
+import com.example.flowerparty.activity.PlantsNicknameActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -37,10 +38,10 @@ import java.net.URL;
 import java.net.URLEncoder;
 
 public class PlantsManageFragment extends Fragment {
-    TextView txt_myplantM_name,txt_myplantM_name2, txt_myplantM_nick;
+    TextView txt_myplantM_name, txt_myplantM_nick;
     TextView txt_myplant_dtl;
 
-    ImageView controlbtn;
+    ImageView controlbtn, imgNickChange;
 
     MainActivity mainActivity;
     private RbPreference pref;
@@ -70,11 +71,9 @@ public class PlantsManageFragment extends Fragment {
             }
         });
 
-
-
         // 식물 이름, 별명 띄우기
         txt_myplantM_name = (TextView) rootView.findViewById(R.id.txt_myplantM_name);
-        txt_myplantM_name2 = (TextView) rootView.findViewById(R.id.txt_myplantM_name2);
+
         txt_myplantM_nick = (TextView) rootView.findViewById(R.id.txt_myplantM_nick);
         Response.Listener<String> responseListener = new Response.Listener<String>() {
             @Override
@@ -89,10 +88,15 @@ public class PlantsManageFragment extends Fragment {
 
                         txt_myplantM_name.setText(plantName);
                         txt_myplantM_name.setTextColor(Color.WHITE);
-                        txt_myplantM_name2.setText(plantName);
-                        txt_myplantM_name2.setTextColor(Color.WHITE);
-                        txt_myplantM_nick.setText(plantNick);
-                        txt_myplantM_nick.setTextColor(Color.WHITE);
+
+                        if (plantNick.equals("null")) {
+                            String dNick = "닉네임";
+                            txt_myplantM_nick.setText(dNick);
+                            txt_myplantM_nick.setTextColor(Color.WHITE);
+                        } else {
+                            txt_myplantM_nick.setText(plantNick);
+                            txt_myplantM_nick.setTextColor(Color.WHITE);
+                        }
 
                         pref = new RbPreference(ct);
                         pref.putPlantNo(RbPreference.PREF_NO_VALUE, plantNo);
@@ -107,6 +111,16 @@ public class PlantsManageFragment extends Fragment {
         GetPlantRequest getPlantRequest = new GetPlantRequest(userID, responseListener);
         RequestQueue queue = Volley.newRequestQueue(ct);
         queue.add(getPlantRequest);
+
+        // 닉네임 수정
+        imgNickChange = (ImageView) rootView.findViewById(R.id.imgNickChange);
+        imgNickChange.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ct, PlantsNicknameActivity.class);
+                startActivity(intent);
+            }
+        });
 
         txt_myplant_dtl = (TextView) rootView.findViewById(R.id.txt_myplant_dtl);
         new Thread(new Runnable() {

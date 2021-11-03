@@ -87,8 +87,16 @@ public class PlantsFragment extends Fragment {
 
                         txt_myplant_name.setText(plantName);
                         txt_myplant_name.setTextColor(Color.WHITE);
-                        txt_myplant_nick.setText(plantNick);
-                        txt_myplant_nick.setTextColor(Color.WHITE);
+
+                        if ( plantNick.equals("null")) {
+                            String dNick = "닉네임";
+                            txt_myplant_nick.setText(dNick);
+                            txt_myplant_nick.setTextColor(Color.WHITE);
+                        } else {
+                            txt_myplant_nick.setText(plantNick);
+                            txt_myplant_nick.setTextColor(Color.WHITE);
+                        }
+
                     }
                 } catch (JSONException e){
                     e.printStackTrace();
