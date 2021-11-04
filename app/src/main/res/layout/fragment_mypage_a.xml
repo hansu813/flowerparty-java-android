@@ -18,17 +18,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
-
-        <ImageView
-            android:id="@+id/imgHSetting"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:layout_marginLeft="300dp"
-            app:srcCompat="@drawable/manage" />
-
-    </LinearLayout>
+        app:layout_constraintVertical_bias="0.0"/>
 
     <LinearLayout
         android:id="@+id/linearLayoutProfile"
@@ -112,7 +102,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="10dp"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/faq" />
+                app:srcCompat="@drawable/clock2" />
 
             <TextView
                 android:id="@+id/textView22"
@@ -122,13 +112,13 @@
                 android:layout_marginLeft="10dp"
                 android:layout_weight="2"
                 android:fontFamily="@font/ahn2006_m"
-                android:text="자주 묻는 질문"
+                android:text="알림 설정"
                 android:textColor="@color/gray"
                 android:textSize="25sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textView26"
+                android:id="@+id/arrow"
                 android:layout_width="10dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"

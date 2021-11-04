@@ -8,16 +8,18 @@
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
 
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar"
-        android:usesCleartextTraffic="true"
-        android:largeHeap="true">
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".activity.MypageNoti"
+            android:exported="true" />
         <activity
             android:name=".activity.PlantsSearchView"
             android:exported="true" />
@@ -56,7 +58,9 @@
         <activity android:name=".activity.MainActivity" />
         <activity android:name=".activity.JournalDiaryActivity" />
 
-        <uses-library android:name="org.apache.http.legacy" android:required="false" />
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
     </application>
 
 </manifest>

@@ -27,6 +27,7 @@ import com.example.flowerparty.RbPreference;
 import com.example.flowerparty.activity.LoginActivity;
 import com.example.flowerparty.activity.PlantsChooseActivity;
 import com.example.flowerparty.activity.PlantsNicknameActivity;
+import com.example.flowerparty.activity.MypageNoti;
 import com.example.flowerparty.activity.ProfileSettingActivity;
 import com.example.flowerparty.activity.homeSettingActivity;
 
@@ -41,6 +42,7 @@ public class MypageAFragment extends Fragment {
     TextView textViewEmail;
     Context ct;
     private RbPreference pref;
+    TextView arrow;
 
 
     @Override
@@ -58,11 +60,11 @@ public class MypageAFragment extends Fragment {
             }
         });
 
-        imgHSetting = (ImageView) rootView.findViewById(R.id.imgHSetting);
-        imgHSetting.setOnClickListener(new View.OnClickListener() {
+        arrow = (TextView) rootView.findViewById(R.id.arrow);
+        arrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), homeSettingActivity.class);
+                Intent intent = new Intent(getActivity(), MypageNoti.class);
                 startActivity(intent);
             }
         });
