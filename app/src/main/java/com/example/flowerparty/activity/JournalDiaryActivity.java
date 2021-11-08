@@ -16,6 +16,7 @@ import com.example.flowerparty.Journal;
 import com.example.flowerparty.JournalAdapter;
 import com.example.flowerparty.R;
 import com.example.flowerparty.RbPreference;
+import com.example.flowerparty.fragment.JournalFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
@@ -75,6 +76,8 @@ public class JournalDiaryActivity extends AppCompatActivity {
         Button btnSave = findViewById(R.id.btn_journal_save);
         TextView txtDelete = findViewById(R.id.text_Journal_Delete);
 
+
+
         // 내용 출력
         Intent intent = getIntent();
         idx = intent.getIntExtra("idx", 0);
@@ -102,7 +105,6 @@ public class JournalDiaryActivity extends AppCompatActivity {
                 } else {
                     insertJournal(titleStr, contentsStr, userID);
                 }
-
             }
         });
 
@@ -117,6 +119,7 @@ public class JournalDiaryActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         deleteJournal(idx, userID);
                         Toast.makeText(JournalDiaryActivity.this, "삭제되었습니다.", Toast.LENGTH_SHORT).show();
+                        finish();
                     }
                 });
                 builder.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
@@ -147,6 +150,8 @@ public class JournalDiaryActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        setResult(RESULT_OK);
     } /* onCreate */
 
     // Insert

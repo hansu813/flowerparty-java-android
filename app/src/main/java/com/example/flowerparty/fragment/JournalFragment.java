@@ -1,5 +1,7 @@
 package com.example.flowerparty.fragment;
 
+import static android.app.Activity.RESULT_OK;
+
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
@@ -8,6 +10,7 @@ import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.DividerItemDecoration;
@@ -102,7 +105,6 @@ public class JournalFragment extends Fragment {
         });
 
 
-
         return rootView;
     }
 
@@ -133,5 +135,4 @@ public class JournalFragment extends Fragment {
 
         list = lists;
     }
-
 }

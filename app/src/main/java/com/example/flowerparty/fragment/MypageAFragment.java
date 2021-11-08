@@ -61,11 +61,15 @@ public class MypageAFragment extends Fragment {
         });
 
         arrow = (TextView) rootView.findViewById(R.id.arrow);
+        LinearLayout settingBox = (LinearLayout) rootView.findViewById(R.id.settingBox);
         arrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), MypageNoti.class);
-                startActivity(intent);
+                if(settingBox.getVisibility() == View.VISIBLE) {
+                    settingBox.setVisibility(View.GONE);
+                } else if (settingBox.getVisibility() == View.GONE) {
+                    settingBox.setVisibility(View.VISIBLE);
+                }
             }
         });
 
