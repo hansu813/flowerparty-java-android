@@ -90,8 +90,9 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.504"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/et_changePW_Email"
+           app:layout_constraintTop_toBottomOf="@+id/et_changePW_Email"
             app:layout_constraintVertical_bias="0.149" />
 
 
@@ -99,7 +100,6 @@
             android:id="@+id/txt_return_login"
             android:layout_width="131dp"
             android:layout_height="22dp"
-            android:layout_marginBottom="124dp"
             android:fontFamily="@font/ahn2006_m"
             android:text="로그인 화면으로 돌아가기"
             android:textAlignment="center"
@@ -111,6 +111,6 @@
             app:layout_constraintHorizontal_bias="0.502"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btnChangePW"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintVertical_bias="0.225" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
