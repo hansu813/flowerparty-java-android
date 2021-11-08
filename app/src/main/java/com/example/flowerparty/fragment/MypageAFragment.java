@@ -56,7 +56,7 @@ public class MypageAFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), ProfileSettingActivity.class);
-                startActivity(intent);
+                startActivityForResult(intent, 400);
             }
         });
 

@@ -19,21 +19,23 @@
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:layout_weight="3"
-            android:gravity="center_vertical"
             android:orientation="vertical"
             >
             <TextView
                 android:id="@+id/item_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="title"
+                android:text="제목"
                 android:fontFamily="@font/ahn2006_m"
+                android:layout_marginTop="5dp"
                 android:textSize="30sp"
-                android:textColor="@color/gray"/>
+                android:textColor="@color/gray"
+                android:textStyle="bold"/>
             <TextView
                 android:id="@+id/item_contents"
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
+                android:layout_marginTop="5dp"
                 android:text="contents"
                 android:fontFamily="@font/ahn2006_m"
                 android:textSize="20sp"

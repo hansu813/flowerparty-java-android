@@ -41,6 +41,7 @@ public class PlantsNicknameActivity extends AppCompatActivity {
         imgLArrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                setResult(RESULT_FIRST_USER);
                 finish();
             }
         });

@@ -25,6 +25,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Filterable;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.flowerparty.ApiClient;
@@ -32,6 +33,7 @@ import com.example.flowerparty.AppInterface;
 import com.example.flowerparty.JournalAdapter;
 import com.example.flowerparty.Journal;
 import com.example.flowerparty.RbPreference;
+import com.example.flowerparty.activity.MainActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 
@@ -39,6 +41,8 @@ import com.example.flowerparty.R;
 import com.example.flowerparty.activity.JournalDiaryActivity;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Locale;
 
@@ -104,7 +108,6 @@ public class JournalFragment extends Fragment {
             }
         });
 
-
         return rootView;
     }
 
@@ -130,6 +133,14 @@ public class JournalFragment extends Fragment {
 
     private void onGetResult(List<Journal> lists) {
         adapter = new JournalAdapter(ct, lists, itemClickListener);
+        Collections.sort(lists, new Comparator<Journal>() {
+            @Override
+            public int compare(Journal lhs, Journal rhs) {
+                // -1 - less than, 1 - greater than, 0 - equal, all inversed for descending
+
+                return Integer.compare(rhs.getIdx(), lhs.getIdx());
+            }
+        });
         adapter.notifyDataSetChanged();
         recyclerView.setAdapter(adapter);
 

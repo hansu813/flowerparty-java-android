@@ -108,16 +108,18 @@
 
             <EditText
                 android:id="@+id/et_journal_contents"
-                android:layout_width="335dp"
+                android:layout_width="300dp"
                 android:layout_height="351dp"
                 android:layout_margin="20dp"
+                android:paddingTop="5dp"
                 android:backgroundTint="@color/sub"
                 android:ems="10"
                 android:fontFamily="@font/ahn2006_m"
                 android:gravity="left|top"
                 android:hint="내용을 작성하시오."
-                android:inputType="textPersonName"
-                android:singleLine="false"
+                android:inputType="textMultiLine"
+
+                android:maxLength="200"
                 android:textColor="@color/gray"
                 android:textColorHint="@color/gray_green"
                 android:textSize="30sp"

@@ -100,10 +100,10 @@ public class JournalDiaryActivity extends AppCompatActivity {
                     //update
                     updateJournal(idx, title, content);
                     Toast.makeText(JournalDiaryActivity.this, "수정 성공", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(JournalDiaryActivity.this, MainActivity.class);
-                    startActivity(intent);
+                    finish();
                 } else {
                     insertJournal(titleStr, contentsStr, userID);
+                    finish();
                 }
             }
         });
@@ -185,8 +185,8 @@ public class JournalDiaryActivity extends AppCompatActivity {
 
     public void onSuccess(String message) {
         Log.e("insertJournal()", "onResponse() 성공 : " + message);
+        Toast.makeText(getApplicationContext(), "저장되었습니다.", Toast.LENGTH_SHORT).show();
         setResult(RESULT_OK);
-        finish();
     }
 
     // Update

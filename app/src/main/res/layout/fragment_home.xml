@@ -88,6 +88,7 @@
                     android:orientation="vertical">
 
                     <LinearLayout
+                        android:id="@+id/layout_home_Nickname"
                         android:layout_width="100dp"
                         android:layout_height="25dp"
                         android:layout_gravity="center"
@@ -112,7 +113,7 @@
                             android:textStyle="bold"/>
 
                         <ImageView
-                            android:id="@+id/imgNickname"
+
                             android:layout_width="15dp"
                             android:layout_height="15dp"
                             android:layout_marginLeft="12dp"
@@ -256,6 +257,7 @@
                             android:layout_gravity="center"
                             android:layout_margin="10dp"
                             android:layout_weight="1"
+                            android:checked="true"
                             android:switchMinWidth="60dp" />
                     </LinearLayout>
 

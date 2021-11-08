@@ -22,6 +22,7 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -51,7 +52,7 @@ import app.akexorcist.bluetotohspp.library.BluetoothSPP;
 
 public class HomeFragment extends Fragment {
     ImageButton imgBtnManage;
-    ImageView imgNickname;
+    LinearLayout layout_home_Nickname;
     ImageView imgBlueIcon;
     Switch switchWater;
     private BluetoothSPP bt;
@@ -85,8 +86,8 @@ public class HomeFragment extends Fragment {
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
         // 식물 닉네임 출력 & 식물 닉네임 변경 액티비티 이동
-        imgNickname = (ImageView) rootview.findViewById(R.id.imgNickname);
-        imgNickname.setOnClickListener(new View.OnClickListener() {
+        layout_home_Nickname = (LinearLayout) rootview.findViewById(R.id.layout_home_Nickname);
+        layout_home_Nickname.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), PlantsNicknameActivity.class);
@@ -206,14 +207,20 @@ public class HomeFragment extends Fragment {
 
         //
         switchWater = (Switch) rootview.findViewById(R.id.switchWater);
+
         switchWater.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked) {
-                    //bt.send("1", true);
-                    mThreadConnectedBluetooth.write("0");
-                } else {
-                    mThreadConnectedBluetooth.write("1");
+                try {
+                    if(isChecked) {
+                        //bt.send("1", true);
+                        mThreadConnectedBluetooth.write("0");
+                    } else {
+                        mThreadConnectedBluetooth.write("1");
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    Toast.makeText(ct, "블루투스를 연결해주세요.", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -267,8 +274,6 @@ public class HomeFragment extends Fragment {
             Toast.makeText(ct, "블루투스가 이미 비활성화 되어 있습니다.", Toast.LENGTH_SHORT).show();
         }
     }
-
-
 
     void listPairedDevices() {
         if (mBluetoothAdapter.isEnabled()) {

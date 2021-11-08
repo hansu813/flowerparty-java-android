@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -30,9 +31,10 @@ import org.json.JSONObject;
 
 public class PlantsFragment extends Fragment {
     Fragment plantsManageFragment;
-    LinearLayout plantsManage;
+    LinearLayout plantsManage, myplant_NickChange;
     MainActivity mainActivity;
     TextView txt_myplant_name, txt_myplant_nick;
+
     private RbPreference pref;
     Context ct;
 
@@ -108,6 +110,16 @@ public class PlantsFragment extends Fragment {
         GetPlantRequest getPlantRequest = new GetPlantRequest(userID, responseListener);
         RequestQueue queue = Volley.newRequestQueue(ct);
         queue.add(getPlantRequest);
+
+        // 식물 별명 변경 이동
+        myplant_NickChange = (LinearLayout) rootView.findViewById(R.id.myplant_NickChange);
+        myplant_NickChange.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), PlantsNicknameActivity.class);
+                startActivityForResult(intent, 100);
+            }
+        });
 
         return rootView;
     }
