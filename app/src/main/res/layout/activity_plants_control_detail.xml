@@ -114,7 +114,7 @@
                                 android:background="@drawable/ampm_back"
                                 android:button="@null"
                                 android:gravity="center"
-                                android:text="오전"
+                                android:text="ON"
                                 android:textColor="@color/white" />
 
                             <RadioButton
@@ -128,7 +128,7 @@
                                 android:background="@drawable/ampm_back"
                                 android:button="@null"
                                 android:gravity="center"
-                                android:text="오후"
+                                android:text="OFF"
 
                                 android:textColor="@color/white" />
                         </RadioGroup>
@@ -203,7 +203,7 @@
                                 android:background="@drawable/ampm_back"
                                 android:button="@null"
                                 android:gravity="center"
-                                android:text="오전"
+                                android:text="ON"
                                 android:textColor="@color/white" />
 
                             <RadioButton
@@ -217,7 +217,7 @@
                                 android:background="@drawable/ampm_back"
                                 android:button="@null"
                                 android:gravity="center"
-                                android:text="오후"
+                                android:text="OFF"
 
                                 android:textColor="@color/white" />
                         </RadioGroup>
