@@ -111,7 +111,7 @@ public class PlantsNicknameActivity extends AppCompatActivity {
                                 //String uId = jsonObject.getString("userID");
 
                                 plantNickName.setText(plantNick);
-                                plantNickName.setTextColor(Color.BLACK);
+                                plantNickName.setTextColor(Color.GRAY);
                                 et_plantNickName.setText(null);
                                 et_plantNickName.clearFocus();
                                 Toast.makeText(getApplicationContext(), "닉네임을 변경했습니다.", Toast.LENGTH_SHORT).show();

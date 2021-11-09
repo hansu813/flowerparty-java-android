@@ -17,6 +17,7 @@ import com.example.flowerparty.JournalAdapter;
 import com.example.flowerparty.R;
 import com.example.flowerparty.RbPreference;
 import com.example.flowerparty.fragment.JournalFragment;
+import com.example.flowerparty.fragment.PlantsManageFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
@@ -64,6 +65,8 @@ public class JournalDiaryActivity extends AppCompatActivity {
 
 
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -95,11 +98,12 @@ public class JournalDiaryActivity extends AppCompatActivity {
                 // 받아온 데이터 값 변경. 받아온 title로 조회해서 변경
                 String titleStr = et_journal_title.getText().toString();
                 String contentsStr = et_journal_contents.getText().toString();
-
+                setResult(RESULT_OK);
                 if (idx > 0) {
                     //update
                     updateJournal(idx, title, content);
                     Toast.makeText(JournalDiaryActivity.this, "수정 성공", Toast.LENGTH_SHORT).show();
+
                     finish();
                 } else {
                     insertJournal(titleStr, contentsStr, userID);
@@ -199,6 +203,7 @@ public class JournalDiaryActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<Journal> call, Response<Journal> response) {
                 //
+                setResult(RESULT_OK);
             }
 
             @Override
@@ -215,7 +220,8 @@ public class JournalDiaryActivity extends AppCompatActivity {
         call.enqueue(new Callback<Journal>() {
             @Override
             public void onResponse(Call<Journal> call, Response<Journal> response) {
-                //
+
+                setResult(RESULT_OK);
             }
 
             @Override

@@ -64,6 +64,10 @@ public class JournalFragment extends Fragment {
 
     private RbPreference pref;
 
+    public static JournalFragment newInstance() {
+        return new JournalFragment();
+    }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -93,7 +97,7 @@ public class JournalFragment extends Fragment {
                 intent.putExtra("idx", idx);
                 intent.putExtra("title", title);
                 intent.putExtra("content", content);
-                startActivity(intent);
+                startActivityForResult(intent, 0);
             }
         };
 
